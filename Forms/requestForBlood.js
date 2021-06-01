@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-community/datetimepicker';
-import NumberPlease from 'react-native-number-please';
-import DatePicker from 'react-native-datepicker';
+//import NumberPlease from 'react-native-number-please';
+//import DatePicker from 'react-native-datepicker';
 
 const requestForBlood= (props) => {
   const [fullName, setFullName] = useState('');
   const [address, setAddress] = useState('');
   const [reason, setReason] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
-  const initialBirthday = [
+  
+  /*const initialBirthday = [
     { id: "day", value: 16 },
     { id: "month", value: 4 },
     { id: "year", value: 1970 },
@@ -22,6 +23,17 @@ const requestForBlood= (props) => {
     { id: "month", label: "b", min: 0, max: 12 },
     { id: "year", label: "c", min: 1900, max: new Date().getFullYear()},
   ];
+
+    <View style={styles.inputView}>
+        <Text>Date</Text>
+          <NumberPlease
+            digits={date}
+            values={birthday.toString()}
+            onChange={(values) => setBirtday(values)}
+          />
+      </View>
+  
+  */
 
 
   const [dat,setDate] = React.useState({day:"2016-05-15"});
@@ -74,14 +86,6 @@ const requestForBlood= (props) => {
       </View>
         
       
-      <View style={styles.inputView}>
-        <Text>Date</Text>
-          <NumberPlease
-            digits={date}
-            values={birthday.toString()}
-            onChange={(values) => setBirtday(values)}
-          />
-      </View>
 
       <View style={styles.inputView}>
         <DatePicker
