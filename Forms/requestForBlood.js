@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import { Picker } from '@react-native-community/picker';
+import { Picker } from '@react-native-community/datetimepicker';
+import NumberPlease from 'react-native-number-please';
+import DatePicker from 'react-native-datepicker';
 
 const requestForBlood= (props) => {
   const [fullName, setFullName] = useState('');
   const [address, setAddress] = useState('');
   const [reason, setReason] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
+  const initialBirthday = [
+    { id: "day", value: 16 },
+    { id: "month", value: 4 },
+    { id: "year", value: 1970 },
+  ];
+
+  const [birthday, setBirtday] = useState(initialBirthday);
+
+  const date = [
+    { id: "day", label: "a", min: 0, max: 31 },
+    { id: "month", label: "b", min: 0, max: 12 },
+    { id: "year", label: "c", min: 1900, max: new Date().getFullYear()},
+  ];
+
+
+  const [dat,setDate] = React.useState({day:"2016-05-15"});
 
   return (
     <View style={styles.container}>
@@ -55,6 +73,43 @@ const requestForBlood= (props) => {
         </Picker>
       </View>
         
+      
+      <View style={styles.inputView}>
+        <Text>Date</Text>
+          <NumberPlease
+            digits={date}
+            values={birthday.toString()}
+            onChange={(values) => setBirtday(values)}
+          />
+      </View>
+
+      <View style={styles.inputView}>
+        <DatePicker
+          style={{width: 200}}
+          date={dat.day}
+          mode="date"
+          placeholder="select date"
+          format="YYYY-MM-DD"
+          minDate="1970-05-01"
+          maxDate="2016-06-01"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              left: 0,
+              top: 4,
+              marginLeft: 40
+            },
+            dateInput: {
+              marginLeft: 86
+            }
+            // ... You can check the source to find the other keys.
+          }}
+          onDateChange={(date) => {setDate({day: date})}}
+        />
+      </View>  
+  
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>
           Post your request
@@ -63,7 +118,7 @@ const requestForBlood= (props) => {
   
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
