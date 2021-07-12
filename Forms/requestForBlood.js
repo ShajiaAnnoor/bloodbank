@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import { Picker } from '@react-native-community/datetimepicker';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { Picker} from '@react-native-community/picker';
 //import NumberPlease from 'react-native-number-please';
-//import DatePicker from 'react-native-datepicker';
+import DatePicker from 'react-native-datepicker';
 
 const requestForBlood= (props) => {
   const [fullName, setFullName] = useState('');
@@ -49,7 +49,7 @@ const requestForBlood= (props) => {
           style={styles.inputText}
           placeholder="Name..." 
           placeholderTextColor="#003f5c"
-          onChangeText={text => this.setState({fullName:text})}
+          onChangeText={text => setFullName(text)}
         />
       </View>
 
@@ -59,7 +59,7 @@ const requestForBlood= (props) => {
           style={styles.inputText}
           placeholder="Address.(eg.Name of hospital).." 
           placeholderTextColor="#003f5c"
-          onChangeText={text => this.setState({address:text})}
+          onChangeText={text => setAddress(text)}
         />
       </View>
 
@@ -69,7 +69,7 @@ const requestForBlood= (props) => {
           style={styles.inputText}
           placeholder="Why you need blood(eg. operation).." 
           placeholderTextColor="#003f5c"
-          onChangeText={text => this.setState({reason:text})}
+          onChangeText={text => setReason(text)}
         />
       </View>
         
@@ -134,12 +134,12 @@ const styles = StyleSheet.create({
   logo:{
     fontWeight:"bold",
     fontSize:30,
-    color:"#fb5b5a",
+    color:"#590208",
     marginBottom:40
   },
   inputView:{
     width:"80%",
-    backgroundColor:"#465881",
+    backgroundColor:"#ebd8d9",
     borderRadius:25,
     height:50,
     marginBottom:20,
