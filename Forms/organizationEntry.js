@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
-import { Picker} from '@react-native-community/picker';
+import { 
+    StyleSheet, 
+    Text,  
+    TextInput, 
+    TouchableOpacity,
+    View
+} from 'react-native';
+import { Picker } from '@react-native-community/picker';
 
 const organizationEntry= (props) => {
   const [organizationnameName, setOrganizationName] = useState('');
@@ -49,7 +55,7 @@ const organizationEntry= (props) => {
     <View style={styles.inputView} >
         <TextInput  
           style={styles.inputText}
-          placeholder=" enter phone number..." 
+          placeholder="Enter phone number..." 
           placeholderTextColor="#003f5c"
           onChangeText={text => setContactNumber(text)}
         />
@@ -60,11 +66,10 @@ const organizationEntry= (props) => {
           Create Entry
         </Text>
       </TouchableOpacity>
-      
+
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
