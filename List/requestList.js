@@ -28,13 +28,11 @@ function Item({ item }) {
         style={{
           height: 50,
           width: 50,
-          justifyContent: 'left',
           alignItems: 'left',
         }}>
         <Text
           style={{
             color: 'green',
-            justifyContent: 'left',
             alignItems: 'left',
           }}>
           Call
