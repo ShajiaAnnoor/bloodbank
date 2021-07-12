@@ -16,7 +16,6 @@ const organizationEntry= (props) => {
   
   return (
     <View style={styles.container}>
-  
       <Text style={styles.logo}>
         Organization Details Form
       </Text>
@@ -52,7 +51,7 @@ const organizationEntry= (props) => {
         </Picker>
       </View>
       
-    <View style={styles.inputView} >
+      <View style={styles.inputView} >
         <TextInput  
           style={styles.inputText}
           placeholder="Enter phone number..." 
