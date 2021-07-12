@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { 
+  useState 
+} from 'react';
 import { 
     StyleSheet, 
     Text,  
@@ -33,7 +35,7 @@ const organizationEntry= (props) => {
         <TextInput  
           secureTextEntry
           style={styles.inputText}
-          placeholder="Address.(eg.Name of hospital).." 
+          placeholder="Address (eg.Name of hospital)..." 
           placeholderTextColor="#003f5c"
           onChangeText={text => setAddress(text)}
         />
