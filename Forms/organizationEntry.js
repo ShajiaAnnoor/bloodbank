@@ -8,9 +8,9 @@ const organizationEntry= (props) => {
   const [district, setSelectedDistrict] = useState("Dhaka");
   const [contactNumber, setContactNumber] = useState('');
   
-
   return (
     <View style={styles.container}>
+  
       <Text style={styles.logo}>
         Organization Details Form
       </Text>
@@ -34,8 +34,6 @@ const organizationEntry= (props) => {
         />
       </View>
 
-
-        
       <View style={styles.inputView}>
         <Picker
           selectedValue={selectedDistrict}
@@ -47,7 +45,6 @@ const organizationEntry= (props) => {
           <Picker.Item label="Dhaka" value="Dhaka" />
         </Picker>
       </View>
-
       
     <View style={styles.inputView} >
         <TextInput  
@@ -57,18 +54,14 @@ const organizationEntry= (props) => {
           onChangeText={text => setContactNumber(text)}
         />
       </View>  
-      
-
-      
-  
+        
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>
           Create Entry
         </Text>
       </TouchableOpacity>
-  
+      
     </View>
-
   );
 };
 
