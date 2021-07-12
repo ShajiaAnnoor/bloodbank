@@ -4,45 +4,70 @@ import {
   Text,
   View,
   FlatList,
-  Image,
-  TouchableOpacity,
-  
+  TouchableOpacity,  
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
+import { Octicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
-function organizationList({ item }) {
+function OrganizationList({ item }) {
   return (
     <View style={styles.listItem}>
-      <View style={{ alignItems: 'left', flex: 1 }}>
-          
 
-        <Text style={{ fontWeight: 'bold',}} >{item.organizationName} </Text>
-        <Paragraph style={{ fontWeight: 'bold',  }} >{item.address}</Paragraph>
-        <Text style={{ fontWeight: 'bold',  }} >{item.district}</Text>
-        <Text style={{ fontWeight: 'bold',  }} >{item.contactNumber}</Text>
+      <View style={{ alignItems: 'flex-start', flex: 1, }}>
+          
+        <View style={ styles.itemContainer}>
+          <Octicons name="organization" size={24} color="black" />
+          <Text style={{ fontWeight: 'bold', marginTop: 7, alignContent: 'space-between'}} > 
+            {item.organizationName} 
+          </Text>
+        </View>
         
+        <View style={ styles.itemContainer}>
+          <Octicons name="location" size={24} color="black" />
+          <Paragraph style={{ fontWeight: 'bold' }}>
+            {item.address}
+          </Paragraph>
+        </View>
+        
+        <View style={ styles.itemContainer}>
+          <MaterialIcons name="location-city" size={24} color="black" />
+          <Text style={{ fontWeight: 'bold' }}>
+            {item.district}
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <FontAwesome name="phone-square" size={24} color="black" />
+          <Text style={{ fontWeight: 'bold' }}>
+            {item.contactNumber}
+          </Text>
+        </View>
       </View>
       <TouchableOpacity
         style={{
           height: 50,
           width: 50,
-          justifyContent: 'left',
-          alignItems: 'left',
+          justifyContent:'flex-start',
+          alignItems: 'flex-start',
+          marginTop :8,
         }}>
         <Text
           style={{
             color: 'green',
-            justifyContent: 'left',
-            alignItems: 'left',
+            justifyContent:'flex-start',
+            alignItems: 'flex-start',
+            
           }}>
-          Call
+          click here to Call
         </Text>
       </TouchableOpacity>
     </View>
   );
 }
 
-export default class organizationList extends React.Component {
+export default class App extends React.Component {
   state = {
     data: [
       {
@@ -112,9 +137,9 @@ export default class organizationList extends React.Component {
     return (
       <View style={styles.container}>
         <FlatList
-          style={{ flex: 1 }}
+          style={{ flex: 1, }}
           data={this.state.data}
-          renderItem={({ item }) => <Item item={item} />}
+          renderItem={({ item }) => <OrganizationList item={item} />}
           keyExtractor={(item) => item.email}
         />
       </View>
@@ -128,15 +153,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F7F7',
     marginTop: 60,
   },
+  itemContainer: {
+    flex:1,
+    flexDirection:'row',
+    justifyContent: 'space-around'
+    
+  },
   listItem: {
     margin: 10,
     padding: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: '#a7d1c9',
     width: '80%',
     flex: 1,
     alignSelf: 'center',
     flexDirection: 'column',
     borderRadius: 5,
+    alignItems:'flex-start',
+    justifyContent: 'space-between',
   },
 });
 
