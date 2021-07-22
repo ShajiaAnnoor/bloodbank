@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 
+import FormModal from '../Forms/requestformmodal';
+
 function Item({ item }) {
   return (
     <View style={styles.listItem}>
@@ -150,6 +152,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <FormModal></FormModal>
       <FlatList       
         numColumns={1}
         style={{ flex: 1 }}
