@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
-import { Picker} from '@react-native-community/picker';
-//import NumberPlease from 'react-native-number-please';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity
+} from 'react-native';
+import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
 
 const requestForBlood= (props) => {
@@ -84,9 +89,7 @@ const requestForBlood= (props) => {
           <Picker.Item label="Dhaka" value="Dhaka" />
         </Picker>
       </View>
-        
       
-
       <View style={styles.inputView}>
         <DatePicker
           style={{width: 200}}
