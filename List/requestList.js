@@ -4,7 +4,6 @@ import {
   Text,
   View,
   FlatList,
-  Image,
   TouchableOpacity,
   
 } from 'react-native';
@@ -15,7 +14,7 @@ import FormModal from '../Forms/requestformmodal';
 function Item({ item }) {
   return (
     <View style={styles.listItem}>
-      <View style={{ alignItems: 'left', flex: 1 }}>
+      <View style={{ alignItems: 'flex-start', flex: 1 }}>
         <Paragraph style={{ fontWeight: 'bold',}} >{item.name} </Paragraph>
         <Text style={{ fontWeight: 'bold',}}>{item.bloodGroup} </Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.district}</Text>
@@ -30,12 +29,12 @@ function Item({ item }) {
         style={{
           height: 50,
           width: 50,
-          alignItems: 'left',
+          alignItems: 'flex-start',
         }}>
         <Text
           style={{
             color: 'green',
-            alignItems: 'left',
+            alignItems: 'flex-start',
           }}>
           Call
         </Text>
@@ -48,16 +47,6 @@ export default function App() {
   let state = {
     data: [
       {
-        name:'Name : Miyah Myles ',
-        bloodGroup: 'BloodGroup : A+',
-        district: 'District : Dhaka',
-        quantity: 'Quantity of blood : 3 bag',
-        address: 'Address : Square Hospital',
-        area:'Area : Dhanmondi',
-        reason: 'Reason : Open heart surgery',
-        phone: 'Contact number: 01749097756',
-      },
-      {
         name:'Miyah Myles ',
         bloodGroup: 'A+',
         district: 'Dhaka',
@@ -75,7 +64,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097757',
       },
       {
         name:'Miyah Myles ',
@@ -85,7 +74,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097758',
       },
       {
         name:'Miyah Myles ',
@@ -95,7 +84,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097759',
       },
       {
         name:'Miyah Myles ',
@@ -105,7 +94,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097760',
       },
       {
         name:'Miyah Myles ',
@@ -115,7 +104,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097761',
       },
       {
         name:'Miyah Myles ',
@@ -125,7 +114,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097762',
       },
       {
         name:'Miyah Myles ',
@@ -135,7 +124,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097763',
       },
       {
         name:'Miyah Myles ',
@@ -145,20 +134,30 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097756',
+        phone: '01749097764',
+      },
+      {
+        name:'Miyah Myles ',
+        bloodGroup: 'A+',
+        district: 'Dhaka',
+        quantity: '3 bag',
+        address: 'Square Hospital',
+        area:'Dhanmondi',
+        reason: 'Open heart surgery',
+        phone: '01749097765',
       },
     ],
   };
 
   return (
     <View style={styles.container}>
-      <FormModal></FormModal>
+      <FormModal />
       <FlatList       
         numColumns={1}
         style={{ flex: 1 }}
         data={state.data}
         renderItem={({ item }) => <Item item={item} />}
-        keyExtractor={(item) => item.email}
+        keyExtractor={(item) => item.phone}
       />
     </View>
   );
