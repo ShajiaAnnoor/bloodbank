@@ -42,8 +42,8 @@ function Item({ item }) {
   );
 }
 
-export default class App extends React.Component {
-  state = {
+export default function App() {
+  let state = {
     data: [
       {
         name:'Name : Miyah Myles ',
@@ -54,8 +54,6 @@ export default class App extends React.Component {
         area:'Area : Dhanmondi',
         reason: 'Reason : Open heart surgery',
         phone: 'Contact number: 01749097756',
-
-
       },
       {
         name:'Miyah Myles ',
@@ -150,20 +148,17 @@ export default class App extends React.Component {
     ],
   };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <FlatList
-         
-          numColumns={1}
-          style={{ flex: 1 }}
-          data={this.state.data}
-          renderItem={({ item }) => <Item item={item} />}
-          keyExtractor={(item) => item.email}
-        />
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <FlatList       
+        numColumns={1}
+        style={{ flex: 1 }}
+        data={state.data}
+        renderItem={({ item }) => <Item item={item} />}
+        keyExtractor={(item) => item.email}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
