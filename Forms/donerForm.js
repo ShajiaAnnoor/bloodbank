@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
-import { Picker} from '@react-native-community/picker';
-
-
+import React, { 
+  useState 
+} from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity
+} from 'react-native';
+import { Picker } from '@react-native-community/picker';
 
 const requestForBlood= (props) => {
   const [donorName, setDonorName] = useState('');
@@ -37,8 +43,6 @@ const requestForBlood= (props) => {
           onChangeText={text => setAddress(text)}
         />
       </View>
-
-
         
       <View style={styles.inputView}>
         <Picker
@@ -85,9 +89,6 @@ const requestForBlood= (props) => {
         />
       </View>  
       
-
-      
-  
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>
           Create Entry
@@ -95,10 +96,8 @@ const requestForBlood= (props) => {
       </TouchableOpacity>
   
     </View>
-
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
