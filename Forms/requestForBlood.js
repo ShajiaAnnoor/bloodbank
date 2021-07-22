@@ -15,6 +15,7 @@ const requestForBlood= (props) => {
   const [reason, setReason] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
   
+  
   /*const initialBirthday = [
     { id: "day", value: 16 },
     { id: "month", value: 4 },
@@ -111,7 +112,7 @@ const requestForBlood= (props) => {
             dateInput: {
               marginLeft: 86
             }
-            // ... You can check the source to find the other keys.
+
           }}
           onDateChange={(date) => {setDate({day: date})}}
         />
