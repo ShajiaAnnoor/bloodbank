@@ -8,7 +8,8 @@ import {
     StyleSheet, 
     Text, 
     View, 
-    TextInput
+    TextInput,
+    TouchableOpacity
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
@@ -22,7 +23,7 @@ const App = () => {
   const [dat,setDate] = React.useState({day:"2016-05-15"});  
 
   return (
-    <View style={styles.container}>
+    <View>
       <Modal
         statusBarTranslucent={true}
         animationType="fade"
@@ -33,7 +34,7 @@ const App = () => {
           setModalVisible(!modalVisible);
         }}
       >
-        <View style={styles.container}>
+        <View style={styles.modalView}>
           <Text style={styles.logo}>
             Make a request for blood
           </Text>
@@ -105,10 +106,7 @@ const App = () => {
               onDateChange={(date) => {setDate({day: date})}}
             />
           </View>  
-        </View>
-      
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
+          <View>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -117,14 +115,26 @@ const App = () => {
             </Pressable>
           </View>
         </View>
-      </Modal>
       
+       {/*<View style={styles.centeredView}>
+          <View>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>POST</Text>
+            </Pressable>
+          </View>
+          </View>*/}
+      </Modal>
+      <View style={styles.container2}>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </Pressable>
+      </View>
     </View>
   );
 };
@@ -149,12 +159,13 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5
+    elevation: 5,
   },
   button: {
     borderRadius: 20,
-    padding: 10,
-    elevation: 2
+    padding: 20,
+    elevation: 2,
+    
   },
   buttonOpen: {
     backgroundColor: "#F194FF",
@@ -165,7 +176,7 @@ const styles = StyleSheet.create({
   textStyle: {
     color: "white",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
   modalText: {
     marginBottom: 15,
@@ -176,6 +187,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0bda5',
     alignItems: 'center',
     justifyContent: 'center',
+    
+  },
+
+  modalButtonContainer:{
+    margin: 2,
+    padding: 20,
+    backgroundColor: '#FFF',
+    width: '80%',
+    height: '80%',
+    flex: 1,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    borderRadius: 80,
+  },
+  container2: {
+    margin: 50,
+    padding: 50,
+    backgroundColor: '#FFF',
+    width: '90%',
+    height: '90%',
+    flex: 1,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly'
+    
+    
   },
   logo:{
     fontWeight:"bold",
