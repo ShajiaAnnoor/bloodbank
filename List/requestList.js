@@ -154,7 +154,7 @@ export default function App() {
       <FormModal />
       <FlatList       
         numColumns={1}
-        style={{ flex: 1 }}
+        style={{ flex: 9 }}
         data={state.data}
         renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.phone}
