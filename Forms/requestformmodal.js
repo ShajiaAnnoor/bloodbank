@@ -127,12 +127,12 @@ const App = () => {
           </View>
           </View>*/}
       </Modal>
-      <View style={styles.container2}>
+      <View >
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Click here to make a request for blood</Text>
       </Pressable>
       </View>
     </View>
@@ -148,6 +148,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
+    
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
@@ -162,16 +163,19 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   button: {
-    borderRadius: 20,
-    padding: 20,
+    borderRadius:10,
+    padding: 30,
     elevation: 2,
-    
+    width: '90%',
+    alignSelf:'center',
+     margin:10,
+    justifyContent:'space-around',
   },
   buttonOpen: {
-    backgroundColor: "#F194FF",
+    backgroundColor: "#c71010",
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#c71010",
   },
   textStyle: {
     color: "white",
@@ -184,7 +188,7 @@ const styles = StyleSheet.create({
   },
     container: {
     flex: 1,
-    backgroundColor: '#f0bda5',
+    backgroundColor: '#eda187',
     alignItems: 'center',
     justifyContent: 'center',
     
@@ -204,7 +208,7 @@ const styles = StyleSheet.create({
   container2: {
     margin: 50,
     padding: 50,
-    backgroundColor: '#FFF',
+    backgroundColor: '#eda187',
     width: '90%',
     height: '90%',
     flex: 1,
