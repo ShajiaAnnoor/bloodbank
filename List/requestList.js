@@ -150,35 +150,77 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container2}>
+      <View >
       <FormModal />
+      </View>
+      <View style={styles.container}>
       <FlatList       
         numColumns={1}
-        style={{ flex: 9 }}
+        style={{ flex: 15 }}
         data={state.data}
         renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.phone}
       />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#F7F7F7',
-    marginTop: 60,
+    flex: 12,
+    //backgroundColor: '#F7F7F7',
+    backgroundColor: '#eda187',
+    marginTop: 10,
+    marginBottom:10,
+    width: '90%',
+    justifyContent: 'space-evenly',
+    alignSelf:'center',
+    flexDirection:'column',
+
+    
    
   },
-  listItem: {
-    margin: 10,
-    padding: 10,
+
+  modalButtonContainer:{
+    margin: 20,
+    padding: 20,
     backgroundColor: '#FFF',
     width: '80%',
+    height: '80%',
+    flex: 1,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    borderRadius: 80,
+  },
+
+  container2: {
+    
+    marginTop:10,
+    backgroundColor:'#fccdb8',
+    width: '95%',
+    height: '90%',
+    flex: 1,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems:'stretch',
+    alignContent:'space-around',
+    flexBasis:10,
+    
+    
+  },
+  listItem: {
+    margin: 20,
+    padding: 20,
+    backgroundColor: '#FFF',
+    width: '90%',
+    height:'10%',
     flex: 1,
     alignSelf: 'center',
     flexDirection: 'column',
     borderRadius: 5,
-     flexDirection: 'column',
+    justifyContent: 'space-evenly',
   },
 });
