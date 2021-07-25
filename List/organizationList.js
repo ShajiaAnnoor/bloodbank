@@ -10,6 +10,7 @@ import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import OrganizationEntryModal from '../Forms/requestOrganizationEntryModal';
 
 function OrganizationList({ item }) {
   return (
@@ -67,14 +68,32 @@ function OrganizationList({ item }) {
   );
 }
 
-export default class App extends React.Component {
-  state = {
+export default function App(){
+  let state = {
     data: [
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097752',
+      },
+      {
+        organizationName:'Sandhani Dhaka Medical College',
+        district: 'Dhaka',
+        address: 'Dhaka Medical College',
+        contactNumber: '01749097753',
+      },
+      {
+        organizationName:'Sandhani Dhaka Medical College',
+        district: 'Dhaka',
+        address: 'Dhaka Medical College',
+        contactNumber: '01749097754',
+      },
+      {
+        organizationName:'Sandhani Dhaka Medical College',
+        district: 'Dhaka',
+        address: 'Dhaka Medical College',
+        contactNumber: '01749097755',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
@@ -86,73 +105,82 @@ export default class App extends React.Component {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097757',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097758',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097759',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097750',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
-      },
-      {
-        organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
-        address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
-      },
-      {
-        organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
-        address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
-      },
-      {
-        organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
-        address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097751',
       },
     ],
   };
 
-  render() {
+  
     return (
+      <View style={styles.container2}>
+      <View >
+      <OrganizationEntryModal/>
+      </View>
       <View style={styles.container}>
         <FlatList
-          style={{ flex: 1, }}
-          data={this.state.data}
+          numColumns={1}
+          style={{ flex: 15 }}
+          data={state.data}
           renderItem={({ item }) => <OrganizationList item={item} />}
-          keyExtractor={(item) => item.email}
+          keyExtractor={(item) => item.contactNumber}
         />
+      </View>
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#F7F7F7',
-    marginTop: 60,
+    flex: 12,
+    backgroundColor: '#eda187',
+    marginTop: 10,
+    marginBottom:10,
+    width: '90%',
+    justifyContent: 'space-evenly',
+    alignSelf:'center',
+    flexDirection:'column',
   },
+
+  container2: {
+    
+    marginTop:10,
+    backgroundColor:'#fccdb8',
+    width: '95%',
+    height: '90%',
+    flex: 1,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems:'stretch',
+    alignContent:'space-around',
+    flexBasis:10,
+  },
+
   itemContainer: {
     flex:1,
     flexDirection:'row',
