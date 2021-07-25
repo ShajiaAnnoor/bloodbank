@@ -7,6 +7,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import  Organizations from '../List/organizationList';
+import Donors from '../List/donorList';
+import  Requests from '../List/requestList';
 
 function BloodRequests() {
   return (
@@ -16,7 +19,7 @@ function BloodRequests() {
   );
 }
 
-function Donors() {
+function Doners() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Blood Doners</Text>
@@ -52,15 +55,17 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
+  
+
     <Tab.Navigator
-      initialRouteName="Blood Requests"
+      initialRouteName="Blood Organizations"
       tabBarOptions={{
         activeTintColor: '#e91e63',
       }}
     >
       <Tab.Screen
         name="Blood Requests"
-        component={BloodRequests}
+        component={Requests}
         options={{
           tabBarLabel: 'Request Notice',
           tabBarIcon: ({ color, size }) => (
@@ -70,7 +75,7 @@ function MyTabs() {
       />
       
       <Tab.Screen
-        name="Blood Doners"
+        name="Blood Donors"
         component={Donors}
         options={{
           tabBarLabel: 'Donors',
@@ -82,7 +87,7 @@ function MyTabs() {
 
       <Tab.Screen
         name="Blood Organizations"
-        component={BloodOrganizations}
+        component={Organizations}
         options={{
           tabBarLabel: 'Organizations',
           tabBarIcon: ({ color, size }) => (
