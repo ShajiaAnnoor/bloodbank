@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-     <Stack.Navigator initialRouteName="requestList">
+     <Stack.Navigator initialRouteName="organizationList">
       
       <Stack.Screen
         name="organizationList"
