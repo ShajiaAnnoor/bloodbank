@@ -1,10 +1,10 @@
 import React from 'react';
 import {
+  FlatList,
   StyleSheet,
   Text,
-  View,
-  FlatList,
-  TouchableOpacity,  
+  TouchableOpacity,
+  View,  
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
@@ -12,8 +12,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-
-
 
 function OrganizationList({ item }) {
   return (
@@ -195,8 +193,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     margin:2,
   },
-
-  
   listItem: {
     margin: 10,
     padding: 10,
