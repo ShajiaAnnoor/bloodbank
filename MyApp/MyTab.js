@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -10,8 +9,6 @@ import { Ionicons } from '@expo/vector-icons';
 import  Organizations from '../List/organizationList';
 import Donors from '../List/donorList';
 import  Requests from '../List/requestList';
-
-
 
 function Patients() {
   return (
@@ -33,8 +30,6 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-  
-
     <Tab.Navigator
       initialRouteName="Blood Organizations"
       tabBarOptions={{
@@ -99,15 +94,12 @@ function MyTabs() {
           ),
         }}
       />
-
     </Tab.Navigator>
   );
 }
 
 export default function App() {
   return (
-    
       <MyTabs />
-    
   );
 }
