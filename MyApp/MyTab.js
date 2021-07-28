@@ -11,29 +11,7 @@ import  Organizations from '../List/organizationList';
 import Donors from '../List/donorList';
 import  Requests from '../List/requestList';
 
-function BloodRequests() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Blood Requests</Text>
-    </View>
-  );
-}
 
-function Doners() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Blood Doners</Text>
-    </View>
-  );
-}
-
-function BloodOrganizations() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Blood Organizations</Text>
-    </View>
-  );
-}
 
 function Patients() {
   return (
@@ -61,6 +39,10 @@ function MyTabs() {
       initialRouteName="Blood Organizations"
       tabBarOptions={{
         activeTintColor: '#e91e63',
+      }}
+      options={{
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
       }}
     >
       <Tab.Screen
@@ -124,8 +106,8 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
+    
       <MyTabs />
-    </NavigationContainer>
+    
   );
 }
