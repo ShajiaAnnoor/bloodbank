@@ -7,8 +7,8 @@ import {
     Pressable, 
     StyleSheet, 
     Text, 
-    View, 
     TextInput,
+    View, 
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
