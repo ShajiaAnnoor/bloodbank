@@ -9,7 +9,6 @@ import {
     Text, 
     View, 
     TextInput,
-    TouchableOpacity
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
@@ -148,7 +147,6 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
@@ -186,14 +184,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center"
   },
-    container: {
+  container: {
     flex: 1,
     backgroundColor: '#eda187',
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
-
   modalButtonContainer:{
     margin: 2,
     padding: 20,
@@ -215,8 +211,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'column',
     justifyContent: 'space-evenly'
-    
-    
   },
   logo:{
     fontWeight:"bold",
