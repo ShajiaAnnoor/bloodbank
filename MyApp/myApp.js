@@ -1,35 +1,24 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import RequestForBlood from '../Forms/requestForBlood';
-import OrganizationList from '../List/organizationList';
-import RequestList from '../List/requestList';
+import MyTab from '../MyApp/MyTab';
+
 
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
-     <Stack.Navigator initialRouteName="organizationList">
-      
+     <Stack.Navigator >
       <Stack.Screen
-        name="organizationList"
-        component={OrganizationList}
+        name="Root"
+        component={MyTab}
         options={{
           headerTintColor: 'white',
           headerStyle: { backgroundColor: 'tomato' },
         }}
       />
-
-      <Stack.Screen
-        name="requestList"
-        component={RequestList}
-        options={{
-          headerTintColor: 'white',
-          headerStyle: { backgroundColor: 'tomato' },
-        }}
-      />
-
+    
     </Stack.Navigator>
   );
 }
