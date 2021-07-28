@@ -3,8 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MyTab from '../MyApp/MyTab';
 
-
-
 const Stack = createStackNavigator();
 
 function App() {
@@ -17,8 +15,7 @@ function App() {
           headerTintColor: 'white',
           headerStyle: { backgroundColor: 'tomato' },
         }}
-      />
-    
+      />    
     </Stack.Navigator>
   );
 }
