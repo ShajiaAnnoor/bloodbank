@@ -15,9 +15,9 @@ import FormModal from '../Forms/requestformmodal';
 
 import call from 'react-native-phone-call';
 
-  const inputValue = '01727192452';
+  //const inputValue = '01727192452';
 
-  const triggerCall = ({item}) => {
+  const triggerCall = (item) => {
     // Check for perfect 10 digit length
     
 
@@ -28,6 +28,12 @@ import call from 'react-native-phone-call';
     // Make a call
     call(args).catch(console.error);
   };
+
+  const triggerCall1=(item)=>{
+    const { phoneNumber } = item.phone;
+
+    Linking.openURL(`tel:${phoneNumber}`)
+  }
 
 const postOnFacebook = () => {
   const facebookShareURL ='https://aboutreact.com';
@@ -97,7 +103,7 @@ function Item({ item }) {
           
             
           }}>
-          Call
+          Share on FB
         </Text>
       </TouchableOpacity>
 
@@ -118,7 +124,7 @@ function Item({ item }) {
 
       <TouchableOpacity
         style={{height:2,alignItems: 'flex-start'}}
-        onPress={()=>triggerCall(item.phone)}
+        onPress={()=>triggerCall(item)}
       >
         
         <Text
@@ -127,7 +133,7 @@ function Item({ item }) {
             alignItems: 'flex-start',
             
           }}>
-          Share
+          Call
         </Text>
       </TouchableOpacity>
       </View>
@@ -176,7 +182,7 @@ export default function App() {
         address: 'Square Hospital',
         area:'Dhanmondi',
         reason: 'Open heart surgery',
-        phone: '01749097759',
+        phone: '01727192452',
       },
       {
         name:'Miyah Myles ',
