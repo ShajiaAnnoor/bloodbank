@@ -5,11 +5,66 @@ import {
   View,
   FlatList,
   TouchableOpacity,
+  Share,
+  Linking,
   
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 
 import FormModal from '../Forms/requestformmodal';
+
+import call from 'react-native-phone-call';
+
+  const inputValue = '01727192452';
+
+  const triggerCall = ({item}) => {
+    // Check for perfect 10 digit length
+    
+
+    const args = {
+      number: item.phone,
+      prompt: true,
+    };
+    // Make a call
+    call(args).catch(console.error);
+  };
+
+const postOnFacebook = () => {
+  const facebookShareURL ='https://aboutreact.com';
+
+const postContent = 'Hello Guys, This is a testing of facebook share   example';
+  let facebookParameters = [];
+  if (facebookShareURL)
+    facebookParameters.push('u=' + encodeURI(facebookShareURL));
+  if (postContent)
+    facebookParameters.push('quote=' + encodeURI(postContent));
+  const url =
+    'https://www.facebook.com/sharer/sharer.php?'
+     + facebookParameters.join('&');
+
+  Linking.openURL(url)
+    .then((data) => {
+      alert('Facebook Opened');
+    })
+    .catch(() => {
+      alert('Something went wrong');
+    });
+}
+
+
+const shareMessage = async (item) => {
+let msg = item.name + "\n" + item.district; 
+  //Here is the Share API
+  await Share.share({
+    message: msg.toString(),
+    url: "www.aubichol.com",
+  })
+    //after successful share return result
+    .then((result) => console.log(result))
+    //If any thing goes wrong it comes here
+    .catch((errorMsg) => console.log(errorMsg));
+};
+
 
 function Item({ item }) {
   return (
@@ -25,20 +80,57 @@ function Item({ item }) {
         <Paragraph style={{ fontWeight: 'bold',  }} >{item.reason}</Paragraph>
         
       </View>
+
+      <View style = {styles.ShareButtonContainer}>
       <TouchableOpacity
         style={{
-          height: 50,
+          height:20,
           width: 50,
           alignItems: 'flex-start',
-        }}>
+        }}
+        onPress={()=>postOnFacebook()}  
+      >
         <Text
           style={{
             color: 'green',
-            alignItems: 'flex-start',
+            alignItems: 'center',
+          
+            
           }}>
           Call
         </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={{height:2,alignItems: 'flex-start'}}
+        onPress={()=>shareMessage(item)}
+      >
+        
+        <Text
+          style={{
+            color: 'green',
+            alignItems: 'flex-start',
+            
+          }}>
+          Share
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={{height:2,alignItems: 'flex-start'}}
+        onPress={()=>triggerCall(item.phone)}
+      >
+        
+        <Text
+          style={{
+            color: 'green',
+            alignItems: 'flex-start',
+            
+          }}>
+          Share
+        </Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -178,10 +270,20 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignSelf:'center',
     flexDirection:'column',
-
-    
-   
   },
+
+  ShareButtonContainer: {
+    flex: 1,
+    //backgroundColor: '#F7F7F7',
+    backgroundColor: '#abd1c6',
+    marginTop: 10,
+    marginBottom:10,
+    width: '90%',
+    justifyContent: 'space-between',
+    alignSelf:'flex-start',
+    flexDirection:'row',
+  },
+
 
   modalButtonContainer:{
     margin: 20,
@@ -208,8 +310,6 @@ const styles = StyleSheet.create({
     alignItems:'stretch',
     alignContent:'space-around',
     flexBasis:10,
-    
-    
   },
   listItem: {
     margin: 20,
