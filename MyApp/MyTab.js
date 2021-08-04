@@ -31,7 +31,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Blood Organizations"
+      initialRouteName="Blood Requests"
       tabBarOptions={{
         activeTintColor: '#e91e63',
       }}
