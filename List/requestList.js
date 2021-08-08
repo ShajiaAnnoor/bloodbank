@@ -15,8 +15,34 @@ import FormModal from '../Forms/requestformmodal';
 
 import call from 'react-native-phone-call';
 
+//import { ShareApi } from 'react-native-fbsdk-next';
+
   //const inputValue = '01727192452';
 
+  {/*const shareOnFacebook1 = () => {
+    // Build up a shareable link.
+    const shareLinkContent = {
+      contentType: 'link',
+      contentUrl: "https://facebook.com",
+      contentDescription: 'Wow, check out this great site!',
+    };
+
+  // Share using the share API.
+    ShareApi.canShare(shareLinkContent).then(
+      function(canShare) {
+        if (canShare) {
+          return ShareApi.share(shareLinkContent, '/me', 'Some message.');
+        }
+      }
+    ).then(
+      function(result) {
+        console.log('Share with ShareApi success.');
+      },
+      function(error) {
+        console.log('Share with ShareApi failed with error: ' + error);
+      }
+    );
+  }*/}
   const triggerCall = (item) => {
     // Check for perfect 10 digit length
     
@@ -108,7 +134,7 @@ function Item({ item }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={{height:2,alignItems: 'flex-start'}}
+        style={{height:50,width:50, alignItems:'flex-start'}}
         onPress={()=>shareMessage(item)}
       >
         
@@ -306,7 +332,8 @@ const styles = StyleSheet.create({
   container2: {
     
     marginTop:10,
-    backgroundColor:'#fccdb8',
+    //backgroundColor:'#fccdb8',
+    backgroundColor: '#eda187',
     width: '95%',
     height: '90%',
     flex: 1,
@@ -320,7 +347,8 @@ const styles = StyleSheet.create({
   listItem: {
     margin: 20,
     padding: 20,
-    backgroundColor: '#FFF',
+    backgroundColor:'#fccdb8',
+    //backgroundColor: '#FFF',
     width: '90%',
     height:'10%',
     flex: 1,
