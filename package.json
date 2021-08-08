@@ -15,12 +15,16 @@
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
+    "add": "^2.0.6",
     "expo": "^41.0.1",
     "expo-status-bar": "~1.0.4",
+    "pod-install": "^0.1.26",
     "react": "^17.0.2",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
     "react-native-datepicker": "^1.7.2",
+    "react-native-fbsdk": "^3.0.0",
+    "react-native-fbsdk-next": "^4.3.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-ionicons": "^4.6.5",
     "react-native-number-please": "^1.0.5",
@@ -29,13 +33,15 @@
     "react-native-screens": "^3.3.0",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
+    "react-native-webview": "^11.6.6",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "react-navigation/stack",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yarn": "^1.22.11"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
