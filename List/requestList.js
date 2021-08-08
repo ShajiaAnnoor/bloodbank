@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 12,
     //backgroundColor: '#F7F7F7',
-    backgroundColor: '#eda187',
+    //backgroundColor: '#eda187',
     marginTop: 10,
     marginBottom:10,
     width: '90%',
@@ -198,7 +198,8 @@ const styles = StyleSheet.create({
   container2: {
     
     marginTop:10,
-    backgroundColor:'#fccdb8',
+    //backgroundColor:'#fccdb8',
+    //backgroundColor: '#eda187',
     width: '95%',
     height: '90%',
     flex: 1,
@@ -214,7 +215,8 @@ const styles = StyleSheet.create({
   listItem: {
     margin: 20,
     padding: 20,
-    backgroundColor: '#FFF',
+    //backgroundColor: '#FFF',
+    backgroundColor: '#eda187',
     width: '90%',
     height:'10%',
     flex: 1,
