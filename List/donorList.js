@@ -12,6 +12,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+//import { LoginManager } from "react-native-fbsdk-next";
+
+
+//import LoginButton from "./facebookLogin";
+//import {LogManager} from './facebookLoginManager';
 
 function OrganizationList({ item }) {
   return (
@@ -79,7 +84,8 @@ function OrganizationList({ item }) {
           Call
         </Text>
       </TouchableOpacity>
-    </View>
+       
+      </View>
   );
 }
 
