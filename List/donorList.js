@@ -1,10 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   FlatList,
+  Picker,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,  
+  View, 
+  Button,
+   
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
@@ -12,6 +15,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+
 //import { LoginManager } from "react-native-fbsdk-next";
 
 
@@ -83,14 +87,13 @@ function OrganizationList({ item }) {
           }}>
           Call
         </Text>
-      </TouchableOpacity>
-       
-      </View>
+      </TouchableOpacity>  
+    </View>
   );
 }
 
-export default class App extends React.Component {
-  state = {
+export default function App() {
+  let state = {
     data: [
       {
         name:'Kalmal Hossain',
@@ -106,7 +109,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Not Available',
         status:'Not yet Ready',
-        contactNumber: '01749097756',
+        contactNumber: '01749097757',
       },
       {
         name:'Kalmal Hossain',
@@ -114,7 +117,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749097758',
       },
       {
         name:'Jamal Hossain',
@@ -122,7 +125,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749097759',
       },
       {
         name:'Kalmal Hossain',
@@ -130,7 +133,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749097723',
       },
       {
         name:'Kalmal Hossain',
@@ -138,13 +141,13 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749077756',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
         district: 'Dhaka',
         address: 'Dhaka Medical College',
-        contactNumber: '01749097756',
+        contactNumber: '01749097792',
       },
       {
         name:'Kalmal Hossain',
@@ -152,7 +155,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749097762',
       },
       {
        name:'Kalmal Hossain',
@@ -160,7 +163,7 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749337756',
       },
       {
         name:'Kalmal Hossain',
@@ -168,24 +171,108 @@ export default class App extends React.Component {
         district: 'Dhaka',
         availablity: 'Available',
         status:'Ready to donate',
-        contactNumber: '01749097756',
+        contactNumber: '01749092256',
       },
     ],
   };
 
-  render() {
+  ////////////////////////////////////
+  const AllValue =[
+    'Dhaka',
+    'Chittagong',
+    'Barishal',
+    'Rajshahi',
+    'Mymensingh',
+    'Rangpur',
+    'Sylhet',
+    'Panchagarh',
+  ];
+  const [selectedValue, setSelectedValue] = useState("one");
+  const [data, setData] = useState([
+    'Dhaka',
+    'Chittagong',
+    'Barishal',
+    'Rajshahi',
+    'Mymensingh',
+    'Rangpur',
+    'Sylhet',
+    'Panchagarh',
+  ]);
+  const [filteredData, setFilteredData] = useState([
+    'Dhaka',
+    'Chittagong',
+    'Barishal',
+    'Rajshahi',
+    'Mymensingh',
+    'Rangpur',
+    'Sylhet',
+    'Panchagarh',
+  ]);
+
+  const onPress = (itemValue) => {
+    const newData = data.filter((item) => {
+      //console.log("print"+itemValue.value;
+      console.log("Jopu")
+      //console.log(JSON.stringify(itemValue, null, 4));
+      return item == itemValue;
+    });
+    setFilteredData(newData);
+    //setSelectedValue(itemValue)
+  };
+
+  const onPressAll = () => {
+    
+    setFilteredData(AllValue);
+    //setSelectedValue(itemValue)
+  };
+
+  const onPickerPress = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+  //////////////////////////////////
+
+  
     return (
-      <View style={styles.container}>
-        <FlatList
-          style={{ flex: 1, }}
-          data={this.state.data}
-          renderItem={({ item }) => <OrganizationList item={item} />}
-          keyExtractor={(item) => item.email}
-        />
+      <View>
+        <View style={styles.filterContainer}>
+          <Picker
+            selectedValue={selectedValue}
+            style={{ height: 50, width: 150 }}
+            onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
+          >
+            {AllValue.map((district) => {
+                return(
+                  <Picker.Item label={district} value={district}/>
+                );
+              }
+            )}
+          </Picker>
+        </View>
+
+        <View style={styles.container}>
+            {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
+          <FlatList
+            style={{ flex: 10, }}
+            data={filteredData} 
+            renderItem={({ item }) => <OrganizationList item={item} />}
+            keyExtractor={(item) => item.email}
+          />
+
+          <Button 
+            onPress={()=>onPress(selectedValue)} 
+            title="Click here to filter" 
+            color="#841584" 
+          />
+          <Button 
+            onPress={()=>onPressAll()} 
+            title="Click here to see all " 
+            color="#841533" 
+          />
+        </View>
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -210,5 +297,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems:'flex-start',
     justifyContent: 'space-between',
+  },
+
+  filterContainer: {
+    flex: 1,
+    paddingTop: 40,
+    alignItems: "center"
   },
 });
