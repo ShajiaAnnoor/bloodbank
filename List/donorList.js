@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import {
   FlatList,
   Picker,
@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   View, 
   Button,
-   
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
@@ -17,12 +16,103 @@ import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 //import { LoginManager } from "react-native-fbsdk-next";
-
-
 //import LoginButton from "./facebookLogin";
 //import {LogManager} from './facebookLoginManager';
+let all_data = {
+  data: [
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749097756',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Not Available',
+      status:'Not yet Ready',
+      contactNumber: '01749097757',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749097758',
+    },
+    {
+      name:'Jamal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749097759',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749097723',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749077756',
+    },
+    {
+      organizationName:'Sandhani Dhaka Medical College',
+      district: 'Barishal',
+      address: 'Dhaka Medical College',
+      contactNumber: '01749097792',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Barishal',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749097762',
+    },
+    {
+     name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749337756',
+    },
+    {
+      name:'Kalmal Hossain',
+      address: 'Dhaka Medical College',
+      district: 'Dhaka',
+      availablity: 'Available',
+      status:'Ready to donate',
+      contactNumber: '01749092256',
+    },
+  ],
+};
 
-function OrganizationList({ item }) {
+const AllValue =[
+  'Dhaka',
+  'Chittagong',
+  'Barishal',
+  'Rajshahi',
+  'Mymensingh',
+  'Rangpur',
+  'Sylhet',
+  'Panchagarh',
+];
+
+function DonorList({ item }) {
   return (
     <View style={styles.listItem}>
 
@@ -93,101 +183,9 @@ function OrganizationList({ item }) {
 }
 
 export default function App() {
-  let state = {
-    data: [
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749097756',
-      },
-      {
-         name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Not Available',
-        status:'Not yet Ready',
-        contactNumber: '01749097757',
-      },
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749097758',
-      },
-      {
-        name:'Jamal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749097759',
-      },
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749097723',
-      },
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749077756',
-      },
-      {
-        organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
-        address: 'Dhaka Medical College',
-        contactNumber: '01749097792',
-      },
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749097762',
-      },
-      {
-       name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749337756',
-      },
-      {
-        name:'Kalmal Hossain',
-        address: 'Dhaka Medical College',
-        district: 'Dhaka',
-        availablity: 'Available',
-        status:'Ready to donate',
-        contactNumber: '01749092256',
-      },
-    ],
-  };
-
-  ////////////////////////////////////
-  const AllValue =[
-    'Dhaka',
-    'Chittagong',
-    'Barishal',
-    'Rajshahi',
-    'Mymensingh',
-    'Rangpur',
-    'Sylhet',
-    'Panchagarh',
-  ];
+  
   const [selectedValue, setSelectedValue] = useState("one");
+  
   const [data, setData] = useState([
     'Dhaka',
     'Chittagong',
@@ -198,31 +196,18 @@ export default function App() {
     'Sylhet',
     'Panchagarh',
   ]);
-  const [filteredData, setFilteredData] = useState([
-    'Dhaka',
-    'Chittagong',
-    'Barishal',
-    'Rajshahi',
-    'Mymensingh',
-    'Rangpur',
-    'Sylhet',
-    'Panchagarh',
-  ]);
+
+  const [filteredData, setFilteredData] = useState(all_data.data);
 
   const onPress = (itemValue) => {
-    const newData = data.filter((item) => {
-      //console.log("print"+itemValue.value;
-      console.log("Jopu")
-      //console.log(JSON.stringify(itemValue, null, 4));
-      return item == itemValue;
+    const newData = all_data.data.filter((item) => {
+      return item.district == itemValue;
     });
     setFilteredData(newData);
-    //setSelectedValue(itemValue)
   };
 
-  const onPressAll = () => {
-    
-    setFilteredData(AllValue);
+  const onPressAll = () => {    
+    setFilteredData(all_data.data);
     //setSelectedValue(itemValue)
   };
 
@@ -231,48 +216,44 @@ export default function App() {
   }
   //////////////////////////////////
 
-  
-    return (
-      <View>
-        <View style={styles.filterContainer}>
-          <Picker
-            selectedValue={selectedValue}
-            style={{ height: 50, width: 150 }}
-            onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
-          >
-            {AllValue.map((district) => {
-                return(
-                  <Picker.Item label={district} value={district}/>
-                );
-              }
-            )}
-          </Picker>
-        </View>
-
-        <View style={styles.container}>
-            {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
-          <FlatList
-            style={{ flex: 10, }}
-            data={filteredData} 
-            renderItem={({ item }) => <OrganizationList item={item} />}
-            keyExtractor={(item) => item.email}
-          />
-
-          <Button 
-            onPress={()=>onPress(selectedValue)} 
-            title="Click here to filter" 
-            color="#841584" 
-          />
-          <Button 
-            onPress={()=>onPressAll()} 
-            title="Click here to see all " 
-            color="#841533" 
-          />
-        </View>
+  return (
+    <View>
+      <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150 }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
+        >
+          {AllValue.map((district) => {
+            return(
+              <Picker.Item label={district} value={district}/>
+            );
+          })}
+        </Picker>
       </View>
-    );
-  }
 
+      <View style={styles.container}>
+        {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
+        <FlatList
+          style={{ flex: 10, }}
+          data={filteredData} 
+          renderItem={({ item }) => <DonorList item={item} />}
+          keyExtractor={( item ) => item.email}
+        />
+        <Button 
+          onPress={()=>onPress(selectedValue)} 
+          title="Click here to filter" 
+          color="#841584" 
+        />
+        <Button 
+          onPress={()=>onPressAll()} 
+          title="Click here to see all" 
+          color="#841533" 
+        />
+      </View>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -298,7 +279,6 @@ const styles = StyleSheet.create({
     alignItems:'flex-start',
     justifyContent: 'space-between',
   },
-
   filterContainer: {
     flex: 1,
     paddingTop: 40,
