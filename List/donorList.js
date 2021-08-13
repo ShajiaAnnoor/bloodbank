@@ -186,17 +186,6 @@ export default function App() {
   
   const [selectedValue, setSelectedValue] = useState("one");
   
-  const [data, setData] = useState([
-    'Dhaka',
-    'Chittagong',
-    'Barishal',
-    'Rajshahi',
-    'Mymensingh',
-    'Rangpur',
-    'Sylhet',
-    'Panchagarh',
-  ]);
-
   const [filteredData, setFilteredData] = useState(all_data.data);
 
   const onPress = (itemValue) => {
@@ -214,7 +203,6 @@ export default function App() {
   const onPickerPress = (itemValue) => {
     setSelectedValue(itemValue);
   }
-  //////////////////////////////////
 
   return (
     <View>
