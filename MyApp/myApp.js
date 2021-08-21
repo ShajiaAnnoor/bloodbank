@@ -1,15 +1,18 @@
 import React, {
   useState,
+  Fragment,
 } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import MyTab from '../MyApp/MyTab';
 import {
+  Button,
   Image,
   Switch,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MyTab from '../MyApp/MyTab';
 
-import { registerForPushNotificationsAsync } from "../Notifications/example"
+
+import { registerForPushNotificationsAsync, sendPushNotification } from "../Notifications/example"
 const Stack = createStackNavigator();
 
 function LogoTitle() {
@@ -23,10 +26,17 @@ function LogoTitle() {
 
 function App() {
   const [isEnabled, setIsEnabled] = useState(false);
+  const [expoPushToken, setExpoPushToken] = useState("");
+
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  const register = () => { 
-    registerForPushNotificationsAsync().then(token => alert(token)) ; 
+  const register = async() => { 
+    await registerForPushNotificationsAsync().then(token => setExpoPushToken(token)) ; 
     toggleSwitch();
+  }
+
+  const send = async () => {
+    alert(expoPushToken);
+    await sendPushNotification(expoPushToken);    
   }
 
   return (
@@ -39,6 +49,7 @@ function App() {
           headerStyle: { backgroundColor: 'tomato' },
           headerTitle: props => <LogoTitle {...props} />,
           headerRight: () => (
+            <Fragment>
             <Switch
               trackColor={{ false: "#767577", true: "#81b0ff" }}
               thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -46,6 +57,13 @@ function App() {
               onValueChange={register}
               value={isEnabled}
             />
+            <Button  
+              onPress={send}  
+              title="Learn More"  
+              color="#841584"  
+              accessibilityLabel="Learn more about this purple button"
+            />
+            </Fragment>
           ),
           headerLeft: () => {
             
