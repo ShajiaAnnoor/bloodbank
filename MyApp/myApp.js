@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {
+  useState,
+} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MyTab from '../MyApp/MyTab';
-import {Button,Image} from 'react-native';
+import {
+  Image,
+  Switch,
+} from 'react-native';
 
+import { registerForPushNotificationsAsync } from "../Notifications/example"
 const Stack = createStackNavigator();
 
 function LogoTitle() {
@@ -16,8 +22,15 @@ function LogoTitle() {
 }
 
 function App() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const register = () => { 
+    registerForPushNotificationsAsync().then(token => alert(token)) ; 
+    toggleSwitch();
+  }
+
   return (
-     <Stack.Navigator >
+    <Stack.Navigator >
       <Stack.Screen
         name="Root"
         component={MyTab}
@@ -26,12 +39,17 @@ function App() {
           headerStyle: { backgroundColor: 'tomato' },
           headerTitle: props => <LogoTitle {...props} />,
           headerRight: () => (
-            <Button
-              onPress={() => alert('This is a button!')}
-              title="Info"
-              color="#fff"
+            <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={register}
+              value={isEnabled}
             />
           ),
+          headerLeft: () => {
+            
+          }
         }}
       />    
     </Stack.Navigator>
