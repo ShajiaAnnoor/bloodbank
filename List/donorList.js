@@ -1,12 +1,12 @@
 import React,{ useState } from 'react';
 import {
+  Button,
   FlatList,
   Picker,
   StyleSheet,
   Text,
   TouchableOpacity,
   View, 
-  Button,
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
@@ -14,6 +14,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+//import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 //import { LoginManager } from "react-native-fbsdk-next";
 //import LoginButton from "./facebookLogin";
@@ -47,7 +48,7 @@ let all_data = {
     {
       name:'Jamal Hossain',
       address: 'Dhaka Medical College',
-      district: 'Dhaka',
+      district: 'Chittagong',
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097759',
@@ -205,11 +206,11 @@ export default function App() {
   }
 
   return (
-    <View>
+    <View style={styles.pageContainer}>
       <View style={styles.filterContainer}>
         <Picker
           selectedValue={selectedValue}
-          style={{ height: 50, width: 150 }}
+          style={{ height: 50, width: 150  }}
           onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
         >
           {AllValue.map((district) => {
@@ -218,7 +219,49 @@ export default function App() {
             );
           })}
         </Picker>
-      </View>
+
+        
+
+        {/*<TouchableOpacity
+          style={{height:50,width:50, alignItems:'center',Color:'#a7d1c9',}}
+          onPress={()=>onPress(selectedValue)} 
+        >
+        
+          <Text
+            style={{
+              color: 'red',
+              alignItems: 'flex-start',
+              
+            }}>
+            FilterIn
+          </Text>
+
+          </TouchableOpacity>*/}
+
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPress(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+        <TouchableOpacity
+            style={{height:50,width:50, alignItems:'center'}}
+            onPress={()=>onPressAll()} 
+          >
+          
+          <Text
+            style={{
+              color: 'green',
+              alignItems: 'flex-start',
+              
+            }}>
+            FilterOut
+          </Text>
+        </TouchableOpacity>
+        
+    </View>
 
       <View style={styles.container}>
         {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
@@ -228,7 +271,7 @@ export default function App() {
           renderItem={({ item }) => <DonorList item={item} />}
           keyExtractor={( item ) => item.email}
         />
-        <Button 
+       {/*} <Button 
           onPress={()=>onPress(selectedValue)} 
           title="Click here to filter" 
           color="#841584" 
@@ -237,15 +280,21 @@ export default function App() {
           onPress={()=>onPressAll()} 
           title="Click here to see all" 
           color="#841533" 
-        />
+        />*/}
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  pageContainer: {
+    flex:1,
+    flexDirection:'column',
+    marginTop:30,
+    justifyContent: 'space-evenly',
+  },
   container: {
-    flex: 1,
+    flex: 10,
     backgroundColor: '#F7F7F7',
     marginTop: 60,
   },
@@ -269,7 +318,20 @@ const styles = StyleSheet.create({
   },
   filterContainer: {
     flex: 1,
-    paddingTop: 40,
-    alignItems: "center"
+    paddingTop:39,
+    alignItems: "flex-start",
+    flexDirection:'row',
+    justifyContent: 'space-between',
+    margin:2,
   },
+
+  filterButton:{
+    height:50,
+    width:10,
+    margin:20,
+    padding:20,
+    backgroundColor:"#4CAF50",
+    
+
+  }
 });
