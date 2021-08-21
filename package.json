@@ -19,6 +19,7 @@
     "@react-navigation/stack": "^5.14.5",
     "add": "^2.0.6",
     "expo": "^41.0.1",
+    "expo-notifications": "^0.12.3",
     "expo-status-bar": "~1.0.4",
     "pod-install": "^0.1.26",
     "react": "^17.0.2",
