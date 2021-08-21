@@ -15,13 +15,12 @@ import { Picker } from '@react-native-community/picker';
 
 
 const App = () => {
-    const [modalVisible, setModalVisible] = useState(false);
-    const [organizationnameName, setOrganizationName] = useState('');
-    const [address, setAddress] = useState('');
-    const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
-    const [contactNumber, setContactNumber] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [organizationnameName, setOrganizationName] = useState('');
+  const [address, setAddress] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
+  const [contactNumber, setContactNumber] = useState('');
     
-
   return (
     <View>
       <Modal
@@ -34,77 +33,78 @@ const App = () => {
           setModalVisible(!modalVisible);
         }}
       >
-            <View style={styles.modalView}>
-                <Text style={styles.logo}>
-                    Make a request for blood
-                </Text>
+        <View style={styles.modalView}>
+          <Text style={styles.logo}>
+            Make a request for blood
+          </Text>
 
-                <View style={styles.inputView} >
-                    <TextInput  
-                    style={styles.inputText}
-                    placeholder=" Organization Name..." 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => setOrganizationName(text)}
-                    />
-                </View>
+          <View style={styles.inputView} >
+            <TextInput  
+              style={styles.inputText}
+              placeholder=" Organization Name..." 
+              placeholderTextColor="#003f5c"
+              onChangeText={text => setOrganizationName(text)}
+            />
+          </View>
 
-                <View style={styles.inputView} >
-                    <TextInput  
-                        secureTextEntry
-                        style={styles.inputText}
-                        placeholder="Address (eg.Name of hospital)..." 
-                        placeholderTextColor="#003f5c"
-                        onChangeText={text => setAddress(text)}
-                    />
-                </View>
+          <View style={styles.inputView} >
+            <TextInput  
+              secureTextEntry
+              style={styles.inputText}
+              placeholder="Address (eg.Name of hospital)..." 
+              placeholderTextColor="#003f5c"
+              onChangeText={text => setAddress(text)}
+            />
+          </View>
 
-                <View style={styles.inputView}>
-                    <Picker
-                    selectedValue={selectedDistrict}
-                    style={{ height: 50, width: 150 }}
-                    onValueChange={(itemValue) => setSelectedDistrict(itemValue)}
-                    style={styles.inputText}
-                    >
-                    <Picker.Item label="Barishal" value="Barishal" />
-                    <Picker.Item label="Dhaka" value="Dhaka" />
-                    </Picker>
-                </View>
+          <View style={styles.inputView}>
+            <Picker
+              selectedValue={selectedDistrict}
+              style={{ height: 50, width: 150 }}
+              onValueChange={(itemValue) => setSelectedDistrict(itemValue)}
+              style={styles.inputText}
+            >
+              <Picker.Item label="Barishal" value="Barishal" />
+              <Picker.Item label="Dhaka" value="Dhaka" />
+            </Picker>
+          </View>
         
-                <View style={styles.inputView} >
-                    <TextInput  
-                    style={styles.inputText}
-                    placeholder="Enter phone number..." 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => setContactNumber(text)}
-                    />
-                </View>  
+          <View style={styles.inputView} >
+            <TextInput  
+              style={styles.inputText}
+              placeholder="Enter phone number..." 
+              placeholderTextColor="#003f5c"
+              onChangeText={text => setContactNumber(text)}
+            />
+          </View>  
             
-                <TouchableOpacity style={styles.loginBtn}>
-                    <Text style={styles.loginText}>
-                    Create Entry
-                    </Text>
-                </TouchableOpacity>
+          <TouchableOpacity style={styles.loginBtn}>
+            <Text style={styles.loginText}>
+              Create Entry
+            </Text>
+          </TouchableOpacity>
 
-            <View>
-                <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-                >
-                <Text style={styles.textStyle}>POST</Text>
-                </Pressable>
-            </View>
-            </View>
-        
-    
+          <View>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>POST</Text>
+            
+            </Pressable>
+          </View>
+        </View>
       </Modal>
       
       <View>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Click here to register your organizations</Text>
-      </Pressable>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}
+        >
+          <Text style={styles.textStyle}>
+            Click here to register your organizations
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     
   },
-
   container2: {
     margin: 50,
     padding: 50,
@@ -168,8 +167,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'column',
     justifyContent: 'space-evenly'
-    
-    
   },
   logo:{
     fontWeight:"bold",
