@@ -69,12 +69,12 @@ export default function App() {
 }
 
 // Can use this function below, OR use Expo's Push Notification Tool-> https://expo.dev/notifications
-async function sendPushNotification(expoPushToken) {
+export async function sendPushNotification(expoPushToken) {
   const message = {
     to: expoPushToken,
     sound: 'default',
-    title: 'Original Title',
-    body: 'And here is the body!',
+    title: 'Blood Bank',
+    body: 'A+ Blood Needed',
     data: { someData: 'goes here' },
   };
 
