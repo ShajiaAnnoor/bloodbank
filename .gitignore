@@ -1,6 +1,6 @@
 .expo/
-	node_modules/
-	yarn-error.log
-	yarn.lock
+node_modules/
+yarn-error.log
+yarn.lock
 
 
