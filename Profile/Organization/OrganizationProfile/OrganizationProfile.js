@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { View,Button, Switch, StyleSheet,Text,TextInput, TouchableOpacity } from "react-native";
+import { View, Button, StyleSheet,Text } from "react-native";
 import { Octicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
