@@ -6,10 +6,10 @@ import React, {
     useRef,
  } from 'react';
 import { 
-    Text, 
-    View, 
-    Button, 
-    Platform,
+  Button,
+  Platform,
+  Text, 
+  View, 
  } from 'react-native';
 
 Notifications.setNotificationHandler({
