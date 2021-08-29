@@ -1,22 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown'
 import { useNavigation } from '@react-navigation/native';
 
 const DropdownScreen = () => {
-    /*
-    const [dropdown, setDropdown] = useState(null);
-    const [selected, setSelected] = useState([]);
-
-    const _renderItem = item => {
-        return (
-        <View style={styles.item}>
-            <Text style={styles.textItem}>{item.label}</Text>
-          
-        </View>
-        );
-    };
-    */
 
     const countries = ["Donor", "Organization", "Patient"]
     const navigation = useNavigation();
