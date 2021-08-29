@@ -9,9 +9,7 @@ import {
     Text, 
     View, 
     TextInput,
-    TouchableOpacity
 } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 
 const nameEntryModal = ({mv, toggle, setName, index}) => {
   const [yourName, setYourName] = useState(' ');
