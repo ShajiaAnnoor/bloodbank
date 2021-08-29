@@ -6,10 +6,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import NameEntryModal from './NameModal2';
-import AddressEntryModal from './AddressModal';
-import DistrictEntryModal from './DistrictModal';
-import ContactEntryModal from './ContactModal';
+
+import NameEntryModal from '../OrganizationModal/nameModal';
+import AddressEntryModal from '../OrganizationModal/addressModal';
+import DistrictEntryModal from '../OrganizationModal/districtModal';
+import ContactEntryModal from '../OrganizationModal/contactNumber';
 
 const OrganizationProfile = () => {
   const arr = [false,false,false,false];
