@@ -6,10 +6,16 @@ import {
   Button,
   Image,
   Switch,
+  View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import MyTab from '../MyApp/MyTab';
+import ProfileNavigator from '../Profile/ProfileNavigatorButton/profileNavigatorButton.js'
+//import Patient from "../Profile/Patient/PatientProfile/PatientProfile";
+import Donor from "../Profile/Donor/DonorProfile/donorProfile";
+import Organization from "../Profile/Organization/OrganizationProfile/OrganizationProfile";
 
 
 import { registerForPushNotificationsAsync, sendPushNotification } from "../Notifications/example"
@@ -50,26 +56,41 @@ function App() {
           headerTitle: props => <LogoTitle {...props} />,
           headerRight: () => (
             <Fragment>
-            <Switch
-              trackColor={{ false: "#767577", true: "#81b0ff" }}
-              thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-              ios_backgroundColor="#3e3e3e"
-              onValueChange={register}
-              value={isEnabled}
-            />
-            <Button  
-              onPress={send}  
-              title="Learn More"  
-              color="#841584"  
-              accessibilityLabel="Learn more about this purple button"
-            />
+              <Switch
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={register}
+                value={isEnabled}
+              />
+              <Button  
+                onPress={send}  
+                title="Learn More"  
+                color="#841584"  
+                accessibilityLabel="Learn more about this purple button"
+              />
+              <View>
+                <ProfileNavigator />
+              </View>
             </Fragment>
           ),
           headerLeft: () => {
             
           }
         }}
-      />    
+      />
+      <Stack.Screen
+        name="Donor"
+        component={Donor}       
+      /> 
+      <Stack.Screen
+        name="Organization"
+        component={Organization}       
+      />
+      {/*<Stack.Screen
+        name="Patient"
+        component={Patient}       
+      />*/}   
     </Stack.Navigator>
   );
 }
