@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from "react";
 import { View,Button, Switch, StyleSheet,Text,TextInput, TouchableOpacity } from "react-native";
-import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
