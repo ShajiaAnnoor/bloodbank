@@ -9,9 +9,7 @@ import {
     Text, 
     View, 
     TextInput,
-    TouchableOpacity
 } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 
 const addressEntryModal = ({mv, toggle,setAddress,index}) => {
  
