@@ -9,9 +9,7 @@ import {
     Text, 
     View, 
     TextInput,
-    TouchableOpacity
 } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 
 const contactEntryModal = ({mv, toggle, setContact, index}) => {
   const [yourContact, setYourContact] = useState(' ');
