@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-around',
   },
   buttonOpen: {
-    backgroundColor: "#c71010",
+    backgroundColor: "teal",
   },
   buttonClose: {
     backgroundColor: "#c71010",
