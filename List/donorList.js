@@ -30,6 +30,7 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097756',
+      bloodGroup: 'A+',
     },
     {
       name:'Kalmal Hossain',
@@ -38,6 +39,7 @@ let all_data = {
       availablity: 'Not Available',
       status:'Not yet Ready',
       contactNumber: '01749097757',
+      bloodGroup: 'A-',
     },
     {
       name:'Kalmal Hossain',
@@ -46,6 +48,7 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097758',
+      bloodGroup: 'B+',
     },
     {
       name:'Jamal Hossain',
@@ -54,6 +57,7 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097759',
+      bloodGroup: 'B-',
     },
     {
       name:'Kalmal Hossain',
@@ -62,6 +66,8 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097723',
+      bloodGroup: 'AB+',
+
     },
     {
       name:'Kalmal Hossain',
@@ -70,13 +76,9 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749077756',
+      bloodGroup: 'AB-',
     },
-    {
-      organizationName:'Sandhani Dhaka Medical College',
-      district: 'Barishal',
-      address: 'Dhaka Medical College',
-      contactNumber: '01749097792',
-    },
+    
     {
       name:'Kalmal Hossain',
       address: 'Dhaka Medical College',
@@ -84,6 +86,7 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749097762',
+      bloodGroup: 'O+',
     },
     {
      name:'Kalmal Hossain',
@@ -92,6 +95,7 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749337756',
+      bloodGroup: 'O+',
     },
     {
       name:'Kalmal Hossain',
@@ -100,11 +104,12 @@ let all_data = {
       availablity: 'Available',
       status:'Ready to donate',
       contactNumber: '01749092256',
+      bloodGroup: 'A+',
     },
   ],
 };
 
-const AllValue =[
+const AllDistrict =[
   'Dhaka',
   'Chittagong',
   'Barishal',
@@ -113,6 +118,17 @@ const AllValue =[
   'Rangpur',
   'Sylhet',
   'Panchagarh',
+];
+
+const AllBloodGroup=[
+  'A+',
+  'A-',
+  'B+',
+  'B-',
+  'AB+',
+  'AB-',
+  'O+',
+  'O-',
 ];
 
 function DonorList({ item }) {
@@ -162,6 +178,13 @@ function DonorList({ item }) {
             {item.contactNumber}
           </Text>
         </View>
+
+        <View style={ styles.itemContainer}>
+          <MaterialIcons name="event-available" size={24} color="black" />
+          <Text style={{ fontWeight: 'bold',margin:5 }}>
+            {item.bloodGroup}
+          </Text>
+        </View>
       </View>
       <TouchableOpacity
         style={{
@@ -191,7 +214,7 @@ export default function App() {
   
   const [filteredData, setFilteredData] = useState(all_data.data);
 
-  const onPress = (itemValue) => {
+  const onPressDistrict = (itemValue) => {
     const newData = all_data.data.filter((item) => {
       return item.district == itemValue;
     });
@@ -203,9 +226,25 @@ export default function App() {
     //setSelectedValue(itemValue)
   };
 
-  const onPickerPress = (itemValue) => {
+  const onPickerPress1 = (itemValue) => {
     setSelectedValue(itemValue);
   }
+
+  const onPickerPress2 = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+
+  const onPressGroup = (itemValue) => {
+    const newData = all_data.data.filter((item) => {
+      return item.bloodGroup == itemValue;
+    });
+    setFilteredData(newData);
+  };
+
+  const onPressAllGroup= () => {    
+    setFilteredData(all_data.data);
+    //setSelectedValue(itemValue)
+  };
 
   return (
     <View style={styles.pageContainer}>
@@ -213,9 +252,9 @@ export default function App() {
         <Picker
           selectedValue={selectedValue}
           style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
+          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
         >
-          {AllValue.map((district) => {
+          {AllDistrict.map((district) => {
             return(
               <Picker.Item label={district} value={district}/>
             );
@@ -223,45 +262,55 @@ export default function App() {
         </Picker>
 
         
-
-        {/*<TouchableOpacity
-          style={{height:50,width:50, alignItems:'center',Color:'#a7d1c9',}}
-          onPress={()=>onPress(selectedValue)} 
-        >
-        
-          <Text
-            style={{
-              color: 'red',
-              alignItems: 'flex-start',
-              
-            }}>
-            FilterIn
-          </Text>
-
-          </TouchableOpacity>*/}
-
         <Button 
           style={styles.filterButton}
-          onPress={()=>onPress(selectedValue)} 
+          onPress={()=>onPressDistrict(selectedValue)} 
           title="Click" 
           color='#a7d1c9' 
           touchSoundDisabled ="false"
         />
 
-        <TouchableOpacity
-            style={{height:50,width:50, alignItems:'center'}}
+          <Button 
+            style={styles.filterButton}
             onPress={()=>onPressAll()} 
-          >
-          
-          <Text
-            style={{
-              color: 'green',
-              alignItems: 'flex-start',
-              
-            }}>
-            FilterOut
-          </Text>
-        </TouchableOpacity>
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
+        
+    </View>
+
+    <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+        >
+          {AllBloodGroup.map((bloodGroup) => {
+            return(
+              <Picker.Item label={bloodGroup} value={bloodGroup}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressGroup(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAllGroup()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
         
     </View>
 
