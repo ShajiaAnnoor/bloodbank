@@ -30,6 +30,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097756',
+        bloodGroup:'B-',
       },
       {
         name:'Kalmal Hossain',
@@ -38,6 +39,7 @@ import React,{
        // availablity: 'Not Available',
         //status:'Not yet Ready',
         contactNumber: '01749097757',
+        bloodGroup:')+',
       },
       {
         name:'Kalmal Hossain',
@@ -46,6 +48,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097758',
+        bloodGroup:'B+',
       },
       {
         name:'Jamal Hossain',
@@ -54,6 +57,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097759',
+        bloodGroup:'AB-',
       },
       {
         name:'Kalmal Hossain',
@@ -62,6 +66,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097723',
+        bloodGroup:'AB+',
       },
       {
         name:'Kalmal Hossain',
@@ -70,6 +75,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749077756',
+        bloodGroup:'O-',
       },
       
       {
@@ -79,6 +85,7 @@ import React,{
        // availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097762',
+        bloodGroup:'O+',
       },
       {
        name:'Kalmal Hossain',
@@ -87,6 +94,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749337756',
+        bloodGroup:'B+',
       },
       {
         name:'Kalmal Hossain',
@@ -95,6 +103,7 @@ import React,{
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749092256',
+        bloodGroup:'A+',
       },
     ],
   };
@@ -157,6 +166,13 @@ import React,{
               {item.contactNumber}
             </Text>
           </View>
+
+          <View style={ styles.itemContainer}>
+            <FontAwesome name="phone-square" size={24} color="black" />
+            <Text style={{ fontWeight: 'bold',margin:5 }}>
+              {item.bloodGroup}
+            </Text>
+          </View>
         </View>
         <TouchableOpacity
           style={{
@@ -183,66 +199,64 @@ import React,{
   export default function App() {
     
     const [selectedValue, setSelectedValue] = useState("one");
-    
-    const [filteredData, setFilteredData] = useState(all_data.data);
   
-    const onPress = (itemValue) => {
-      const newData = all_data.data.filter((item) => {
-        return item.district == itemValue;
-      });
-      setFilteredData(newData);
-    };
-  
-    const onPressAll = () => {    
-      setFilteredData(all_data.data);
-      //setSelectedValue(itemValue)
-    };
-  
-    const onPickerPress = (itemValue) => {
-      setSelectedValue(itemValue);
-    }
-  
-    return (
-      <View style={styles.pageContainer}>
-        <View style={styles.filterContainer}>
-          <Picker
-            selectedValue={selectedValue}
-            style={{ height: 50, width: 150  }}
-            onValueChange={(itemValue, itemIndex) => onPickerPress(itemValue,itemIndex)}
-          >
-            {AllValue.map((district) => {
-              return(
-                <Picker.Item label={district} value={district}/>
-              );
-            })}
-          </Picker>
-  
-          
-  
-          {/*<TouchableOpacity
-            style={{height:50,width:50, alignItems:'center',Color:'#a7d1c9',}}
-            onPress={()=>onPress(selectedValue)} 
-          >
-          
-            <Text
-              style={{
-                color: 'red',
-                alignItems: 'flex-start',
-                
-              }}>
-              FilterIn
-            </Text>
-  
-            </TouchableOpacity>*/}
-  
-          <Button 
-            style={styles.filterButton}
-            onPress={()=>onPress(selectedValue)} 
-            title="Click" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />
+  const [filteredData, setFilteredData] = useState(all_data.data);
 
+  const onPressDistrict = (itemValue) => {
+    const newData = all_data.data.filter((item) => {
+      return item.district == itemValue;
+    });
+    setFilteredData(newData);
+  };
+
+  const onPressAll = () => {    
+    setFilteredData(all_data.data);
+    //setSelectedValue(itemValue)
+  };
+
+  const onPickerPress1 = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+
+  const onPickerPress2 = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+
+  const onPressGroup = (itemValue) => {
+    const newData = all_data.data.filter((item) => {
+      return item.bloodGroup == itemValue;
+    });
+    setFilteredData(newData);
+  };
+
+  const onPressAllGroup= () => {    
+    setFilteredData(all_data.data);
+    //setSelectedValue(itemValue)
+  };
+
+  return (
+    <View style={styles.pageContainer}>
+      <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+        >
+          {AllDistrict.map((district) => {
+            return(
+              <Picker.Item label={district} value={district}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressDistrict(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
 
           <Button 
             style={styles.filterButton}
@@ -250,24 +264,43 @@ import React,{
             title="See All" 
             color='#a7d1c9' 
             touchSoundDisabled ="false"
-          />                
-  
-          {/*<TouchableOpacity
-              style={{height:50,width:50, alignItems:'center'}}
-              onPress={()=>onPressAll()} 
-            >
-            
-            <Text
-              style={{
-                color: 'green',
-                alignItems: 'flex-start',
-                
-              }}>
-              FilterOut
-            </Text>
-            </TouchableOpacity>*/}
-          
-      </View>
+          />  
+
+        
+    </View>
+
+    <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+        >
+          {AllBloodGroup.map((bloodGroup) => {
+            return(
+              <Picker.Item label={bloodGroup} value={bloodGroup}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressGroup(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAllGroup()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
+        
+    </View>
   
         <View style={styles.container}>
           {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
@@ -338,7 +371,7 @@ import React,{
       margin:20,
       padding:20,
       backgroundColor:"#4CAF50",
-      
+    
   
     }
   });
