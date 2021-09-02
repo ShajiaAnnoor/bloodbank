@@ -242,8 +242,17 @@ import React,{
             color='#a7d1c9' 
             touchSoundDisabled ="false"
           />
+
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAll()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />                
   
-          <TouchableOpacity
+          {/*<TouchableOpacity
               style={{height:50,width:50, alignItems:'center'}}
               onPress={()=>onPressAll()} 
             >
@@ -256,7 +265,7 @@ import React,{
               }}>
               FilterOut
             </Text>
-          </TouchableOpacity>
+            </TouchableOpacity>*/}
           
       </View>
   
