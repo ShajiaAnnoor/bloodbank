@@ -12,14 +12,15 @@ import { Ionicons } from '@expo/vector-icons';
 import  Organizations from '../List/organizationList';
 import Donors from '../List/donorList';
 import  Requests from '../List/requestList';
+import Patients from '../List/patientList';
 
-function Patients() {
+/*function Patients() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Patients</Text>
     </View>
   );
-}
+}*/
 
 function More() {
   return (
