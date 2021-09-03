@@ -273,6 +273,31 @@ export default function App() {
     ],
   };
 
+
+
+const AllDistrict =[
+  'Dhaka',
+  'Chittagong',
+  'Barishal',
+  'Rajshahi',
+  'Mymensingh',
+  'Rangpur',
+  'Sylhet',
+  'Panchagarh',
+];
+
+const AllBloodGroup=[
+  'A+',
+  'A-',
+  'B+',
+  'B-',
+  'AB+',
+  'AB-',
+  'O+',
+  'O-',
+];
+
+
   return (
     <View style={styles.container2}>
       <View >
