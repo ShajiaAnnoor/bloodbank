@@ -1,6 +1,10 @@
-import React from 'react';
+import React,{ 
+  useState,
+ } from 'react';
 import {
   StyleSheet,
+  Picker,
+  Button,
   Text,
   View,
   FlatList,
@@ -97,25 +101,25 @@ export default function App(){
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
+        district: 'Chittagong',
         address: 'Dhaka Medical College',
         contactNumber: '01749097756',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
+        district: 'Rangpur',
         address: 'Dhaka Medical College',
         contactNumber: '01749097757',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
+        district: 'Sylhet',
         address: 'Dhaka Medical College',
         contactNumber: '01749097758',
       },
       {
         organizationName:'Sandhani Dhaka Medical College',
-        district: 'Dhaka',
+        district: 'Panchagarh',
         address: 'Dhaka Medical College',
         contactNumber: '01749097759',
       },
@@ -134,17 +138,84 @@ export default function App(){
     ],
   };
 
+  const AllDistrict =[
+    'Dhaka',
+    'Chittagong',
+    'Barishal',
+    'Rajshahi',
+    'Mymensingh',
+    'Rangpur',
+    'Sylhet',
+    'Panchagarh',
+  ];
+  
+  
+  
+  const [selectedValue, setSelectedValue] = useState("one");
+    
+    const [filteredData, setFilteredData] = useState(state.data);
+  
+    const onPressDistrict = (itemValue) => {
+      const newData = state.data.filter((item) => {
+        return item.district == itemValue;
+      });
+      setFilteredData(newData);
+    };
+  
+    const onPressAll = () => {    
+      setFilteredData(state.data);
+      //setSelectedValue(itemValue)
+    };
+  
+    const onPickerPress1 = (itemValue) => {
+      setSelectedValue(itemValue);
+    }
+  
+  
   
     return (
       <View style={styles.container2}>
       <View >
       <OrganizationEntryModal/>
       </View>
+
+      <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+        >
+          {AllDistrict.map((district) => {
+            return(
+              <Picker.Item label={district} value={district}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressDistrict(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAll()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
+        
+    </View>
       <View style={styles.container}>
         <FlatList
           numColumns={1}
           style={{ flex: 15 }}
-          data={state.data}
+          data={filteredData}
           renderItem={({ item }) => <OrganizationList item={item} />}
           keyExtractor={(item) => item.contactNumber}
         />
@@ -164,6 +235,25 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignSelf:'center',
     flexDirection:'column',
+  },
+
+  filterContainer: {
+    flex: 1,
+    paddingTop:39,
+    alignItems: "flex-start",
+    flexDirection:'row',
+    justifyContent: 'space-between',
+    margin:2,
+  },
+
+  filterButton:{
+    height:50,
+    width:10,
+    margin:20,
+    padding:20,
+    backgroundColor:"#4CAF50",
+    
+
   },
 
   container2: {
