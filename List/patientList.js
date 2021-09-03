@@ -108,7 +108,7 @@ import React,{
     ],
   };
   
-  const AllValue =[
+  const AllDistrict =[
     'Dhaka',
     'Chittagong',
     'Barishal',
@@ -117,6 +117,17 @@ import React,{
     'Rangpur',
     'Sylhet',
     'Panchagarh',
+  ];
+
+  const AllBloodGroup=[
+    'A+',
+    'A-',
+    'B+',
+    'B-',
+    'AB+',
+    'AB-',
+    'O+',
+    'O-',
   ];
   
   function PatientList({ item }) {
