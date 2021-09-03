@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,}from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,6 +7,9 @@ import {
   TouchableOpacity,
   Share,
   Linking,
+  Picker,
+  Button,
+  
   
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
@@ -172,7 +175,7 @@ export default function App() {
     data: [
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'O-',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -192,7 +195,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'O-',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -202,7 +205,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'B-',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -212,7 +215,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'B+',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -222,7 +225,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'A-',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -252,7 +255,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'AB+',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -262,7 +265,7 @@ export default function App() {
       },
       {
         name:'Miyah Myles ',
-        bloodGroup: 'A+',
+        bloodGroup: 'O+',
         district: 'Dhaka',
         quantity: '3 bag',
         address: 'Square Hospital',
@@ -297,17 +300,119 @@ const AllBloodGroup=[
   'O-',
 ];
 
+const [selectedValue, setSelectedValue] = useState("one");
+  
+  const [filteredData, setFilteredData] = useState(state.data);
+
+  const onPressDistrict = (itemValue) => {
+    const newData = state.data.filter((item) => {
+      return item.district == itemValue;
+    });
+    setFilteredData(newData);
+  };
+
+  const onPressAll = () => {    
+    setFilteredData(state.data);
+    //setSelectedValue(itemValue)
+  };
+
+  const onPickerPress1 = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+
+  const onPickerPress2 = (itemValue) => {
+    setSelectedValue(itemValue);
+  }
+
+  const onPressGroup = (itemValue) => {
+    const newData = state.data.filter((item) => {
+      return item.bloodGroup == itemValue;
+    });
+    setFilteredData(newData);
+  };
+
+  const onPressAllGroup= () => {    
+    setFilteredData(state.data);
+    //setSelectedValue(itemValue)
+  };
+
 
   return (
     <View style={styles.container2}>
       <View >
       <FormModal />
       </View>
+
+      <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+        >
+          {AllDistrict.map((district) => {
+            return(
+              <Picker.Item label={district} value={district}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressDistrict(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAll()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
+        
+    </View>
+
+      <View style={styles.filterContainer}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150  }}
+          onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+        >
+          {AllBloodGroup.map((bloodGroup) => {
+            return(
+              <Picker.Item label={bloodGroup} value={bloodGroup}/>
+            );
+          })}
+        </Picker>
+
+        
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressGroup(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+          <Button 
+            style={styles.filterButton}
+            onPress={()=>onPressAllGroup()} 
+            title="See All" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
+
+        
+    </View>
       <View style={styles.container}>
       <FlatList       
         numColumns={1}
         style={{ flex: 15 }}
-        data={state.data}
+        data={filteredData}
         renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.phone}
       />
@@ -382,4 +487,24 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'space-evenly',
   },
+
+  filterContainer: {
+    flex: 1,
+    paddingTop:39,
+    alignItems: "flex-start",
+    flexDirection:'row',
+    justifyContent: 'space-between',
+    margin:2,
+  },
+
+  filterButton:{
+    height:50,
+    width:10,
+    margin:20,
+    padding:20,
+    backgroundColor:"#4CAF50",
+    
+
+  }
+
 });
