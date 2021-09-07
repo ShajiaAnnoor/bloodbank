@@ -18,6 +18,135 @@ import FormModal from '../Forms/requestformmodal';
 
 import call from 'react-native-phone-call';
 
+
+let all_data = {
+  data: [
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'O-',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097756',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'A+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097757',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'O-',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097758',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'B-',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01727192452',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'B+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097760',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'A-',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097761',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'A+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097762',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'A+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097763',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'AB+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097764',
+    },
+    {
+      name:'Miyah Myles ',
+      bloodGroup: 'O+',
+      district: 'Dhaka',
+      quantity: '3 bag',
+      address: 'Square Hospital',
+      area:'Dhanmondi',
+      reason: 'Open heart surgery',
+      phone: '01749097765',
+    },
+  ],
+};
+
+
+
+const AllDistrict =[
+'Dhaka',
+'Chittagong',
+'Barishal',
+'Rajshahi',
+'Mymensingh',
+'Rangpur',
+'Sylhet',
+'Panchagarh',
+];
+
+const AllBloodGroup=[
+'A+',
+'A-',
+'B+',
+'B-',
+'AB+',
+'AB-',
+'O+',
+'O-',
+];
 //import { ShareApi } from 'react-native-fbsdk-next';
 
   //const inputValue = '01727192452';
@@ -171,243 +300,114 @@ function Item({ item }) {
 }
 
 export default function App() {
-  let state = {
-    data: [
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'O-',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097756',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'A+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097757',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'O-',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097758',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'B-',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01727192452',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'B+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097760',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'A-',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097761',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'A+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097762',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'A+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097763',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'AB+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097764',
-      },
-      {
-        name:'Miyah Myles ',
-        bloodGroup: 'O+',
-        district: 'Dhaka',
-        quantity: '3 bag',
-        address: 'Square Hospital',
-        area:'Dhanmondi',
-        reason: 'Open heart surgery',
-        phone: '01749097765',
-      },
-    ],
-  };
+
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
+
+  const [filteredData, setFilteredData] = useState(all_data.data);
 
 
-
-const AllDistrict =[
-  'Dhaka',
-  'Chittagong',
-  'Barishal',
-  'Rajshahi',
-  'Mymensingh',
-  'Rangpur',
-  'Sylhet',
-  'Panchagarh',
-];
-
-const AllBloodGroup=[
-  'A+',
-  'A-',
-  'B+',
-  'B-',
-  'AB+',
-  'AB-',
-  'O+',
-  'O-',
-];
-
-const [selectedValue, setSelectedValue] = useState("one");
+//const [selectedValue, setSelectedValue] = useState("one");
   
-  const [filteredData, setFilteredData] = useState(state.data);
+  //const [filteredData, setFilteredData] = useState(all-data.data);
 
-  const onPressDistrict = (itemValue) => {
-    const newData = state.data.filter((item) => {
+  {/*const onPressDistrict = (itemValue) => {
+    const newData = all_data.data.filter((item) => {
       return item.district == itemValue;
     });
     setFilteredData(newData);
-  };
+  };*/}
 
   const onPressAll = () => {    
-    setFilteredData(state.data);
+    setFilteredData(all_data.data);
     //setSelectedValue(itemValue)
   };
 
   const onPickerPress1 = (itemValue) => {
-    setSelectedValue(itemValue);
+    setSelectedDistrict(itemValue);
   }
 
   const onPickerPress2 = (itemValue) => {
-    setSelectedValue(itemValue);
+    setSelectedBloodGroup(itemValue);
   }
 
-  const onPressGroup = (itemValue) => {
-    const newData = state.data.filter((item) => {
+  const onPressBoth = (district, bloodgroup) => {
+    const newData = all_data.data.filter((item) => {
+      if( district == "" ) return true ; 
+      return item.district == district;
+    });
+
+    const finalData = newData.filter((item) => {
+      if( bloodgroup == "" ) return true ; 
+      return item.bloodGroup == bloodgroup;
+    })
+    setFilteredData(finalData);
+  }
+
+ {/* const onPressGroup = (itemValue) => {
+    const newData = all_data.data.filter((item) => {
       return item.bloodGroup == itemValue;
     });
     setFilteredData(newData);
   };
 
   const onPressAllGroup= () => {    
-    setFilteredData(state.data);
+    setFilteredData(all_data.data);
     //setSelectedValue(itemValue)
-  };
+  };*/}
 
 
   return (
     <View style={styles.container2}>
-      <View >
+      <View style={styles.modalButtonContainer}>
       <FormModal />
       </View>
 
       <View style={styles.filterContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
-        >
-          {AllDistrict.map((district) => {
-            return(
-              <Picker.Item label={district} value={district}/>
-            );
-          })}
-        </Picker>
+          <Picker
+            selectedValue={selectedDistrict}
+            style={{ height: 50, width: 150, margin:2,padding:2,}}
+            onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+          >
+            {AllDistrict.map((district) => {
+              return(
+                <Picker.Item label={district} value={district}/>
+              );
+            })}
+          </Picker>
 
-        
-        <Button 
-          style={styles.filterButton}
-          onPress={()=>onPressDistrict(selectedValue)} 
-          title="Click" 
-          color='#a7d1c9' 
-          touchSoundDisabled ="false"
-        />
-
-          <Button 
-            style={styles.filterButton}
-            onPress={()=>onPressAll()} 
-            title="See All" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />  
-
-        
-    </View>
+          <Picker
+            selectedValue={selectedBloodGroup}
+            style={{ height: 50, width: 150  }}
+            onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+          >
+            {AllBloodGroup.map((bloodGroup) => {
+              return(
+                <Picker.Item label={bloodGroup} value={bloodGroup}/>
+              );
+            })}
+          </Picker>
+          
+      </View>
 
       <View style={styles.filterContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
-        >
-          {AllBloodGroup.map((bloodGroup) => {
-            return(
-              <Picker.Item label={bloodGroup} value={bloodGroup}/>
-            );
-          })}
-        </Picker>
-
-        
-        <Button 
-          style={styles.filterButton}
-          onPress={()=>onPressGroup(selectedValue)} 
-          title="Click" 
-          color='#a7d1c9' 
-          touchSoundDisabled ="false"
-        />
-
           <Button 
             style={styles.filterButton}
-            onPress={()=>onPressAllGroup()} 
-            title="See All" 
+            onPress={()=>onPressBoth(selectedDistrict,selectedBloodGroup)} 
+            title="Apply Filter" 
             color='#a7d1c9' 
             touchSoundDisabled ="false"
-          />  
+          />
 
-        
-    </View>
+            <Button 
+              style={styles.filterButton}
+              onPress={()=>onPressAll()} 
+              title="See Full List" 
+              color='#a7d1c9' 
+              touchSoundDisabled ="false"
+            />  
+          
+      </View>
       <View style={styles.container}>
       <FlatList       
         numColumns={1}
@@ -423,11 +423,11 @@ const [selectedValue, setSelectedValue] = useState("one");
 
 const styles = StyleSheet.create({
   container: {
-    flex: 12,
+    flex: 15,
     //backgroundColor: '#F7F7F7',
     //backgroundColor: '#eda187',
     marginTop: 10,
-    marginBottom:10,
+    marginBottom:5,
     width: '90%',
     justifyContent: 'space-evenly',
     alignSelf:'center',
@@ -448,20 +448,20 @@ const styles = StyleSheet.create({
 
 
   modalButtonContainer:{
-    margin: 20,
+    margin: 10,
     padding: 20,
     backgroundColor: '#FFF',
     width: '80%',
     height: '80%',
-    flex: 1,
+    flex: 3,
     alignSelf: 'center',
-    flexDirection: 'column',
-    borderRadius: 80,
+    //flexDirection: 'column',
+    //borderRadius: 50,
   },
 
   container2: {
     
-    marginTop:10,
+    marginTop:1,
     //backgroundColor:'#fccdb8',
     //backgroundColor: '#eda187',
     width: '95%',
@@ -488,23 +488,27 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
 
+ 
   filterContainer: {
-    flex: 1,
-    paddingTop:39,
-    alignItems: "flex-start",
+    flex: 2,
+    padding:2,
+    //paddingTop:5,
+   // alignItems: "flex-start",
     flexDirection:'row',
     justifyContent: 'space-between',
-    margin:2,
+    marginBottom:5,
+    //paddingBottom:2,
+    flexWrap:'nowrap',
+   // alignContent:'space-around',
   },
-
+  
   filterButton:{
-    height:50,
-    width:10,
-    margin:20,
-    padding:20,
+    height:20,
+    width:20,
+    borderRadius:20,
+    //margin:2,
+    //padding:2,
     backgroundColor:"#4CAF50",
-    
-
   }
 
 });
