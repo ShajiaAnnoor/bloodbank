@@ -16,6 +16,7 @@ import React,{
   import { FontAwesome } from '@expo/vector-icons';
   import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
+//import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
   //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
   
   //import { LoginManager } from "react-native-fbsdk-next";
@@ -54,6 +55,26 @@ import React,{
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Chittagong',
+        //availablity: 'Available',
+        //status:'Ready to donate',
+        contactNumber: '01749097759',
+        bloodGroup:'AB-',
+      },
+
+      {
+        name:'Jamal Hossain',
+        address: 'Dhaka Medical College',
+        district: 'Dhaka',
+        //availablity: 'Available',
+        //status:'Ready to donate',
+        contactNumber: '01749097759',
+        bloodGroup:'AB-',
+      },
+
+      {
+        name:'Jamal Hossain',
+        address: 'Dhaka Medical College',
+        district: 'Barishal',
         //availablity: 'Available',
         //status:'Ready to donate',
         contactNumber: '01749097759',
@@ -157,19 +178,6 @@ import React,{
             </Text>
           </View>
   
-          <View style={ styles.itemContainer}>
-            <Entypo name="compass" size={24} color="black" />
-            <Text style={{ fontWeight: 'bold',margin:5 }}>
-              {item.availablity}
-            </Text>
-          </View>
-  
-          <View style={ styles.itemContainer}>
-            <MaterialIcons name="event-available" size={24} color="black" />
-            <Text style={{ fontWeight: 'bold',margin:5 }}>
-              {item.status}
-            </Text>
-          </View>
   
           <View style={ styles.itemContainer}>
             <FontAwesome name="phone-square" size={24} color="black" />
@@ -209,110 +217,100 @@ import React,{
   
   export default function App() {
     
-    const [selectedValue, setSelectedValue] = useState("one");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
   
-  const [filteredData, setFilteredData] = useState(all_data.data);
+    const [filteredData, setFilteredData] = useState(all_data.data);
 
-  const onPressDistrict = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.district == itemValue;
-    });
-    setFilteredData(newData);
-  };
+    /*
+    const onPressDistrict = (itemValue) => {
+      const newData = all_data.data.filter((item) => {
+        return item.district == itemValue;
+      });
+      setFilteredData(newData);
+    };
+    */
+    const onPressAll = () => {    
+      setFilteredData(all_data.data);
+    };
 
-  const onPressAll = () => {    
-    setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
-  };
+    const onPickerPress1 = (itemValue) => {
+      setSelectedDistrict(itemValue);
+    }
 
-  const onPickerPress1 = (itemValue) => {
-    setSelectedValue(itemValue);
-  }
+    const onPickerPress2 = (itemValue) => {
+      setSelectedBloodGroup(itemValue);
+    }
 
-  const onPickerPress2 = (itemValue) => {
-    setSelectedValue(itemValue);
-  }
+    {/*const onPressGroup = (itemValue) => {
+      const newData = all_data.data.filter((item) => {
+        return item.bloodGroup == itemValue;
+      });
+      setFilteredData(newData);
+    };*/}
 
-  const onPressGroup = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.bloodGroup == itemValue;
-    });
-    setFilteredData(newData);
-  };
+    const onPressBoth = (district, bloodgroup) => {
+      const newData = all_data.data.filter((item) => {
+        if( district == "" ) return true ; 
+        return item.district == district;
+      });
 
-  const onPressAllGroup= () => {    
-    setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
-  };
-
+      const finalData = newData.filter((item) => {
+        if( bloodgroup == "" ) return true ; 
+        return item.bloodGroup == bloodgroup;
+      })
+      setFilteredData(finalData);
+    }
+    
   return (
     <View style={styles.pageContainer}>
+    {/*<View style={styles.allFilterContainer}>*/}
+        <View style={styles.filterContainer}>
+          <Picker
+            selectedValue={selectedDistrict}
+            style={{ height: 50, width: 150, margin:2,padding:2,}}
+            onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+          >
+            {AllDistrict.map((district) => {
+              return(
+                <Picker.Item label={district} value={district}/>
+              );
+            })}
+          </Picker>
+
+          <Picker
+            selectedValue={selectedBloodGroup}
+            style={{ height: 50, width: 150  }}
+            onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+          >
+            {AllBloodGroup.map((bloodGroup) => {
+              return(
+                <Picker.Item label={bloodGroup} value={bloodGroup}/>
+              );
+            })}
+          </Picker>
+          
+      </View>
+
       <View style={styles.filterContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
-        >
-          {AllDistrict.map((district) => {
-            return(
-              <Picker.Item label={district} value={district}/>
-            );
-          })}
-        </Picker>
-
-        
-        <Button 
-          style={styles.filterButton}
-          onPress={()=>onPressDistrict(selectedValue)} 
-          title="Click" 
-          color='#a7d1c9' 
-          touchSoundDisabled ="false"
-        />
-
           <Button 
             style={styles.filterButton}
-            onPress={()=>onPressAll()} 
-            title="See All" 
+            onPress={()=>onPressBoth(selectedDistrict,selectedBloodGroup)} 
+            title="Apply Filter" 
             color='#a7d1c9' 
             touchSoundDisabled ="false"
-          />  
+          />
 
-        
-    </View>
-
-    <View style={styles.filterContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
-        >
-          {AllBloodGroup.map((bloodGroup) => {
-            return(
-              <Picker.Item label={bloodGroup} value={bloodGroup}/>
-            );
-          })}
-        </Picker>
-
-        
-        <Button 
-          style={styles.filterButton}
-          onPress={()=>onPressGroup(selectedValue)} 
-          title="Click" 
-          color='#a7d1c9' 
-          touchSoundDisabled ="false"
-        />
-
-          <Button 
-            style={styles.filterButton}
-            onPress={()=>onPressAllGroup()} 
-            title="See All" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />  
-
-        
-    </View>
-  
+            <Button 
+              style={styles.filterButton}
+              onPress={()=>onPressAll()} 
+              title="See Full List" 
+              color='#a7d1c9' 
+              touchSoundDisabled ="false"
+            />  
+          
+      </View>
+   {/*</View>*/}
         <View style={styles.container}>
           {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
           <FlatList
@@ -340,13 +338,18 @@ import React,{
     pageContainer: {
       flex:1,
       flexDirection:'column',
-      marginTop:30,
+      margin:5,
+      paddingTop:5,
+      //marginTop:1,
       justifyContent: 'space-evenly',
     },
     container: {
       flex: 10,
       backgroundColor: '#F7F7F7',
-      marginTop: 60,
+      //marginTop: 60,
+      marginTop:10,
+      marginBottom:5,
+
     },
     itemContainer: {
       flex:1,
@@ -368,22 +371,37 @@ import React,{
     },
     filterContainer: {
       flex: 1,
-      paddingTop:39,
-      alignItems: "flex-start",
+      padding:2,
+      //paddingTop:5,
+     // alignItems: "flex-start",
       flexDirection:'row',
       justifyContent: 'space-between',
-      margin:2,
+      marginBottom:5,
+      //paddingBottom:2,
+      flexWrap:'nowrap',
+     // alignContent:'space-around',
+    },
+
+    allFilterContainer: {
+      flex: 1,
+      //paddingTop:10,
+      //alignItems: "flex-start",
+      flexDirection:'column',
+     //justifyContent: 'space-between',
+      marginBottom:8,
+      //padding:2,
+      //flexWrap:'nowrap',
+      //paddingBottom:2,
+      //height:10
     },
   
     filterButton:{
-      height:50,
-      width:10,
-
-      margin:20,
-      padding:20,
+      height:20,
+      width:20,
+      borderRadius:20,
+      //margin:2,
+      //padding:2,
       backgroundColor:"#4CAF50",
-    
-  
     }
   });
   
