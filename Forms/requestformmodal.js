@@ -29,19 +29,18 @@ const App = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.modalView}>
           <Text style={styles.logo}>
-            Make a request for blood
+            Make a Request for Blood
           </Text>
 
           <View style={styles.inputView} >
             <TextInput  
               style={styles.inputText}
-              placeholder="Name..." 
+              placeholder="Name" 
               placeholderTextColor="#003f5c"
               onChangeText={text => setFullName(text)}
             />
@@ -51,7 +50,7 @@ const App = () => {
             <TextInput  
               secureTextEntry
               style={styles.inputText}
-              placeholder="Address.(eg.Name of hospital).." 
+              placeholder="Address (eg: Name of hospital)" 
               placeholderTextColor="#003f5c"
               onChangeText={text => setAddress(text)}
             />
