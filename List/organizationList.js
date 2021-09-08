@@ -228,7 +228,7 @@ export default function App(){
 const styles = StyleSheet.create({
   container: {
     flex: 12,
-    backgroundColor: '#eda187',
+    //backgroundColor: '#eda187',
     marginTop: 10,
     marginBottom:10,
     width: '90%',
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
 
   filterContainer: {
     flex: 1,
-    paddingTop:39,
+    padding:10,
     alignItems: "flex-start",
     flexDirection:'row',
     justifyContent: 'space-between',
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   container2: {
     
     marginTop:10,
-    backgroundColor:'#fccdb8',
+   // backgroundColor:'#fccdb8',
     width: '95%',
     height: '90%',
     flex: 1,
