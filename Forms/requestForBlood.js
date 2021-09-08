@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { 
   StyleSheet, 
   Text, 
-  View, 
   TextInput, 
-  TouchableOpacity
+  TouchableOpacity,
+  View, 
 } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
@@ -40,7 +40,6 @@ const requestForBlood= (props) => {
       </View>
   
   */
-
 
   const [dat,setDate] = React.useState({day:"2016-05-15"});
 
