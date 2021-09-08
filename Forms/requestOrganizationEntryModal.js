@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  button: {
+ /* button: {
     borderRadius:10,
     padding: 30,
     elevation: 2,
@@ -134,9 +134,25 @@ const styles = StyleSheet.create({
     alignSelf:'center',
      margin:10,
     justifyContent:'space-around',
+  },*/
+  button: {
+    borderRadius:10,
+    //padding: 30,
+    //elevation: 2,
+   // width: '90%',
+    //alignSelf:'center',
+    margin:10,
+    justifyContent:'space-around',
+   // margin: 10,
+    padding:30,
+    //backgroundColor: '#FFF',
+    width: '100%',
+    height: '90%',
+    flex: 9,
+    alignSelf: 'center',
   },
   buttonOpen: {
-    backgroundColor: "#c71010",
+    backgroundColor: "teal",
   },
   buttonClose: {
     backgroundColor: "#c71010",
@@ -145,6 +161,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     textAlign: "center",
+    //color: "white",
+    //fontWeight: "bold",
+    //textAlign: "center",
+    flexWrap:'wrap',
+    //marginBottom:5,
+    padding:1,
   },
   modalText: {
     marginBottom: 15,
