@@ -18,7 +18,6 @@ const requestForBlood= (props) => {
   const [selectedReady,setSelectedReady]= useState('');
   const [contactNumber, setContactNumber] = useState('');
   
-
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>
@@ -28,7 +27,7 @@ const requestForBlood= (props) => {
       <View style={styles.inputView} >
         <TextInput  
           style={styles.inputText}
-          placeholder=" Donor Name..." 
+          placeholder=" Donor Name" 
           placeholderTextColor="#003f5c"
           onChangeText={text => setDonorName(text)}
         />
@@ -83,7 +82,7 @@ const requestForBlood= (props) => {
     <View style={styles.inputView} >
         <TextInput  
           style={styles.inputText}
-          placeholder=" enter phone number..." 
+          placeholder="Enter Phone Number" 
           placeholderTextColor="#003f5c"
           onChangeText={text => setContactNumber(text)}
         />
