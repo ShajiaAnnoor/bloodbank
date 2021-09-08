@@ -7,16 +7,16 @@ import {
     Pressable, 
     StyleSheet, 
     Text, 
-    View, 
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    View, 
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
 
 
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [organizationnameName, setOrganizationName] = useState('');
+  const [organizationName, setOrganizationName] = useState('');
   const [address, setAddress] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState("Dhaka");
   const [contactNumber, setContactNumber] = useState('');
@@ -29,7 +29,6 @@ const App = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
