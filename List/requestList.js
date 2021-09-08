@@ -448,12 +448,12 @@ const styles = StyleSheet.create({
 
 
   modalButtonContainer:{
-    margin: 10,
-    padding: 20,
+    //margin: 10,
+    //padding: 10,
     backgroundColor: '#FFF',
-    width: '80%',
-    height: '80%',
-    flex: 3,
+    width: '100%',
+    height: '100%',
+    flex:2,
     alignSelf: 'center',
     //flexDirection: 'column',
     //borderRadius: 50,
@@ -475,11 +475,11 @@ const styles = StyleSheet.create({
     flexBasis:10,
   },
   listItem: {
-    margin: 20,
-    padding: 20,
+    marginTop: 5,
+    padding:10,
     //backgroundColor: '#FFF',
     backgroundColor: '#eda187',
-    width: '90%',
+    width: '100%',
     height:'10%',
     flex: 1,
     alignSelf: 'center',
