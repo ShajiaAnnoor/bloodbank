@@ -33,6 +33,7 @@ const App = () => {
         }}
       >
         <View style={styles.modalView}>
+
           <Text style={styles.logo}>
             Make a request for blood
           </Text>
@@ -71,7 +72,7 @@ const App = () => {
           <View style={styles.inputView} >
             <TextInput  
               style={styles.inputText}
-              placeholder="Enter phone number..." 
+              placeholder="Enter Phone Number" 
               placeholderTextColor="#003f5c"
               onChangeText={text => setContactNumber(text)}
             />
