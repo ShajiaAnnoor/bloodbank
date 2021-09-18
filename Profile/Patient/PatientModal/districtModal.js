@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
     height:50,
     color:"white"
   },
- 
 });
 
 export default districtEntryModal;
