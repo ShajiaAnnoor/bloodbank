@@ -29,7 +29,6 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
           visible={mv}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
-    //        setModalVisible(!modalVisible);
           }}
         >
 
