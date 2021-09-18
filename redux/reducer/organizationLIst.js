@@ -3,8 +3,6 @@ import {
     FETCH_ORGANIZATION_LIST,
   } from "../constants/constants";
   
-
-
   const initialState = {
     organizationList: [],
     isLoading: false,
