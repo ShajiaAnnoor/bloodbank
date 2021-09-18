@@ -8,9 +8,7 @@ import {
   Share,
   Linking,
   Picker,
-  Button,
-  
-  
+  Button,  
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 
@@ -18,6 +16,7 @@ import FormModal from '../Forms/requestformmodal';
 
 import call from 'react-native-phone-call';
 
+import { Platform } from 'react-native';
 
 let all_data = {
   data: [
