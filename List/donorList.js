@@ -1,4 +1,5 @@
 import React,{ 
+  useEffect,
   useState,
  } from 'react';
 import {
@@ -16,6 +17,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { State } from 'react-native-gesture-handler';
 //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 //import { LoginManager } from "react-native-fbsdk-next";
@@ -78,7 +80,6 @@ let all_data = {
       contactNumber: '01749077756',
       bloodGroup: 'AB-',
     },
-    
     {
       name:'Kalmal Hossain',
       address: 'Dhaka Medical College',
@@ -210,23 +211,26 @@ function DonorList({ item }) {
 
 export default function App() {
   
+  useEffect(()=> {
+    dispatch(donorListThunk);
+  })
+
   //const [selectedValue, setSelectedValue] = useState("one");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
 
-  const [filteredData, setFilteredData] = useState(all_data.data);
-
-
+  const [filteredData, setFilteredData] = useState(donorList);
+  const { donorList } = useSelector( state => state.donorList.donorList );
 
   {/*const onPressDistrict = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
+    const newData = donorList.filter((item) => {
       return item.district == itemValue;
     });
     setFilteredData(newData);
   };*/}
 
   const onPressAll = () => {    
-    setFilteredData(all_data.data);
+    setFilteredData(donorList);
     //setSelectedValue(itemValue)
   };
 
@@ -239,7 +243,7 @@ export default function App() {
   }
 
   const onPressBoth = (district, bloodgroup) => {
-    const newData = all_data.data.filter((item) => {
+    const newData = donorList.filter((item) => {
       if( district == "" ) return true ; 
       return item.district == district;
     });
@@ -252,7 +256,7 @@ export default function App() {
   }
 
   {/*const onPressGroup = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
+    const newData = donorList.filter((item) => {
       return item.bloodGroup == itemValue;
     });
     setFilteredData(newData);
@@ -261,7 +265,7 @@ export default function App() {
 
 
   const onPressAllGroup= () => {    
-    setFilteredData(all_data.data);
+    setFilteredData(donorList);
     //setSelectedValue(itemValue)
   };*/}
 
