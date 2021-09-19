@@ -15,6 +15,7 @@ import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import OrganizationEntryModal from '../Forms/requestOrganizationEntryModal';
+import organizationListThunk from "../redux/thunk/organizationList";
 
 function OrganizationList({ item }) {
   return (
@@ -73,6 +74,11 @@ function OrganizationList({ item }) {
 }
 
 export default function App(){
+
+  useEffect(()=> {
+    dispatch(organizationListThunk);
+  })
+
   let state = {
     data: [
       {
