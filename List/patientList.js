@@ -17,13 +17,7 @@ import React,{
   import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
   import patientListThunk from "../redux/thunk/PatientList";
-  
-//import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
-  //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
-  
-  //import { LoginManager } from "react-native-fbsdk-next";
-  //import LoginButton from "./facebookLogin";
-  //import {LogManager} from './facebookLoginManager';
+
   let all_data = {
     data: [
       {
@@ -228,14 +222,6 @@ import React,{
   
     const [filteredData, setFilteredData] = useState(all_data.data);
 
-    /*
-    const onPressDistrict = (itemValue) => {
-      const newData = all_data.data.filter((item) => {
-        return item.district == itemValue;
-      });
-      setFilteredData(newData);
-    };
-    */
     const onPressAll = () => {    
       setFilteredData(all_data.data);
     };
@@ -247,13 +233,6 @@ import React,{
     const onPickerPress2 = (itemValue) => {
       setSelectedBloodGroup(itemValue);
     }
-
-    {/*const onPressGroup = (itemValue) => {
-      const newData = all_data.data.filter((item) => {
-        return item.bloodGroup == itemValue;
-      });
-      setFilteredData(newData);
-    };*/}
 
     const onPressBoth = (district, bloodgroup) => {
       const newData = all_data.data.filter((item) => {
@@ -270,7 +249,6 @@ import React,{
     
   return (
     <View style={styles.pageContainer}>
-    {/*<View style={styles.allFilterContainer}>*/}
         <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
@@ -306,7 +284,6 @@ import React,{
             color='#a7d1c9' 
             touchSoundDisabled ="false"
           />
-
             <Button 
               style={styles.filterButton}
               onPress={()=>onPressAll()} 
@@ -316,25 +293,13 @@ import React,{
             />  
           
       </View>
-   {/*</View>*/}
         <View style={styles.container}>
-          {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
           <FlatList
             style={{ flex: 10, }}
             data={filteredData} 
             renderItem={({ item }) => <PatientList item={item} />}
             keyExtractor={( item ) => item.email}
           />
-         {/*} <Button 
-            onPress={()=>onPress(selectedValue)} 
-            title="Click here to filter" 
-            color="#841584" 
-          />
-          <Button 
-            onPress={()=>onPressAll()} 
-            title="Click here to see all" 
-            color="#841533" 
-          />*/}
         </View>
       </View>
     );
