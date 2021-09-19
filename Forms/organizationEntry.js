@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 
-const organizationEntry= (props) => {
+  const organizationEntry= (props) => {
   const [organizationnameName, setOrganizationName] = useState('');
   const [address, setAddress] = useState('');
   const [district, setSelectedDistrict] = useState("Dhaka");
