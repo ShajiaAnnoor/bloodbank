@@ -155,8 +155,6 @@ export default function App(){
     'Panchagarh',
   ];
   
-  
-  
   const [selectedValue, setSelectedValue] = useState("one");
     
     const [filteredData, setFilteredData] = useState(state.data);
@@ -170,14 +168,11 @@ export default function App(){
   
     const onPressAll = () => {    
       setFilteredData(state.data);
-      //setSelectedValue(itemValue)
     };
   
     const onPickerPress1 = (itemValue) => {
       setSelectedValue(itemValue);
     }
-  
-  
   
     return (
       <View style={styles.container2}>
@@ -197,8 +192,7 @@ export default function App(){
             );
           })}
         </Picker>
-
-        
+      
         <Button 
           style={styles.filterButton}
           onPress={()=>onPressDistrict(selectedValue)} 
@@ -258,14 +252,10 @@ const styles = StyleSheet.create({
     margin:20,
     padding:20,
     backgroundColor:"#4CAF50",
-    
-
   },
 
-  container2: {
-    
+  container2: {    
     marginTop:10,
-   // backgroundColor:'#fccdb8',
     width: '95%',
     height: '90%',
     flex: 1,
@@ -281,8 +271,8 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection:'row',
     justifyContent: 'space-around'
-    
   },
+  
   listItem: {
     margin: 10,
     padding: 10,
