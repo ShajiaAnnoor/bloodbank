@@ -16,6 +16,8 @@ import React,{
   import { FontAwesome } from '@expo/vector-icons';
   import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
+  import patientListThunk from "../redux/thunk/PatientList";
+  
 //import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
   //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
   
@@ -217,6 +219,10 @@ import React,{
   
   export default function App() {
     
+    useEffect(()=> {
+      dispatch(patientListThunk);
+    })
+
     const [selectedDistrict, setSelectedDistrict] = useState("");
     const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
   
