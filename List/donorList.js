@@ -18,11 +18,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { State } from 'react-native-gesture-handler';
-//import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
-//import { LoginManager } from "react-native-fbsdk-next";
-//import LoginButton from "./facebookLogin";
-//import {LogManager} from './facebookLoginManager';
 let all_data = {
   data: [
     {
@@ -215,23 +211,14 @@ export default function App() {
     dispatch(donorListThunk);
   })
 
-  //const [selectedValue, setSelectedValue] = useState("one");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
 
   const [filteredData, setFilteredData] = useState(donorList);
   const { donorList } = useSelector( state => state.donorList.donorList );
 
-  {/*const onPressDistrict = (itemValue) => {
-    const newData = donorList.filter((item) => {
-      return item.district == itemValue;
-    });
-    setFilteredData(newData);
-  };*/}
-
   const onPressAll = () => {    
     setFilteredData(donorList);
-    //setSelectedValue(itemValue)
   };
 
   const onPickerPress1 = (itemValue) => {
@@ -255,23 +242,8 @@ export default function App() {
     setFilteredData(finalData);
   }
 
-  {/*const onPressGroup = (itemValue) => {
-    const newData = donorList.filter((item) => {
-      return item.bloodGroup == itemValue;
-    });
-    setFilteredData(newData);
-  };
-
-
-
-  const onPressAllGroup= () => {    
-    setFilteredData(donorList);
-    //setSelectedValue(itemValue)
-  };*/}
-
   return (
     <View style={styles.pageContainer}>
-      {/*<View style={styles.allFilterContainer}>*/}
       <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
@@ -317,26 +289,14 @@ export default function App() {
             />  
           
       </View>
-   {/*</View>*/}
 
       <View style={styles.container}>
-        {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
         <FlatList
           style={{ flex: 10, }}
           data={filteredData} 
           renderItem={({ item }) => <DonorList item={item} />}
           keyExtractor={( item ) => item.email}
         />
-       {/*} <Button 
-          onPress={()=>onPress(selectedValue)} 
-          title="Click here to filter" 
-          color="#841584" 
-        />
-        <Button 
-          onPress={()=>onPressAll()} 
-          title="Click here to see all" 
-          color="#841533" 
-        />*/}
       </View>
     </View>
   );
