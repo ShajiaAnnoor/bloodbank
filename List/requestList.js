@@ -122,8 +122,6 @@ let all_data = {
   ],
 };
 
-
-
 const AllDistrict =[
 'Dhaka',
 'Chittagong',
@@ -308,21 +306,8 @@ export default function App() {
 
   const [filteredData, setFilteredData] = useState(all_data.data);
 
-
-//const [selectedValue, setSelectedValue] = useState("one");
-  
-  //const [filteredData, setFilteredData] = useState(all-data.data);
-
-  {/*const onPressDistrict = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.district == itemValue;
-    });
-    setFilteredData(newData);
-  };*/}
-
   const onPressAll = () => {    
     setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
   };
 
   const onPickerPress1 = (itemValue) => {
@@ -345,19 +330,6 @@ export default function App() {
     })
     setFilteredData(finalData);
   }
-
- {/* const onPressGroup = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.bloodGroup == itemValue;
-    });
-    setFilteredData(newData);
-  };
-
-  const onPressAllGroup= () => {    
-    setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
-  };*/}
-
 
   return (
     <View style={styles.container2}>
@@ -512,5 +484,4 @@ const styles = StyleSheet.create({
     //padding:2,
     backgroundColor:"#4CAF50",
   }
-
 });
