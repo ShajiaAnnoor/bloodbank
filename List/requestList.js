@@ -15,8 +15,7 @@ import { Paragraph } from 'react-native-paper';
 import FormModal from '../Forms/requestformmodal';
 
 import call from 'react-native-phone-call';
-
-import { Platform } from 'react-native';
+import requestListThunk from "../redux/thunk/requestList";
 
 let all_data = {
   data: [
@@ -299,6 +298,10 @@ function Item({ item }) {
 }
 
 export default function App() {
+  
+  useEffect(()=> {
+    dispatch(requestListThunk);
+  })
 
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
