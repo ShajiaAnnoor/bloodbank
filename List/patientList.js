@@ -249,50 +249,50 @@ import React,{
     
   return (
     <View style={styles.pageContainer}>
+          <View style={styles.filterContainer}>
+            <Picker
+              selectedValue={selectedDistrict}
+              style={{ height: 50, width: 150, margin:2,padding:2,}}
+              onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+            >
+              {AllDistrict.map((district) => {
+                return(
+                  <Picker.Item label={district} value={district}/>
+                );
+              })}
+            </Picker>
+
+            <Picker
+              selectedValue={selectedBloodGroup}
+              style={{ height: 50, width: 150  }}
+              onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
+            >
+              {AllBloodGroup.map((bloodGroup) => {
+                return(
+                  <Picker.Item label={bloodGroup} value={bloodGroup}/>
+                );
+              })}
+            </Picker>
+            
+        </View>
+
         <View style={styles.filterContainer}>
-          <Picker
-            selectedValue={selectedDistrict}
-            style={{ height: 50, width: 150, margin:2,padding:2,}}
-            onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
-          >
-            {AllDistrict.map((district) => {
-              return(
-                <Picker.Item label={district} value={district}/>
-              );
-            })}
-          </Picker>
-
-          <Picker
-            selectedValue={selectedBloodGroup}
-            style={{ height: 50, width: 150  }}
-            onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
-          >
-            {AllBloodGroup.map((bloodGroup) => {
-              return(
-                <Picker.Item label={bloodGroup} value={bloodGroup}/>
-              );
-            })}
-          </Picker>
-          
-      </View>
-
-      <View style={styles.filterContainer}>
-          <Button 
-            style={styles.filterButton}
-            onPress={()=>onPressBoth(selectedDistrict,selectedBloodGroup)} 
-            title="Apply Filter" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />
             <Button 
               style={styles.filterButton}
-              onPress={()=>onPressAll()} 
-              title="See Full List" 
+              onPress={()=>onPressBoth(selectedDistrict,selectedBloodGroup)} 
+              title="Apply Filter" 
               color='#a7d1c9' 
               touchSoundDisabled ="false"
-            />  
-          
-      </View>
+            />
+              <Button 
+                style={styles.filterButton}
+                onPress={()=>onPressAll()} 
+                title="See Full List" 
+                color='#a7d1c9' 
+                touchSoundDisabled ="false"
+              />  
+            
+        </View>
         <View style={styles.container}>
           <FlatList
             style={{ flex: 10, }}
