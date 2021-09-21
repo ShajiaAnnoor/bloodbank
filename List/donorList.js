@@ -17,7 +17,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { State } from 'react-native-gesture-handler';
 import FormModal from '../Forms/donorEntryModal';
 
 let all_data = {
