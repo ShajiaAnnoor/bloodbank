@@ -308,13 +308,11 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     margin:5,
     paddingTop:5,
-    //marginTop:1,
     justifyContent: 'space-evenly',
   },
   container: {
     flex: 10,
     backgroundColor: '#F7F7F7',
-    //marginTop: 60,
     marginTop:10,
     marginBottom:5,
   },
@@ -336,39 +334,23 @@ const styles = StyleSheet.create({
     alignItems:'flex-start',
     justifyContent: 'space-between',
   },
-  
   filterContainer: {
     flex: 1,
     padding:2,
-    //paddingTop:5,
-   // alignItems: "flex-start",
     flexDirection:'row',
     justifyContent: 'space-between',
     marginBottom:5,
-    //paddingBottom:2,
     flexWrap:'nowrap',
-   // alignContent:'space-around',
   },
-
   allFilterContainer: {
     flex: 1,
-    //paddingTop:10,
-    //alignItems: "flex-start",
     flexDirection:'column',
-   //justifyContent: 'space-between',
     marginBottom:8,
-    //padding:2,
-    //flexWrap:'nowrap',
-    //paddingBottom:2,
-    //height:10
   },
-
   filterButton:{
     height:20,
     width:20,
     borderRadius:20,
-    //margin:2,
-    //padding:2,
     backgroundColor:"#4CAF50",
   }
 });
