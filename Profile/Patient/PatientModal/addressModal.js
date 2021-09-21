@@ -15,55 +15,49 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
  
   const [yourAddress, setYourAddress] = useState(' ');
  
-
   const handleModalSubmit = () => {
     toggle(index);
     setAddress(yourAddress);
   }
     
   return (     
-        <Modal
-          statusBarTranslucent={true}
-          animationType="fade"
-          transparent={true}
-          visible={mv}
-          onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-          }}
-        >
+    <Modal
+      statusBarTranslucent={true}
+      animationType="fade"
+      transparent={true}
+      visible={mv}
+      onRequestClose={() => {
+        Alert.alert("Modal has been closed.");
+      }}
+    >
+      <View style={styles.modalView}>
+        <Text style={styles.logo}>
+          Change/Edit your address
+        </Text>
 
-          <View style={styles.modalView}>
-            <Text style={styles.logo}>
-              Change/Edit your address
-            </Text>
-
-            <View style={styles.inputView} >
-              <TextInput  
-                style={styles.inputText}
-                placeholder="Your Address..." 
-                placeholderTextColor="#003f5c"
-                onChangeText={text => setYourAddress(text)}
-              />
-            </View>
-          
-            <View>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                 onPress={handleModalSubmit}
-              >
-                <Text style={styles.textStyle}>POST</Text>
-            </Pressable>
-          </View>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Your Address..." 
+            placeholderTextColor="#003f5c"
+            onChangeText={text => setYourAddress(text)}
+          />
         </View>
-      </Modal>
-      
-      
-    //</View>
+        
+        <View>
+          <Pressable
+            style={[styles.button, styles.buttonClose]}
+            onPress={handleModalSubmit}
+          >
+            <Text style={styles.textStyle}>POST</Text>
+          </Pressable>
+        </View>
+      </View>
+    </Modal>
   );
 };
 
 const styles = StyleSheet.create({
-   
   modalView: {
     margin: 20,
     backgroundColor: "white",
@@ -99,7 +93,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-
   logo:{
     fontWeight:"bold",
     fontSize:30,
@@ -119,7 +112,6 @@ const styles = StyleSheet.create({
     height:50,
     color:"white"
   },
- 
 });
 
 export default addressEntryModal;
