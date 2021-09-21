@@ -9,7 +9,6 @@ const DropdownScreen = () => {
     const navigation = useNavigation();
 
     return (
-        //<View style={styles.container}>
             <SelectDropdown
                 data={countries}
                 onSelect={(selectedItem, index) => {
@@ -38,13 +37,11 @@ export default DropdownScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-       // height:'50%',
         width:100,
         height:50,
         backgroundColor: 'gray',
        padding: 25,
         margin:10,
-        //marginEnd:1,
         borderRadius:50,
         alignSelf:'center',
         justifyContent:'space-evenly',
@@ -76,16 +73,11 @@ const styles = StyleSheet.create({
     },
     textItem: {
         flex: 1,
-        //height:20,
-        //width:60,
-        fontSize:10,
-        
+        fontSize:10,        
     },
     filterButton:{
         height:40,
         width:16,
-    //    margin:30,
-    //    padding:30,
         paddingLeft: 120,
         backgroundColor:"#4CAF50",
     }
