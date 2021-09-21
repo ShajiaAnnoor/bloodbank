@@ -22,8 +22,6 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
   }
     
   return (
-   // <View style={styles.modalView}>
-     
         <Modal
           statusBarTranslucent={true}
           animationType="fade"
@@ -59,9 +57,6 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
           </View>
         </View>
       </Modal>
-      
-      
-    //</View>
   );
 };
 
