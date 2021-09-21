@@ -9,9 +9,7 @@ import {
     Text, 
     View, 
     TextInput,
-    TouchableOpacity
 } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 
 const addressEntryModal = ({mv, toggle,setAddress,index}) => {
  
@@ -23,9 +21,7 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
     setAddress(yourAddress);
   }
     
-  return (
-   // <View style={styles.modalView}>
-     
+  return (     
         <Modal
           statusBarTranslucent={true}
           animationType="fade"
@@ -33,7 +29,6 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
           visible={mv}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
-    //        setModalVisible(!modalVisible);
           }}
         >
 
@@ -62,9 +57,7 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
         </View>
       </Modal>
       
-      
-    //</View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
