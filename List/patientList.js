@@ -14,7 +14,6 @@ import React,{
   import { Octicons } from '@expo/vector-icons';
   import { MaterialIcons } from '@expo/vector-icons';
   import { FontAwesome } from '@expo/vector-icons';
-  import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
   import patientListThunk from "../redux/thunk/PatientList";
 
@@ -24,8 +23,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097756',
         bloodGroup:'B-',
       },
@@ -33,8 +30,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-       // availablity: 'Not Available',
-        //status:'Not yet Ready',
         contactNumber: '01749097757',
         bloodGroup:')+',
       },
@@ -42,8 +37,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097758',
         bloodGroup:'B+',
       },
@@ -51,28 +44,20 @@ import React,{
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Chittagong',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
-
       {
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
-
       {
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Barishal',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
@@ -80,8 +65,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097723',
         bloodGroup:'AB+',
       },
@@ -89,8 +72,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749077756',
         bloodGroup:'O-',
       },
@@ -99,8 +80,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Barishal',
-       // availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097762',
         bloodGroup:'O+',
       },
@@ -108,8 +87,6 @@ import React,{
        name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749337756',
         bloodGroup:'B+',
       },
@@ -117,8 +94,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749092256',
         bloodGroup:'A+',
       },
@@ -311,13 +286,11 @@ import React,{
       flexDirection:'column',
       margin:5,
       paddingTop:5,
-      //marginTop:1,
       justifyContent: 'space-evenly',
     },
     container: {
       flex: 10,
       backgroundColor: '#F7F7F7',
-      //marginTop: 60,
       marginTop:10,
       marginBottom:5,
 
@@ -343,35 +316,20 @@ import React,{
     filterContainer: {
       flex: 1,
       padding:2,
-      //paddingTop:5,
-     // alignItems: "flex-start",
       flexDirection:'row',
       justifyContent: 'space-between',
       marginBottom:5,
-      //paddingBottom:2,
       flexWrap:'nowrap',
-     // alignContent:'space-around',
     },
-
     allFilterContainer: {
       flex: 1,
-      //paddingTop:10,
-      //alignItems: "flex-start",
       flexDirection:'column',
-     //justifyContent: 'space-between',
       marginBottom:8,
-      //padding:2,
-      //flexWrap:'nowrap',
-      //paddingBottom:2,
-      //height:10
     },
-  
     filterButton:{
       height:20,
       width:20,
       borderRadius:20,
-      //margin:2,
-      //padding:2,
       backgroundColor:"#4CAF50",
     }
   });
