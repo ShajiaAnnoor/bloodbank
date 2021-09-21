@@ -14,7 +14,6 @@ import {
 const contactEntryModal = ({mv, toggle, setContact, index}) => {
   const [yourContact, setYourContact] = useState(' ');
   
-
   const handleModalSubmit = () => {
     toggle(index);
     setContact(yourContact);
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-
   logo:{
     fontWeight:"bold",
     fontSize:30,
@@ -115,7 +113,6 @@ const styles = StyleSheet.create({
     height:50,
     color:"white"
   },
- 
 });
 
 export default contactEntryModal;
