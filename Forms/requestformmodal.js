@@ -2,7 +2,6 @@ import React, {
     useState, 
 } from "react";
 import { 
-    Alert, 
     Modal,
     Pressable, 
     StyleSheet, 
@@ -151,15 +150,9 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius:10,
-    //padding: 30,
-    //elevation: 2,
-   // width: '90%',
-    //alignSelf:'center',
     margin:10,
     justifyContent:'space-around',
-   // margin: 10,
     padding: 20,
-    //backgroundColor: '#FFF',
     width: '100%',
     height: '90%',
     flex: 9,
@@ -176,7 +169,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     flexWrap:'wrap',
-    //marginBottom:5,
     padding:1,
   },
   modalText: {
