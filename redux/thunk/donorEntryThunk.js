@@ -5,6 +5,7 @@ export const donorCreateThunkCreator = (donor) =>
     donorCreateThunk = (dispatch, getState) => {
         if (getState().donorList.isSaving == false ) {
         
+
             dispatch({type: CREATE_DONOR});
 
             axios.post('/donor/create', donor)
