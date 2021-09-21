@@ -113,18 +113,8 @@ const App = () => {
             </Pressable>
           </View>
         </View>
-      
-       {/*<View style={styles.centeredView}>
-          <View>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>POST</Text>
-            </Pressable>
-          </View>
-          </View>*/}
       </Modal>
+      
       <View >
       <Pressable
         style={[styles.button, styles.buttonOpen]}
