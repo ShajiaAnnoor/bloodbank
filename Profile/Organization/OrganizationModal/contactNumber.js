@@ -30,7 +30,6 @@ const contactEntryModal = ({mv, toggle, setContact, index}) => {
         Alert.alert("Modal has been closed.");
         }}
     >
-
       <View style={styles.modalView}>
         <Text style={styles.logo}>
           Change/Edit your contact
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-
   logo:{
     fontWeight:"bold",
     fontSize:30,
@@ -115,7 +113,6 @@ const styles = StyleSheet.create({
     height:50,
     color:"white"
   },
- 
 });
 
 export default contactEntryModal;
