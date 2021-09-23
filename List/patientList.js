@@ -16,6 +16,7 @@ import React,{
   import { FontAwesome } from '@expo/vector-icons';
   import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
+  import PatientEntryModal from '../Forms/patientEntryModal';
 //import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
   //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
   
@@ -40,7 +41,7 @@ import React,{
        // availablity: 'Not Available',
         //status:'Not yet Ready',
         contactNumber: '01749097757',
-        bloodGroup:')+',
+        bloodGroup:'B+',
       },
       {
         name:'Kalmal Hossain',
@@ -265,6 +266,10 @@ import React,{
   return (
     <View style={styles.pageContainer}>
     {/*<View style={styles.allFilterContainer}>*/}
+      <View >
+      <PatientEntryModal/>
+      </View>
+
         <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
