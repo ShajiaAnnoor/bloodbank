@@ -16,6 +16,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import DonorEntryModal from '../Forms/donorEntryModal';
 //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 //import { LoginManager } from "react-native-fbsdk-next";
@@ -268,6 +269,11 @@ export default function App() {
   return (
     <View style={styles.pageContainer}>
       {/*<View style={styles.allFilterContainer}>*/}
+
+      <View >
+      <DonorEntryModal/>
+      </View>
+
       <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
