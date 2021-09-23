@@ -16,6 +16,18 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import OrganizationEntryModal from '../Forms/requestOrganizationEntryModal';
 
+const triggerCall = (item) => {
+  // Check for perfect 10 digit length
+  
+
+  const args = {
+    number: item.phone,
+    prompt: true,
+  };
+  // Make a call
+  call(args).catch(console.error);
+};
+
 function OrganizationList({ item }) {
   return (
     <View style={styles.listItem}>
@@ -50,7 +62,7 @@ function OrganizationList({ item }) {
           </Text>
         </View>
       </View>
-      <TouchableOpacity
+      {/*<TouchableOpacity
         style={{
           height: 50,
           width: 50,
@@ -67,7 +79,14 @@ function OrganizationList({ item }) {
           }}>
           click here to Call
         </Text>
-      </TouchableOpacity>
+        </TouchableOpacity>*/}
+        <Button 
+            style={styles.filterButton}
+            onPress={()=>triggerCall(item)} 
+            title="Call" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          />  
     </View>
   );
 }
@@ -214,7 +233,7 @@ export default function App(){
       <View style={styles.container}>
         <FlatList
           numColumns={1}
-          style={{ flex: 15 }}
+          style={{ flex:15,height:"50%", }}
           data={filteredData}
           renderItem={({ item }) => <OrganizationList item={item} />}
           keyExtractor={(item) => item.contactNumber}
@@ -229,9 +248,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 12,
     //backgroundColor: '#eda187',
-    marginTop: 10,
+    marginTop: 5,
     marginBottom:10,
-    width: '90%',
+    width: '100%',
     justifyContent: 'space-evenly',
     alignSelf:'center',
     flexDirection:'column',
@@ -278,10 +297,10 @@ const styles = StyleSheet.create({
     
   },
   listItem: {
-    margin: 10,
-    padding: 10,
+    margin:10,
+    padding:10,
     backgroundColor: '#a7d1c9',
-    width: '80%',
+    width: '95%',
     flex: 1,
     alignSelf: 'center',
     flexDirection: 'column',
