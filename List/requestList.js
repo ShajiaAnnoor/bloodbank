@@ -246,54 +246,29 @@ function Item({ item }) {
       </View>
 
       <View style = {styles.ShareButtonContainer}>
-      <TouchableOpacity
-        style={{
-          height:20,
-          width: 50,
-          alignItems: 'flex-start',
-        }}
-        onPress={()=>postOnFacebook()}  
-      >
-        <Text
-          style={{
-            color: 'green',
-            alignItems: 'center',
-          
-            
-          }}>
-          Share on FB
-        </Text>
-      </TouchableOpacity>
+      <Button 
+            style={styles.filterButton}
+            onPress={()=>postOnFacebook(item)} 
+            title="Share on FB" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          /> 
 
-      <TouchableOpacity
-        style={{height:50,width:50, alignItems:'flex-start'}}
-        onPress={()=>shareMessage(item)}
-      >
-        
-        <Text
-          style={{
-            color: 'green',
-            alignItems: 'flex-start',
-            
-          }}>
-          Share
-        </Text>
-      </TouchableOpacity>
+      <Button 
+            style={styles.filterButton}
+            onPress={()=>shareMessage(item)} 
+            title="Share" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          /> 
 
-      <TouchableOpacity
-        style={{height:2,alignItems: 'flex-start'}}
-        onPress={()=>triggerCall(item)}
-      >
-        
-        <Text
-          style={{
-            color: 'green',
-            alignItems: 'flex-start',
-            
-          }}>
-          Call
-        </Text>
-      </TouchableOpacity>
+      <Button 
+            style={styles.filterButton}
+            onPress={()=>triggerCall(item)} 
+            title="Call" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          /> 
       </View>
     </View>
   );
@@ -436,14 +411,15 @@ const styles = StyleSheet.create({
 
   ShareButtonContainer: {
     flex: 1,
-    //backgroundColor: '#F7F7F7',
-    backgroundColor: '#abd1c6',
+    backgroundColor: '#F7F7F7',
+    //backgroundColor: 'white',
     marginTop: 10,
     marginBottom:10,
     width: '90%',
     justifyContent: 'space-between',
     alignSelf:'flex-start',
     flexDirection:'row',
+    
   },
 
 
@@ -505,10 +481,15 @@ const styles = StyleSheet.create({
   filterButton:{
     height:20,
     width:20,
-    borderRadius:20,
+    borderRadius:40,
     //margin:2,
     //padding:2,
+    //justifyContent:'center',
+    
     backgroundColor:"#4CAF50",
+    position:'relative',
+    alignItems :'center',
+    //elevation:10,
   }
 
 });
