@@ -15,13 +15,14 @@ import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import OrganizationEntryModal from '../Forms/requestOrganizationEntryModal';
+import call from 'react-native-phone-call';
 
 const triggerCall = (item) => {
   // Check for perfect 10 digit length
   
 
   const args = {
-    number: item.phone,
+    number: item.contactNumber,
     prompt: true,
   };
   // Make a call
