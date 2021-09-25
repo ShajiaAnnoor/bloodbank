@@ -17,11 +17,25 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import DonorEntryModal from '../Forms/donorEntryModal';
+import call from 'react-native-phone-call';
 //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 //import { LoginManager } from "react-native-fbsdk-next";
 //import LoginButton from "./facebookLogin";
 //import {LogManager} from './facebookLoginManager';
+
+const triggerCall = (item) => {
+  // Check for perfect 10 digit length
+  
+
+  const args = {
+    number: item.phone,
+    prompt: true,
+  };
+  // Make a call
+  call(args).catch(console.error);
+};
+
 let all_data = {
   data: [
     {
@@ -187,24 +201,13 @@ function DonorList({ item }) {
           </Text>
         </View>
       </View>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          width: 50,
-          justifyContent:'flex-start',
-          alignItems: 'flex-start',
-          marginTop :8,
-        }}>
-        <Text
-          style={{
-            color: 'green',
-            justifyContent:'flex-start',
-            alignItems: 'flex-start',
-            
-          }}>
-          Call
-        </Text>
-      </TouchableOpacity>  
+      <Button 
+            style={styles.filterButton}
+            onPress={()=>triggerCall(item)} 
+            title="Call" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          /> 
     </View>
   );
 }
@@ -369,9 +372,10 @@ const styles = StyleSheet.create({
   listItem: {
     margin: 10,
     padding: 10,
+    paddingLeft:40,
     backgroundColor: '#a7d1c9',
-    width: '80%',
-    flex: 1,
+    width: '95%',
+    flex:1,
     alignSelf: 'center',
     flexDirection: 'column',
     borderRadius: 5,
