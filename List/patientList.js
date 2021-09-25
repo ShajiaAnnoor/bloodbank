@@ -7,6 +7,7 @@ import React,{
     Picker,
     StyleSheet,
     Text,
+    TouchableHighlight,
     TouchableOpacity,
     View, 
   } from 'react-native';
@@ -17,12 +18,27 @@ import React,{
   import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
   import PatientEntryModal from '../Forms/patientEntryModal';
+  import call from 'react-native-phone-call';
 //import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
   //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
   
   //import { LoginManager } from "react-native-fbsdk-next";
   //import LoginButton from "./facebookLogin";
   //import {LogManager} from './facebookLoginManager';
+
+  const triggerCall = (item) => {
+    // Check for perfect 10 digit length
+    
+
+    const args = {
+      number: item.phone,
+      prompt: true,
+    };
+    // Make a call
+    call(args).catch(console.error);
+  };
+
+
   let all_data = {
     data: [
       {
@@ -194,24 +210,26 @@ import React,{
             </Text>
           </View>
         </View>
-        <TouchableOpacity
-          style={{
-            height: 50,
-            width: 50,
-            justifyContent:'flex-start',
-            alignItems: 'flex-start',
-            marginTop :8,
-          }}>
-          <Text
-            style={{
-              color: 'green',
-              justifyContent:'flex-start',
-              alignItems: 'flex-start',
-              
-            }}>
-            Call
-          </Text>
-        </TouchableOpacity>  
+       
+        <TouchableHighlight 
+                style ={{
+                    height: 20,
+                    width:80,
+                    borderRadius:10,
+                    backgroundColor : "white",
+                    marginLeft :4,
+                    //marginRight:50,
+                    marginTop :1,
+                    marginBottom:10,
+                }}>
+        <Button 
+            //style={styles.filterButton}
+            onPress={()=>triggerCall(item)} 
+            title="Call" 
+            color='#a7d1c9' 
+            touchSoundDisabled ="false"
+          /> 
+          </TouchableHighlight>
       </View>
     );
   }
@@ -366,7 +384,7 @@ import React,{
       margin: 10,
       padding: 10,
       backgroundColor: '#a7d1c9',
-      width: '80%',
+      width: '95%',
       flex: 1,
       alignSelf: 'center',
       flexDirection: 'column',
