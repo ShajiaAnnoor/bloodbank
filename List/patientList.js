@@ -5,6 +5,7 @@ import React,{
     Button,
     FlatList,
     Picker,
+    Pressable,
     StyleSheet,
     Text,
     TouchableHighlight,
@@ -31,7 +32,7 @@ import React,{
     
 
     const args = {
-      number: item.phone,
+      number: item.contactNumber,
       prompt: true,
     };
     // Make a call
@@ -211,25 +212,23 @@ import React,{
           </View>
         </View>
        
-        <TouchableHighlight 
+        <Pressable 
                 style ={{
-                    height: 20,
-                    width:80,
-                    borderRadius:10,
-                    backgroundColor : "white",
-                    marginLeft :4,
+                    height: 40,
+                    width:40,
+                    borderRadius:5,
+                    backgroundColor : "#a6020d",
+                    //marginLeft :4,
                     //marginRight:50,
-                    marginTop :1,
-                    marginBottom:10,
-                }}>
-        <Button 
-            //style={styles.filterButton}
-            onPress={()=>triggerCall(item)} 
-            title="Call" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          /> 
-          </TouchableHighlight>
+                    marginTop :5,
+                    marginBottom:5,
+                    elevation: 10,
+                }}
+               // style ={styles.filterButton}
+                onPress={()=>triggerCall(item)}
+                >
+        <Text style={styles.textStyle}>CAll</Text>
+          </Pressable>
       </View>
     );
   }
@@ -422,9 +421,21 @@ import React,{
       height:20,
       width:20,
       borderRadius:20,
-      //margin:2,
-      //padding:2,
+      margin:2,
+      padding:2,
       backgroundColor:"#4CAF50",
-    }
+    },
+
+    textStyle: {
+      color: "white",
+      fontWeight: "bold",
+      textAlign: "center",
+      //color: "white",
+      //fontWeight: "bold",
+      //textAlign: "center",
+      flexWrap:'wrap',
+      //marginBottom:5,
+      padding:1,
+    },
   });
   
