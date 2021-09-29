@@ -8,7 +8,8 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity,  
+  TouchableOpacity, 
+  Pressable, 
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
@@ -81,13 +82,20 @@ function OrganizationList({ item }) {
           click here to Call
         </Text>
         </TouchableOpacity>*/}
-        <Button 
-            style={styles.filterButton}
-            onPress={()=>triggerCall(item)} 
-            title="Call" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />  
+        <Pressable 
+                style ={{
+                    height: 40,
+                    width:60,
+                    borderRadius:5,
+                    backgroundColor : "#a6020d",
+                    marginTop :5,
+                    marginBottom:5,
+                    elevation: 10,
+                }}
+                onPress={()=>triggerCall(item)}
+                >
+           <Text style={styles.textStyle}>CALL</Text>
+        </Pressable> 
     </View>
   );
 }
@@ -309,5 +317,19 @@ const styles = StyleSheet.create({
     alignItems:'flex-start',
     justifyContent: 'space-between',
   },
+  textStyle:{
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize:10,
+    
+    //color: "white",
+    //fontWeight: "bold",
+    //textAlign: "center",
+    flexWrap:'wrap',
+    //marginBottom:5,
+    justifyContent:'center',
+    padding:4,
+    },
 });
 
