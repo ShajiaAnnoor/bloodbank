@@ -29,7 +29,7 @@ const triggerCall = (item) => {
   
 
   const args = {
-    number: item.phone,
+    number: item.contactNumber,
     prompt: true,
   };
   // Make a call
