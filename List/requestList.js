@@ -9,6 +9,7 @@ import {
   Linking,
   Picker,
   Button,
+  Pressable,
   
   
 } from 'react-native';
@@ -246,7 +247,7 @@ function Item({ item }) {
       </View>
 
       <View style = {styles.ShareButtonContainer}>
-      <Button 
+       {/*<Button 
             style={styles.filterButton}
             onPress={()=>postOnFacebook(item)} 
             title="Share on FB" 
@@ -254,21 +255,69 @@ function Item({ item }) {
             touchSoundDisabled ="false"
           /> 
 
-      <Button 
+     <Button 
             style={styles.filterButton}
             onPress={()=>shareMessage(item)} 
             title="Share" 
             color='#a7d1c9' 
             touchSoundDisabled ="false"
-          /> 
+     /> */}
 
-      <Button 
-            style={styles.filterButton}
-            onPress={()=>triggerCall(item)} 
-            title="Call" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          /> 
+       <Pressable 
+                style ={{
+                    height:30,
+                    width:50,
+                    borderRadius:5,
+                    backgroundColor : "#a6020d",
+                    //marginLeft :4,
+                    //marginRight:50,
+                    margin:10,
+                    padding :2,
+                    elevation: 10,
+                    flex: 5,
+                }}
+               // style ={styles.filterButton}
+                onPress={()=>postOnFacebook(item)}
+                >
+           <Text style={styles.textStyle}>Share on Facebook</Text>
+        </Pressable>       
+
+          
+       <Pressable 
+                style ={{
+                    height: 30,
+                    width:20,
+                    borderRadius:5,
+                    backgroundColor : "#a6020d",
+                    margin:10,
+                    padding:2,
+                    elevation: 10,
+                    flex:3,
+                }}
+               // style ={styles.filterButton}
+                onPress={()=>shareMessage(item)}
+                >
+           <Text style={styles.textStyle}>Share</Text>
+        </Pressable>    
+
+      <Pressable 
+                style ={{
+                    height: 30,
+                    width:20,
+                    borderRadius:5,
+                    backgroundColor : "#a6020d",
+                    //marginLeft :4,
+                    //marginRight:50,
+                    margin :10,
+                    padding:2,
+                    elevation: 10,
+                    flex:2,
+                }}
+               // style ={styles.filterButton}
+                onPress={()=>triggerCall(item)}
+                >
+           <Text style={styles.textStyle}>Call</Text>
+      </Pressable>
       </View>
     </View>
   );
@@ -398,13 +447,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 15,
-    //backgroundColor: '#F7F7F7',
+    flex: 10,
+    backgroundColor: '#F7F7F7',
     //backgroundColor: '#eda187',
-    marginTop: 10,
+    marginTop: 8,
     marginBottom:5,
     width: '90%',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignSelf:'center',
     flexDirection:'column',
   },
@@ -454,7 +503,8 @@ const styles = StyleSheet.create({
     marginTop: 5,
     padding:10,
     //backgroundColor: '#FFF',
-    backgroundColor: '#eda187',
+    //backgroundColor: '#eda187',
+    backgroundColor: '#a7d1c9',
     width: '100%',
     height:'10%',
     flex: 1,
@@ -465,7 +515,7 @@ const styles = StyleSheet.create({
   },
 
  
-  filterContainer: {
+  /*filterContainer: {
     flex: 2,
     padding:2,
     //paddingTop:5,
@@ -490,6 +540,44 @@ const styles = StyleSheet.create({
     position:'relative',
     alignItems :'center',
     //elevation:10,
+  },*/
+
+  filterButton:{
+    height:20,
+    width:20,
+    borderRadius:20,
+    //margin:2,
+    //padding:2,
+    backgroundColor:"#4CAF50",
+  },
+
+  filterContainer: {
+    flex: 1,
+    padding:2,
+    //paddingTop:5,
+   // alignItems: "flex-start",
+    flexDirection:'row',
+    justifyContent: 'space-between',
+    marginBottom:5,
+    //paddingBottom:2,
+    flexWrap:'nowrap',
+   // alignContent:'space-around',
+  },
+
+
+  textStyle:{
+  color: "white",
+  fontWeight: "bold",
+  textAlign: "center",
+  fontSize:10,
+  
+  //color: "white",
+  //fontWeight: "bold",
+  //textAlign: "center",
+  flexWrap:'wrap',
+  //marginBottom:5,
+  justifyContent:'center',
+  padding:4,
   }
 
 });
