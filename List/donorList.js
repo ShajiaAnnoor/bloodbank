@@ -7,7 +7,6 @@ import {
   Picker,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View, 
   Pressable,
 } from 'react-native';
@@ -19,16 +18,9 @@ import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import DonorEntryModal from '../Forms/donorEntryModal';
 import call from 'react-native-phone-call';
-//import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
-
-//import { LoginManager } from "react-native-fbsdk-next";
-//import LoginButton from "./facebookLogin";
-//import {LogManager} from './facebookLoginManager';
 
 const triggerCall = (item) => {
   // Check for perfect 10 digit length
-  
-
   const args = {
     number: item.contactNumber,
     prompt: true,
@@ -94,7 +86,6 @@ let all_data = {
       contactNumber: '01749077756',
       bloodGroup: 'AB-',
     },
-    
     {
       name:'Kalmal Hossain',
       address: 'Dhaka Medical College',
@@ -222,24 +213,13 @@ function DonorList({ item }) {
 
 export default function App() {
   
-  //const [selectedValue, setSelectedValue] = useState("one");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
 
   const [filteredData, setFilteredData] = useState(all_data.data);
 
-
-
-  {/*const onPressDistrict = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.district == itemValue;
-    });
-    setFilteredData(newData);
-  };*/}
-
   const onPressAll = () => {    
     setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
   };
 
   const onPickerPress1 = (itemValue) => {
@@ -263,23 +243,8 @@ export default function App() {
     setFilteredData(finalData);
   }
 
-  {/*const onPressGroup = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.bloodGroup == itemValue;
-    });
-    setFilteredData(newData);
-  };
-
-
-
-  const onPressAllGroup= () => {    
-    setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
-  };*/}
-
   return (
     <View style={styles.pageContainer}>
-      {/*<View style={styles.allFilterContainer}>*/}
 
       <View >
       <DonorEntryModal/>
@@ -330,26 +295,14 @@ export default function App() {
             />  
           
       </View>
-   {/*</View>*/}
 
       <View style={styles.container}>
-        {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
         <FlatList
           style={{ flex: 10, }}
           data={filteredData} 
           renderItem={({ item }) => <DonorList item={item} />}
           keyExtractor={( item ) => item.email}
         />
-       {/*} <Button 
-          onPress={()=>onPress(selectedValue)} 
-          title="Click here to filter" 
-          color="#841584" 
-        />
-        <Button 
-          onPress={()=>onPressAll()} 
-          title="Click here to see all" 
-          color="#841533" 
-        />*/}
       </View>
     </View>
   );
@@ -361,13 +314,11 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     margin:5,
     paddingTop:5,
-    //marginTop:1,
     justifyContent: 'space-evenly',
   },
   container: {
     flex: 10,
     backgroundColor: '#F7F7F7',
-    //marginTop: 60,
     marginTop:10,
     marginBottom:5,
   },
@@ -389,56 +340,33 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems:'flex-start',
     justifyContent: 'space-between',
-  },
-  
+  },  
   filterContainer: {
     flex: 1,
     padding:2,
-    //paddingTop:5,
-   // alignItems: "flex-start",
     flexDirection:'row',
     justifyContent: 'space-between',
     marginBottom:5,
-    //paddingBottom:2,
     flexWrap:'nowrap',
-   // alignContent:'space-around',
   },
-
   allFilterContainer: {
     flex: 1,
-    //paddingTop:10,
-    //alignItems: "flex-start",
     flexDirection:'column',
-   //justifyContent: 'space-between',
     marginBottom:8,
-    //padding:2,
-    //flexWrap:'nowrap',
-    //paddingBottom:2,
-    //height:10
   },
-
   filterButton:{
     height:20,
     width:20,
     borderRadius:20,
-    //margin:2,
-    //padding:2,
     backgroundColor:"#4CAF50",
   },
-
   textStyle:{
     color: "white",
     fontWeight: "bold",
     textAlign: "center",
     fontSize:10,
-    
-    //color: "white",
-    //fontWeight: "bold",
-    //textAlign: "center",
     flexWrap:'wrap',
-    //marginBottom:5,
     justifyContent:'center',
     padding:4,
     }
-
 });
