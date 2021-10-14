@@ -1,24 +1,19 @@
-import React, {useState,}from 'react';
+import React, {useState}from 'react';
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
-  TouchableOpacity,
   Share,
   Linking,
   Picker,
   Button,
-  Pressable,
-  
-  
+  Pressable,  
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
-
-import FormModal from '../Forms/requestformmodal';
-
 import call from 'react-native-phone-call';
 
+import FormModal from '../Forms/requestformmodal';
 
 let all_data = {
   data: [
@@ -125,8 +120,6 @@ let all_data = {
   ],
 };
 
-
-
 const AllDistrict =[
 'Dhaka',
 'Chittagong',
@@ -216,7 +209,6 @@ const postContent = 'Hello Guys, This is a testing of facebook share   example';
     });
 }
 
-
 const shareMessage = async (item) => {
 let msg = item.name + "\n" + item.district; 
   //Here is the Share API
@@ -229,7 +221,6 @@ let msg = item.name + "\n" + item.district;
     //If any thing goes wrong it comes here
     .catch((errorMsg) => console.log(errorMsg));
 };
-
 
 function Item({ item }) {
   return (
@@ -264,59 +255,58 @@ function Item({ item }) {
      /> */}
 
        <Pressable 
-                style ={{
-                    height:30,
-                    width:50,
-                    borderRadius:5,
-                    backgroundColor : "#a6020d",
-                    //marginLeft :4,
-                    //marginRight:50,
-                    margin:10,
-                    padding :2,
-                    elevation: 10,
-                    flex: 5,
-                }}
+        style = {{
+          height:30,
+          width:50,
+          borderRadius:5,
+          backgroundColor : "#a6020d",
+          //marginLeft :4,
+          //marginRight:50,
+          margin:10,
+          padding :2,
+          elevation: 10,
+          flex: 5,
+        }}
                // style ={styles.filterButton}
-                onPress={()=>postOnFacebook(item)}
-                >
-           <Text style={styles.textStyle}>Share on Facebook</Text>
+        onPress={()=>postOnFacebook(item)}
+      >
+          <Text style={styles.textStyle}>Share on Facebook</Text>
         </Pressable>       
 
-          
        <Pressable 
-                style ={{
-                    height: 30,
-                    width:20,
-                    borderRadius:5,
-                    backgroundColor : "#a6020d",
-                    margin:10,
-                    padding:2,
-                    elevation: 10,
-                    flex:3,
-                }}
+          style = {{
+            height: 30,
+            width:20,
+            borderRadius:5,
+            backgroundColor : "#a6020d",
+            margin:10,
+            padding:2,
+            elevation: 10,
+            flex:3,
+          }}
                // style ={styles.filterButton}
-                onPress={()=>shareMessage(item)}
-                >
+          onPress={()=>shareMessage(item)}
+        >
            <Text style={styles.textStyle}>Share</Text>
         </Pressable>    
 
       <Pressable 
-                style ={{
-                    height: 30,
-                    width:20,
-                    borderRadius:5,
-                    backgroundColor : "#a6020d",
-                    //marginLeft :4,
-                    //marginRight:50,
-                    margin :10,
-                    padding:2,
-                    elevation: 10,
-                    flex:2,
-                }}
-               // style ={styles.filterButton}
-                onPress={()=>triggerCall(item)}
-                >
-           <Text style={styles.textStyle}>Call</Text>
+        style ={{
+          height: 30,
+          width:20,
+          borderRadius:5,
+          backgroundColor : "#a6020d",
+          //marginLeft :4,
+          //marginRight:50,
+          margin :10,
+          padding:2,
+          elevation: 10,
+          flex:2,
+        }}
+        // style ={styles.filterButton}
+        onPress={()=>triggerCall(item)}
+      >
+          <Text style={styles.textStyle}>Call</Text>
       </Pressable>
       </View>
     </View>
@@ -467,10 +457,8 @@ const styles = StyleSheet.create({
     width: '90%',
     justifyContent: 'space-between',
     alignSelf:'flex-start',
-    flexDirection:'row',
-    
+    flexDirection:'row',  
   },
-
 
   modalButtonContainer:{
     //margin: 10,
@@ -485,7 +473,6 @@ const styles = StyleSheet.create({
   },
 
   container2: {
-    
     marginTop:1,
     //backgroundColor:'#fccdb8',
     //backgroundColor: '#eda187',
@@ -563,8 +550,7 @@ const styles = StyleSheet.create({
     flexWrap:'nowrap',
    // alignContent:'space-around',
   },
-
-
+  
   textStyle:{
   color: "white",
   fontWeight: "bold",
