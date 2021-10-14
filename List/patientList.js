@@ -8,15 +8,12 @@ import React,{
     Pressable,
     StyleSheet,
     Text,
-    TouchableHighlight,
-    TouchableOpacity,
     View, 
   } from 'react-native';
   import { Paragraph } from 'react-native-paper';
   import { Octicons } from '@expo/vector-icons';
   import { MaterialIcons } from '@expo/vector-icons';
   import { FontAwesome } from '@expo/vector-icons';
-  import { Entypo } from '@expo/vector-icons';
   import { Ionicons } from '@expo/vector-icons';
   import PatientEntryModal from '../Forms/patientEntryModal';
   import call from 'react-native-phone-call';
@@ -29,8 +26,6 @@ import React,{
 
   const triggerCall = (item) => {
     // Check for perfect 10 digit length
-    
-
     const args = {
       number: item.contactNumber,
       prompt: true,
@@ -38,7 +33,6 @@ import React,{
     // Make a call
     call(args).catch(console.error);
   };
-
 
   let all_data = {
     data: [
@@ -78,7 +72,6 @@ import React,{
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
-
       {
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
@@ -88,7 +81,6 @@ import React,{
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
-
       {
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
@@ -115,8 +107,7 @@ import React,{
         //status:'Ready to donate',
         contactNumber: '01749077756',
         bloodGroup:'O-',
-      },
-      
+      },      
       {
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
@@ -195,8 +186,7 @@ import React,{
               {item.district}
             </Text>
           </View>
-  
-  
+   
           <View style={ styles.itemContainer}>
             <FontAwesome name="phone-square" size={24} color="black" />
             <Text style={{ fontWeight: 'bold',margin:5 }}>
@@ -213,22 +203,19 @@ import React,{
         </View>
        
         <Pressable 
-                style ={{
-                    height: 40,
-                    width:40,
-                    borderRadius:5,
-                    backgroundColor : "#a6020d",
-                    //marginLeft :4,
-                    //marginRight:50,
-                    marginTop :5,
-                    marginBottom:5,
-                    elevation: 10,
-                }}
-               // style ={styles.filterButton}
-                onPress={()=>triggerCall(item)}
-                >
-        <Text style={styles.textStyle}>CAll</Text>
-          </Pressable>
+          style ={{
+            height: 40,
+            width:40,
+            borderRadius:5,
+            backgroundColor : "#a6020d",
+            marginTop :5,
+            marginBottom:5,
+            elevation: 10,
+          }}
+          onPress={()=>triggerCall(item)}
+        >
+          <Text style={styles.textStyle}>CAll</Text>
+        </Pressable>
       </View>
     );
   }
@@ -282,7 +269,6 @@ import React,{
     
   return (
     <View style={styles.pageContainer}>
-    {/*<View style={styles.allFilterContainer}>*/}
       <View >
       <PatientEntryModal/>
       </View>
@@ -332,25 +318,13 @@ import React,{
             />  
           
       </View>
-   {/*</View>*/}
         <View style={styles.container}>
-          {/* <FlatList data={filteredData} renderItem={({item}) => <Text>{item}</Text>} />*/}
           <FlatList
             style={{ flex: 10, }}
             data={filteredData} 
             renderItem={({ item }) => <PatientList item={item} />}
             keyExtractor={( item ) => item.email}
           />
-         {/*} <Button 
-            onPress={()=>onPress(selectedValue)} 
-            title="Click here to filter" 
-            color="#841584" 
-          />
-          <Button 
-            onPress={()=>onPressAll()} 
-            title="Click here to see all" 
-            color="#841533" 
-          />*/}
         </View>
       </View>
     );
@@ -362,16 +336,13 @@ import React,{
       flexDirection:'column',
       margin:5,
       paddingTop:5,
-      //marginTop:1,
       justifyContent: 'space-evenly',
     },
     container: {
       flex: 10,
       backgroundColor: '#F7F7F7',
-      //marginTop: 60,
       marginTop:10,
       marginBottom:5,
-
     },
     itemContainer: {
       flex:1,
@@ -416,7 +387,6 @@ import React,{
       //paddingBottom:2,
       //height:10
     },
-  
     filterButton:{
       height:20,
       width:20,
@@ -425,7 +395,6 @@ import React,{
       padding:2,
       backgroundColor:"#4CAF50",
     },
-
     textStyle: {
       color: "white",
       fontWeight: "bold",
