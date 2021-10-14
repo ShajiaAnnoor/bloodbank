@@ -68,9 +68,7 @@ const PatientEntryModal = () => {
               <Picker.Item label="Dhaka" value="Dhaka" />
             </Picker>
           </View>
-
           
-
         <View style={styles.inputView}>
             <Picker
             selectedValue={bloodGroup}
