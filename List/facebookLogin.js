@@ -1,7 +1,6 @@
 import { LoginButton, AccessToken } from 'react-native-fbsdk';
 import React, { Component } from 'react';
 import { View } from 'react-native';
-//import { Profile } from "react-native-fbsdk-next";
 
 export default class Login extends Component {
   render() {
