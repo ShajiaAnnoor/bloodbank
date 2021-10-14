@@ -1,7 +1,6 @@
 import React, {
     useState,
 } from "react";
-
 import {
     View,
 } from "react-native";
@@ -25,8 +24,8 @@ export default function notificationResponse() {
 
     return (
         <View>
-            <Text>{title}</Text>
-            <Text>{body}</Text>
+          <Text>{title}</Text>
+          <Text>{body}</Text>
         </View>
     );
 }
