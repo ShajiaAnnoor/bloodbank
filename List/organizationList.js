@@ -8,7 +8,6 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity, 
   Pressable, 
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
@@ -20,7 +19,6 @@ import call from 'react-native-phone-call';
 
 const triggerCall = (item) => {
   // Check for perfect 10 digit length
-  
 
   const args = {
     number: item.contactNumber,
@@ -64,38 +62,20 @@ function OrganizationList({ item }) {
           </Text>
         </View>
       </View>
-      {/*<TouchableOpacity
-        style={{
-          height: 50,
-          width: 50,
-          justifyContent:'flex-start',
-          alignItems: 'flex-start',
-          marginTop :8,
-        }}>
-        <Text
-          style={{
-            color: 'green',
-            justifyContent:'flex-start',
-            alignItems: 'flex-start',
-            
-          }}>
-          click here to Call
-        </Text>
-        </TouchableOpacity>*/}
-        <Pressable 
-                style ={{
-                    height: 40,
-                    width:60,
-                    borderRadius:5,
-                    backgroundColor : "#a6020d",
-                    marginTop :5,
-                    marginBottom:5,
-                    elevation: 10,
-                }}
-                onPress={()=>triggerCall(item)}
-                >
-           <Text style={styles.textStyle}>CALL</Text>
-        </Pressable> 
+      <Pressable 
+        style ={{
+          height: 40,
+          width:60,
+          borderRadius:5,
+          backgroundColor : "#a6020d",
+          marginTop :5,
+          marginBottom:5,
+          elevation: 10,
+        }}
+        onPress={()=>triggerCall(item)}
+      >
+        <Text style={styles.textStyle}>CALL</Text>
+      </Pressable> 
     </View>
   );
 }
@@ -176,9 +156,7 @@ export default function App(){
     'Sylhet',
     'Panchagarh',
   ];
-  
-  
-  
+
   const [selectedValue, setSelectedValue] = useState("one");
     
     const [filteredData, setFilteredData] = useState(state.data);
@@ -198,9 +176,7 @@ export default function App(){
     const onPickerPress1 = (itemValue) => {
       setSelectedValue(itemValue);
     }
-  
-  
-  
+    
     return (
       <View style={styles.container2}>
       <View >
@@ -220,7 +196,6 @@ export default function App(){
           })}
         </Picker>
 
-        
         <Button 
           style={styles.filterButton}
           onPress={()=>onPressDistrict(selectedValue)} 
@@ -252,7 +227,6 @@ export default function App(){
     );
   }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 12,
@@ -264,7 +238,6 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     flexDirection:'column',
   },
-
   filterContainer: {
     flex: 1,
     padding:10,
@@ -273,19 +246,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     margin:2,
   },
-
   filterButton:{
     height:50,
     width:10,
     margin:20,
     padding:20,
     backgroundColor:"#4CAF50",
-    
-
   },
-
   container2: {
-    
     marginTop:10,
    // backgroundColor:'#fccdb8',
     width: '95%',
@@ -298,12 +266,10 @@ const styles = StyleSheet.create({
     alignContent:'space-around',
     flexBasis:10,
   },
-
   itemContainer: {
     flex:1,
     flexDirection:'row',
-    justifyContent: 'space-around'
-    
+    justifyContent: 'space-around'    
   },
   listItem: {
     margin:10,
@@ -322,12 +288,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     fontSize:10,
-    
-    //color: "white",
-    //fontWeight: "bold",
-    //textAlign: "center",
     flexWrap:'wrap',
-    //marginBottom:5,
     justifyContent:'center',
     padding:4,
     },
