@@ -230,7 +230,6 @@ export default function App(){
 const styles = StyleSheet.create({
   container: {
     flex: 12,
-    //backgroundColor: '#eda187',
     marginTop: 5,
     marginBottom:10,
     width: '100%',
