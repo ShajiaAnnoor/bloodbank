@@ -1,13 +1,11 @@
 import React, {
   useState,
-  Fragment,
 } from 'react';
 import {
-  Button,
   Image,
+  StyleSheet,
   Switch,
   View,
-  StyleSheet,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
