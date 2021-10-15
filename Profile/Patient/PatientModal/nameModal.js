@@ -10,6 +10,8 @@ import {
     TextInput,
 } from "react-native";
 
+import { styles } from "./nameModal.style";
+
 const nameEntryModal = ({mv, toggle, setName, index}) => {
   const [yourName, setYourName] = useState(' ');
   const [myName, setMyName] = useState('B'); 
