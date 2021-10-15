@@ -5,8 +5,6 @@ import {
   Switch, 
   StyleSheet,
   Text,
-  TextInput, 
-  TouchableOpacity 
 } from "react-native";
 import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
