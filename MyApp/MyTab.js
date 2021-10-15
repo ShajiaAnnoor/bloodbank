@@ -10,10 +10,10 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
-import  Organizations from '../List/organizationList';
-import Donors from '../List/donorList';
-import  Requests from '../List/requestList';
-import Patients from '../List/patientList';
+import  Organizations from '../List/Organization';
+import Donors from '../List/Donor';
+import  Requests from '../List/Request';
+import Patients from '../List/Patient';
 
 /*function Patients() {
   return (
