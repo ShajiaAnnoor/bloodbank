@@ -15,7 +15,6 @@ const addressEntryModal = ({mv, toggle,setAddress,index}) => {
  
   const [yourAddress, setYourAddress] = useState(' ');
  
-
   const handleModalSubmit = () => {
     toggle(index);
     setAddress(yourAddress);
@@ -96,7 +95,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-
   logo:{
     fontWeight:"bold",
     fontSize:30,
