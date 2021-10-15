@@ -1,5 +1,10 @@
 import React, { useState, Fragment } from "react";
-import { View, Button, StyleSheet,Text } from "react-native";
+import { 
+  View, 
+  Button, 
+  StyleSheet,
+  Text 
+} from "react-native";
 import { Octicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -28,7 +33,6 @@ const OrganizationProfile = () => {
   const toggleModalVisiblity = (i) => setModalVisible(previousState => {
     let newArr = [];
 
-    //alert("Prev" + previousState);
     for (var j of previousState) {
       newArr.push(j);
     }
@@ -38,10 +42,6 @@ const OrganizationProfile = () => {
     } else {
       newArr[ i ] = false ; 
     }
-    //newArr = previousState ;
-    //newArr[i] = !previousState[i];
-    //alert("new arr fu"+newArr);
-    //alert("index is" + i);
     return newArr ;
   })
 
@@ -61,7 +61,6 @@ const OrganizationProfile = () => {
   } else {      
     text = <Text>Available</Text>;    
   }
- // alert(modalVisible);
   return (
     <Fragment>
        <NameEntryModal mv={modalVisible[0]} toggle={toggleModalVisiblity} setName={setMyName} index={0}/>
@@ -109,17 +108,13 @@ const styles = StyleSheet.create({
   },
 
   itemContainer2: {
-    //flex:1,
     flexDirection:'row',
     justifyContent: 'space-around',
     height:"10%",
     width:"80%",
     backgroundColor:"#ebd8d9",
     margin:10,
-    //marginBottom:3,
-    //marginTop:10,
     alignItems:"center",
-    //borderRadius:25,  
   },
 });
 
