@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-
   logo:{
     fontWeight:"bold",
     fontSize:30,
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
     height:50,
     color:"white"
   },
- 
 });
 
 export default nameEntryModal;
