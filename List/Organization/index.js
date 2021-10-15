@@ -2,7 +2,6 @@ import React,{
   useState,
  } from 'react';
 import {
-  StyleSheet,
   Picker,
   Button,
   Text,
@@ -16,6 +15,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import OrganizationEntryModal from '../Forms/requestOrganizationEntryModal';
 import call from 'react-native-phone-call';
+
+import { styles } from "./organization.style";
 
 const triggerCall = (item) => {
   // Check for perfect 10 digit length
@@ -226,70 +227,4 @@ export default function App(){
       </View>
     );
   }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 12,
-    marginTop: 5,
-    marginBottom:10,
-    width: '100%',
-    justifyContent: 'space-evenly',
-    alignSelf:'center',
-    flexDirection:'column',
-  },
-  filterContainer: {
-    flex: 1,
-    padding:10,
-    alignItems: "flex-start",
-    flexDirection:'row',
-    justifyContent: 'space-between',
-    margin:2,
-  },
-  filterButton:{
-    height:50,
-    width:10,
-    margin:20,
-    padding:20,
-    backgroundColor:"#4CAF50",
-  },
-  container2: {
-    marginTop:10,
-   // backgroundColor:'#fccdb8',
-    width: '95%',
-    height: '90%',
-    flex: 1,
-    alignSelf: 'center',
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    alignItems:'stretch',
-    alignContent:'space-around',
-    flexBasis:10,
-  },
-  itemContainer: {
-    flex:1,
-    flexDirection:'row',
-    justifyContent: 'space-around'    
-  },
-  listItem: {
-    margin:10,
-    padding:10,
-    backgroundColor: '#a7d1c9',
-    width: '95%',
-    flex: 1,
-    alignSelf: 'center',
-    flexDirection: 'column',
-    borderRadius: 5,
-    alignItems:'flex-start',
-    justifyContent: 'space-between',
-  },
-  textStyle:{
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize:10,
-    flexWrap:'wrap',
-    justifyContent:'center',
-    padding:4,
-    },
-});
 
