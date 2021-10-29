@@ -18,12 +18,6 @@ import React,{
   import { styles } from "./patientlist.style";
   import PatientEntryModal from '../../Forms/patientEntryModal';
   import call from 'react-native-phone-call';
-//import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
-  //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
-  
-  //import { LoginManager } from "react-native-fbsdk-next";
-  //import LoginButton from "./facebookLogin";
-  //import {LogManager} from './facebookLoginManager';
 
   const triggerCall = (item) => {
     // Check for perfect 10 digit length
@@ -41,8 +35,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097756',
         bloodGroup:'B-',
       },
@@ -50,8 +42,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-       // availablity: 'Not Available',
-        //status:'Not yet Ready',
         contactNumber: '01749097757',
         bloodGroup:'B+',
       },
@@ -59,8 +49,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097758',
         bloodGroup:'B+',
       },
@@ -68,8 +56,6 @@ import React,{
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Chittagong',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
@@ -77,8 +63,6 @@ import React,{
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
@@ -86,8 +70,6 @@ import React,{
         name:'Jamal Hossain',
         address: 'Dhaka Medical College',
         district: 'Barishal',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
       },
@@ -95,8 +77,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097723',
         bloodGroup:'AB+',
       },
@@ -104,8 +84,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749077756',
         bloodGroup:'O-',
       },      
@@ -113,8 +91,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Barishal',
-       // availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749097762',
         bloodGroup:'O+',
       },
@@ -122,8 +98,6 @@ import React,{
        name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749337756',
         bloodGroup:'B+',
       },
@@ -131,8 +105,6 @@ import React,{
         name:'Kalmal Hossain',
         address: 'Dhaka Medical College',
         district: 'Dhaka',
-        //availablity: 'Available',
-        //status:'Ready to donate',
         contactNumber: '01749092256',
         bloodGroup:'A+',
       },
@@ -228,14 +200,6 @@ import React,{
   
     const [filteredData, setFilteredData] = useState(all_data.data);
 
-    /*
-    const onPressDistrict = (itemValue) => {
-      const newData = all_data.data.filter((item) => {
-        return item.district == itemValue;
-      });
-      setFilteredData(newData);
-    };
-    */
     const onPressAll = () => {    
       setFilteredData(all_data.data);
     };
@@ -247,13 +211,6 @@ import React,{
     const onPickerPress2 = (itemValue) => {
       setSelectedBloodGroup(itemValue);
     }
-
-    {/*const onPressGroup = (itemValue) => {
-      const newData = all_data.data.filter((item) => {
-        return item.bloodGroup == itemValue;
-      });
-      setFilteredData(newData);
-    };*/}
 
     const onPressBoth = (district, bloodgroup) => {
       const newData = all_data.data.filter((item) => {
