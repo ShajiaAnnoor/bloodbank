@@ -13,7 +13,7 @@ import { Paragraph } from 'react-native-paper';
 import call from 'react-native-phone-call';
 
 import { styles } from "./request.style";
-import FormModal from '../Forms/requestformmodal';
+import FormModal from '../../Forms/requestformmodal';
 
 let all_data = {
   data: [
