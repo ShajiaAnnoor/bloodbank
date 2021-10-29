@@ -40,6 +40,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749097756',
       bloodGroup: 'A+',
+      email: '1@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -49,6 +50,7 @@ let all_data = {
       status:'Not yet Ready',
       contactNumber: '01749097757',
       bloodGroup: 'A-',
+      email: '2@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -58,6 +60,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749097758',
       bloodGroup: 'B+',
+      email: '3@bb.com',
     },
     {
       name:'Jamal Hossain',
@@ -67,6 +70,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749097759',
       bloodGroup: 'B-',
+      email: '4@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -76,7 +80,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749097723',
       bloodGroup: 'AB+',
-
+      email: '5@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -86,6 +90,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749077756',
       bloodGroup: 'AB-',
+      email: '6@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -95,6 +100,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749097762',
       bloodGroup: 'O+',
+      email: '7@bb.com',
     },
     {
      name:'Kalmal Hossain',
@@ -104,6 +110,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749337756',
       bloodGroup: 'O+',
+      email: '8@bb.com',
     },
     {
       name:'Kalmal Hossain',
@@ -113,6 +120,7 @@ let all_data = {
       status:'Ready to donate',
       contactNumber: '01749092256',
       bloodGroup: 'A+',
+      email: '9@bb.com',
     },
   ],
 };
