@@ -15,7 +15,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import DonorEntryModal from '../Forms/donorEntryModal';
+import DonorEntryModal from '../../Forms/donorEntryModal';
 import call from 'react-native-phone-call';
 
 import { styles } from "./donorList.style";
