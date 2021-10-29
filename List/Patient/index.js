@@ -37,6 +37,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749097756',
         bloodGroup:'B-',
+        email: '1@bb.com',
       },
       {
         name:'Kalmal Hossain',
@@ -44,6 +45,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749097757',
         bloodGroup:'B+',
+        email: '2@bb.com',
       },
       {
         name:'Kalmal Hossain',
@@ -51,6 +53,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749097758',
         bloodGroup:'B+',
+        email: '3@bb.com',
       },
       {
         name:'Jamal Hossain',
@@ -58,6 +61,7 @@ import React,{
         district: 'Chittagong',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
+        email: '4@bb.com',
       },
       {
         name:'Jamal Hossain',
@@ -65,6 +69,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
+        email: '5@bb.com',
       },
       {
         name:'Jamal Hossain',
@@ -72,6 +77,7 @@ import React,{
         district: 'Barishal',
         contactNumber: '01749097759',
         bloodGroup:'AB-',
+        email: '6@bb.com',
       },
       {
         name:'Kalmal Hossain',
@@ -79,6 +85,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749097723',
         bloodGroup:'AB+',
+        email: '7@bb.com',
       },
       {
         name:'Kalmal Hossain',
@@ -86,6 +93,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749077756',
         bloodGroup:'O-',
+        email: '8@bb.com',
       },      
       {
         name:'Kalmal Hossain',
@@ -93,6 +101,7 @@ import React,{
         district: 'Barishal',
         contactNumber: '01749097762',
         bloodGroup:'O+',
+        email: '9@bb.com',
       },
       {
        name:'Kalmal Hossain',
@@ -100,6 +109,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749337756',
         bloodGroup:'B+',
+        email: '10@bb.com',
       },
       {
         name:'Kalmal Hossain',
@@ -107,6 +117,7 @@ import React,{
         district: 'Dhaka',
         contactNumber: '01749092256',
         bloodGroup:'A+',
+        email: '11@bb.com',
       },
     ],
   };
