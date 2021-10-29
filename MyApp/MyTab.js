@@ -82,7 +82,7 @@ function MyTabs() {
         name="Patients"
         component={Patients}
         options={{
-          tabBarLabel: 'Patirnts',
+          tabBarLabel: 'Patients',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-people-circle" size={24} color={color} />
           ),
