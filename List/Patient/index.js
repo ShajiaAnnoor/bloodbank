@@ -16,7 +16,7 @@ import React,{
   import { Ionicons } from '@expo/vector-icons';
 
   import { styles } from "./patientlist.style";
-  import PatientEntryModal from '../Forms/patientEntryModal';
+  import PatientEntryModal from '../../Forms/patientEntryModal';
   import call from 'react-native-phone-call';
 //import { styles } from 'react-native-fbsdk-next/types/FBLoginButton';
   //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
