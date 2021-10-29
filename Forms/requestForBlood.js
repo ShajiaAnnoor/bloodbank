@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
+import { styles } from "./requestForBlood.style";
 
 const requestForBlood= (props) => {
   const [fullName, setFullName] = useState('');
