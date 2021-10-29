@@ -248,7 +248,7 @@ export default function App() {
     <View style={styles.pageContainer}>
 
       <View >
-      <DonorEntryModal/>
+        <DonorEntryModal/>
       </View>
 
       <View style={styles.filterContainer}>
