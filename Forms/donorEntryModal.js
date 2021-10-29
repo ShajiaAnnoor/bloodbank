@@ -11,7 +11,7 @@ import {
     View, 
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
-
+import { styles } from "./donorEntryModal.style";
 
 const DonorEntryModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
