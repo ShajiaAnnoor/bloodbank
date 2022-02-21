@@ -13,7 +13,7 @@ export const setList = function(data) {
 
 export const addBloodRequest = data => {
     return {
-      type: ADD_BLOOD_REQUEST,
+      type:ADD_BLOOD_REQUEST,
       payload: data
     }
   }
