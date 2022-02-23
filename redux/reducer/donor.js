@@ -47,6 +47,16 @@ import {
           }
         }
       }
+
+      case DELETE_DONOR:{
+        const newDonorList= { ...state.donorList }
+        delete newDonorList[action.payload]
+  
+        return {
+          ...state,
+          donorList: newDonorList
+        }
+      }
   
       
           
