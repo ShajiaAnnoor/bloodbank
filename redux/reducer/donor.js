@@ -23,6 +23,18 @@ import {
           }
         }
       }
+
+      case FETCH_DONOR_LIST:{
+          const newDonorList = {}
+          action.payload.forEach(donor => {
+            newDonorList[donor.id] = donor
+          })
+          return {
+            ...state,
+            donorList: newDonorList
+          }
+        
+      }
   
       
           
