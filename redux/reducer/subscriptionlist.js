@@ -44,13 +44,13 @@ export default (state = initialState, action) => {
 
     case FETCH_BLOOD_REQUEST_LIST:{
       //const bloodRequest= action.payload
-        const newBloodRequest = {}
+        const newBloodRequestList = {}
         action.payload.forEach(bloodRequest => {
-          newBloodRequest[bloodRequest.id] = bloodRequest
+          newBloodRequestList[bloodRequest.id] = bloodRequest
         })
         return {
           ...state,
-          bloodRequestList: newBloodRequest
+          bloodRequestList: newBloodRequestList
         }
       
     }
@@ -66,6 +66,8 @@ export default (state = initialState, action) => {
         }
       }
     }
+
+   
         
       default:
         return state;
