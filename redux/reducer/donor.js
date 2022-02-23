@@ -35,6 +35,18 @@ import {
           }
         
       }
+
+      case UPDATE_DONOR:{
+        const donor= action.payload
+        return {
+          ...state,
+          donorList: {
+            ...state.donorList,
+            [donor.id]: donor,
+          
+          }
+        }
+      }
   
       
           
