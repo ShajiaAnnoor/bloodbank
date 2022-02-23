@@ -67,6 +67,15 @@ export default (state = initialState, action) => {
       }
     }
 
+    case DELETE_BLOOD_REQUEST:{
+      const newBloodRequestList= { ...state.bloodRequestList }
+      delete newBloodRequestList[action.payload]
+
+      return {
+        ...state,
+        bloodRequestList: newBloodRequestList
+      }
+    }
    
         
       default:
