@@ -57,6 +57,18 @@ import {
           donorList: newDonorList
         }
       }
+
+      case FETCH_DONOR:{
+        const donor= action.payload
+        return {
+          ...state,
+          donorList: {
+            ...state.donorList,
+            [donor.id]: donor,
+          
+          }
+        }
+      }
   
       
           
