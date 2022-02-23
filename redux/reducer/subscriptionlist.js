@@ -76,6 +76,18 @@ export default (state = initialState, action) => {
         bloodRequestList: newBloodRequestList
       }
     }
+
+    case FETCH_BLOOD_REQUEST:{
+      const bloodRequest= action.payload
+      return {
+        ...state,
+        bloodRequestList: {
+          ...state.bloodRequestList,
+          [bloodRequest.id]: bloodRequest,
+        
+        }
+      }
+    }
    
         
       default:
