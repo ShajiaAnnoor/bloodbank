@@ -27,9 +27,35 @@ const initialState = {
   }
 }*/
 
+//export default function todosReducer(state = initialState, action) {
 export default (state = initialState, action) => {
   switch(action.type) {
     case ADD_BLOOD_REQUEST:{
+      const bloodRequest= action.payload
+      return {
+        ...state,
+        bloodRequestList: {
+          ...state.bloodRequestList,
+          [bloodRequest.id]: bloodRequest,
+        
+        }
+      }
+    }
+
+    case FETCH_BLOOD_REQUEST_LIST:{
+      //const bloodRequest= action.payload
+        const newBloodRequest = {}
+        action.payload.forEach(bloodRequest => {
+          newBloodRequest[bloodRequest.id] = bloodRequest
+        })
+        return {
+          ...state,
+          bloodRequestList: newBloodRequest
+        }
+      
+    }
+
+    case UPDATE_BLOOD_REQUEST:{
       const bloodRequest= action.payload
       return {
         ...state,
