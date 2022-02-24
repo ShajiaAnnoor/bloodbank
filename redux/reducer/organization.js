@@ -36,6 +36,21 @@ import {
       
     }
 
+    case UPDATE_ORGANIZATION:{
+        const organization= action.payload
+        return {
+          ...state,
+          organizationList: {
+            ...state.organizationList,
+            [organization.id]: organization,
+          
+          }
+        }
+      }
+  
+    
+    
+
     
       
           
