@@ -48,7 +48,17 @@ import {
         }
       }
   
-    
+      case DELETE_ORGANIZATION:{
+        const newOrganizationList= { ...state.organizationList }
+        delete newOrganizationList[action.payload]
+  
+        return {
+          ...state,
+          organizationList: newOrganizationList
+        }
+      }
+  
+     
     
 
     
