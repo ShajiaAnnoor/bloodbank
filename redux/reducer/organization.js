@@ -24,8 +24,19 @@ import {
         }
       }
 
-     
-  
+      case FETCH_ORGANIZATION_LIST:{
+        const newOrganizationList = {}
+        action.payload.forEach(organization => {
+          newOrganizationList[organization.id] = organization
+        })
+        return {
+          ...state,
+          organizationList: newOrganizationList
+        }
+      
+    }
+
+    
       
           
         default:
