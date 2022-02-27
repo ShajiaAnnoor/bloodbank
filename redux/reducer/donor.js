@@ -4,6 +4,8 @@ import {
     UPDATE_DONOR,
     DELETE_DONOR,
     FETCH_DONOR,
+    SHOW_LOADER_DONOR,
+    HIDE_LOADER_DONOR,
   } from "../constants/constants";
   
   
