@@ -1,6 +1,12 @@
 import {
-    SET_LIST,
-  } from "../constants/constants";
+    ADD_PATIENT,
+    FETCH_PATIENT_LIST,
+    UPDATE_PATIENT,
+    DELETE_PATIENT,
+    FETCH_PATIENT,
+    SHOW_LOADER_PATIENT,
+    HIDE_LOADER_PATIENT,
+} from "../constants/constants";
   
   
   const initialState = {
