@@ -70,14 +70,14 @@ import {
         }
       }
 
-      case SHOW_LOADER: {
+      case SHOW_LOADER_DONOR: {
         return {
           ...state,
           isLoading:true,
         }
       }
 
-      case HIDE_LOADER: {
+      case HIDE_LOADER_DONOR: {
         return {
           ...state,
           isLoading:false,
