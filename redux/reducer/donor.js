@@ -1,5 +1,9 @@
 import {
-    SET_LIST,
+    ADD_DONOR,
+    FETCH_DONOR_LIST,
+    UPDATE_DONOR,
+    DELETE_DONOR,
+    FETCH_DONOR,
   } from "../constants/constants";
   
   
