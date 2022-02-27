@@ -1,11 +1,14 @@
 import {
-  SET_LIST,
+  ADD_BLOOD_REQUEST,
+  FETCH_BLOOD_REQUEST_LIST,
+  UPDATE_BLOOD_REQUEST,
+  DELETE_BLOOD_REQUEST,
+  FETCH_BLOOD_REQUEST,
+  SHOW_LOADER_BLOOD_REQUEST,
+  HIDE_LOADER_BLOOD_REQUEST,
 } from "../constants/constants";
 
-/*const initialState = {
-  subscriptionList: [],
-  isLoading: false,
-}*/
+
 
 const initialState = {
   bloodRequestList: [],
