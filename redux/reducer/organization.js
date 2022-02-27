@@ -70,7 +70,19 @@ import {
         }
       }
 
-    
+      case SHOW_LOADER_ORGANIZATION: {
+        return {
+          ...state,
+          isLoading:true,
+        }
+      }
+
+      case HIDE_LOADER_ORGANIZATION: {
+        return {
+          ...state,
+          isLoading:false,
+        }
+      }
       
           
         default:
