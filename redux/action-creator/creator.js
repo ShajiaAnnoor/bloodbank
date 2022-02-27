@@ -97,6 +97,17 @@ export const addBloodRequest = data => {
     }
   }
 
+  export const showLoaderDonor = () => {
+    return {
+      type: SHOW_LOADER_DONOR,
+    }
+  }
+
+  export const hideLoaderDonor = () => {
+    return {
+      type: HIDE_LOADER_DONOR,
+    }
+  }
 
 
   export const addPatient = data => {
