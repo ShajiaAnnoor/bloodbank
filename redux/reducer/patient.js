@@ -69,6 +69,20 @@ import {
           }
         }
       }
+
+      case SHOW_LOADER_PATIENT: {
+        return {
+          ...state,
+          isLoading:true,
+        }
+      }
+
+      case HIDE_LOADER_PATIENT: {
+        return {
+          ...state,
+          isLoading:false,
+        }
+      }
   
       
           
