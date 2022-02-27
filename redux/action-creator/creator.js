@@ -198,3 +198,14 @@ export const addOrganization = data => {
     }
   }
 
+  export const showLoaderOrganization = () => {
+    return {
+      type: SHOW_LOADER_ORGANIZATION,
+    }
+  }
+
+  export const hideLoaderOrganization = () => {
+    return {
+      type: HIDE_LOADER_ORGANIZATION,
+    }
+  }
