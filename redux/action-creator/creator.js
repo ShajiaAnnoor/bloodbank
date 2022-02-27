@@ -48,6 +48,18 @@ export const addBloodRequest = data => {
     }
   }
 
+  export const showLoaderBloodRequest = () => {
+    return {
+      type: SHOW_LOADER_BLOOD_REQUEST,
+    }
+  }
+
+  export const hideLoaderBloodRequest = () => {
+    return {
+      type: HIDE_LOADER_BLOOD_REQUEST,
+    }
+  }
+
   export const addDonor = data => {
     return {
       type: ADD_DONOR,
