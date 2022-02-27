@@ -54,7 +54,7 @@ import {
         }
       }
 
-      case DELETE_DONOR:{
+      case DELETE_PATIENT:{
         const newPatientList= { ...state.patientList }
         delete newPatientList[action.payload]
   
