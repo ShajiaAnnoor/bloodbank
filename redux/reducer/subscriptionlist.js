@@ -92,7 +92,19 @@ export default (state = initialState, action) => {
       }
     }
    
-        
+    case SHOW_LOADER_BLOOD_REQUEST: {
+      return {
+        ...state,
+        isLoading:true,
+      }
+    }
+
+    case HIDE_LOADER_BLOOD_REQUEST: {
+      return {
+        ...state,
+        isLoading:false,
+      }
+    }
       default:
         return state;
   }
