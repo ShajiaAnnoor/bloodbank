@@ -12,17 +12,7 @@ export async function addBloodRequestThunk(dispatch, getState) {
   }
 }
 
-export async function fetchBloodRequestThunk(dispatch, getState) {
 
-    const isLoading = getState().bloodRequest.isLoading;
-    
-    if(isLoading == false){
-        dispatch(showLoaderBloodRequest())
-        const response = await client.get('/fakeApi/todos')
-        dispatch(hideLoaderBloodRequest())
-        dispatch(fetchBloodRequest(response))
-  }
-}
 
 export async function fetchBloodRequestListThunk(dispatch, getState) {
 
@@ -33,5 +23,17 @@ export async function fetchBloodRequestListThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         dispatch(fetchBloodRequestList(response))
+  }
+}
+
+export async function fetchBloodRequestThunk(dispatch, getState) {
+
+    const isLoading = getState().bloodRequest.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderBloodRequest())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderBloodRequest())
+        dispatch(fetchBloodRequest(response))
   }
 }
