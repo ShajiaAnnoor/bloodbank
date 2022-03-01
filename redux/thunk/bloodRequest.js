@@ -12,11 +12,9 @@ export async function addBloodRequestThunk(dispatch, getState) {
   }
 }
 
-
-
 export async function fetchBloodRequestListThunk(dispatch, getState) {
 
-    const isLoading = getState().bloodRequestList.isLoading;
+    const isLoading = getState().bloodRequest.isLoading;
     
     if(isLoading == false){
         dispatch(showLoaderBloodRequest())
@@ -25,6 +23,29 @@ export async function fetchBloodRequestListThunk(dispatch, getState) {
         dispatch(fetchBloodRequestList(response))
   }
 }
+
+export async function updateBloodRequestThunk(dispatch, getState) {
+
+    const isLoading = getState().bloodRequest.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderBloodRequest())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderBloodRequest())
+        if(response.ok==true){
+            dispatch(showSuccessMessage())
+        }
+        else{
+            dispatch(showFailureMessage())
+        }
+        dispatch(updateBloodRequest(response))
+  }
+}
+
+
+
+
+
 
 export async function fetchBloodRequestThunk(dispatch, getState) {
 
