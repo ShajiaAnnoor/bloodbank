@@ -1,6 +1,6 @@
-import {addPatient, hideLoaderPatient,showLoaderPatient } from '../action-creator/creator';
+import {addPatient, deletePatient, fetchPatient, fetchPatientList, hideLoaderPatient,showLoaderPatient, updatePatient } from '../action-creator/creator';
 
-export async function addDonorThunk(dispatch, getState) {
+export async function addPatientThunk(dispatch, getState) {
 
     const isLoading = getState().donor.isLoading;
     
@@ -59,5 +59,17 @@ export async function deletePatientThunk(dispatch, getState) {
             dispatch(showFailureMessage())
         }
         dispatch(deletePatient(response))
+  }
+}
+
+export async function fetchPatientThunk(dispatch, getState) {
+
+    const isLoading = getState().patient.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderPatient())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderPatient())
+        dispatch(fetchPatient(response))
   }
 }
