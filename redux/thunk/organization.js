@@ -24,3 +24,21 @@ export async function fetchOrganizationListThunk(dispatch, getState) {
       dispatch(fetchOrganizationList(response))
 }
 }
+
+export async function updateOrganizationThunk(dispatch, getState) {
+
+  const isLoading = getState().organization.isLoading;
+  
+  if(isLoading == false){
+      dispatch(showLoaderOrganization())
+      const response = await client.get('/fakeApi/todos')
+      dispatch(hideLoaderOrganization())
+      if(response.ok==true){
+          dispatch(showSuccessMessage())
+      }
+      else{
+          dispatch(showFailureMessage())
+      }
+      dispatch(updateOrganization(response))
+}
+}
