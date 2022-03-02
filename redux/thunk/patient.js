@@ -13,3 +13,15 @@ export async function addDonorThunk(dispatch, getState) {
         dispatch(addPatient(response))
   }
 }
+
+export async function fetchPatientListThunk(dispatch, getState) {
+
+  const isLoading = getState().patient.isLoading;
+  
+  if(isLoading == false){
+      dispatch(showLoaderPatient())
+      const response = await client.get('/fakeApi/todos')
+      dispatch(hideLoaderPatient())
+      dispatch(fetchPatientList(response))
+}
+}
