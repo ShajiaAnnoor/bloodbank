@@ -43,3 +43,21 @@ export async function updateDonorThunk(dispatch, getState) {
       dispatch(updateDonor(response))
 }
 }
+
+export async function deleteDonorThunk(dispatch, getState) {
+
+    const isLoading = getState().donor.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderDonor())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderDonor())
+        if(response.ok==true){
+            dispatch(showSuccessMessage())
+        }
+        else{
+            dispatch(showFailureMessage())
+        }
+        dispatch(deleteDonor(response))
+  }
+}
