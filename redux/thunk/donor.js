@@ -25,3 +25,21 @@ export async function fetchDonorListThunk(dispatch, getState) {
       dispatch(fetchDonorList(response))
 }
 }
+
+export async function updateDonorThunk(dispatch, getState) {
+
+  const isLoading = getState().donor.isLoading;
+  
+  if(isLoading == false){
+      dispatch(showLoaderDonor())
+      const response = await client.get('/fakeApi/todos')
+      dispatch(hideLoaderDonor())
+      if(response.ok==true){
+          dispatch(showSuccessMessage())
+      }
+      else{
+          dispatch(showFailureMessage())
+      }
+      dispatch(updateDonor(response))
+}
+}
