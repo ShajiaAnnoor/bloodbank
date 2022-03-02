@@ -12,6 +12,10 @@ import {
   const initialState = {
     donorList: [],
     isLoading: false,
+    status:{
+      operationType:"",
+      verdict:"",
+    }
   
   }
   
@@ -87,6 +91,17 @@ import {
         return {
           ...state,
           isLoading:false,
+        }
+      }
+
+      case SHOW_DONOR_MESSAGE: {
+        return{
+          ...state,
+          status:{
+            operationType:action.payload.operationType,
+            verdict:action.payload.verdict,
+          }
+          
         }
       }
   
