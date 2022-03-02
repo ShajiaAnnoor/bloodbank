@@ -43,3 +43,21 @@ export async function updatePatientThunk(dispatch, getState) {
       dispatch(updatePatient(response))
 }
 }
+
+export async function deletePatientThunk(dispatch, getState) {
+
+    const isLoading = getState().patient.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderPatient())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderPatient())
+        if(response.ok==true){
+            dispatch(showSuccessMessage())
+        }
+        else{
+            dispatch(showFailureMessage())
+        }
+        dispatch(deletePatient(response))
+  }
+}
