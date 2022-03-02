@@ -1,4 +1,4 @@
-import {  addOrganization, fetchOrganizationList, hideLoaderOrganization, showLoaderOrganization } from '../action-creator/creator';
+import {  addOrganization, deleteOrganization, fetchOrganization, fetchOrganizationList, hideLoaderOrganization, showLoaderOrganization, updateOrganization } from '../action-creator/creator';
 
 export async function addOrganizationThunk(dispatch, getState) {
 
@@ -58,5 +58,17 @@ export async function deleteOrganizationThunk(dispatch, getState) {
             dispatch(showFailureMessage())
         }
         dispatch(deleteOrganization(response))
+  }
+}
+
+export async function fetchOrganizationThunk(dispatch, getState) {
+
+    const isLoading = getState().organization.isLoading;
+    
+    if(isLoading == false){
+        dispatch(showLoaderOrganization())
+        const response = await client.get('/fakeApi/todos')
+        dispatch(hideLoaderOrganization())
+        dispatch(fetchOrganization(response))
   }
 }
