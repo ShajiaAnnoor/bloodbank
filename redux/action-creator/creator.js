@@ -232,3 +232,19 @@ export const addOrganization = data => {
       type: HIDE_LOADER_ORGANIZATION,
     }
   }
+
+  export const showMessage = (primaryType, operationType, verdict) => {
+    const actionType = "",
+    if( primaryType == "donor" ) {
+      actionType = SHOW_DONOR_MESSAGE; 
+    }
+
+    const payld = {}
+    payld.operationType = operationType;
+    payld.verdict = verdict;
+
+    return {
+      type: actionType,
+      payload: payld
+    }
+  }
