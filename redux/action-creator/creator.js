@@ -1,10 +1,33 @@
 import {
+    ADD_BLOOD_REQUEST,
     ADD_DONOR,
     ADD_ORGANIZATION,
+    ADD_PATIENT,
+    DELETE_BLOOD_REQUEST,
+    DELETE_DONOR,
     DELETE_ORGANIZATION,
+    DELETE_PATIENT,
+    FETCH_BLOOD_REQUEST,
+    FETCH_BLOOD_REQUEST_LIST,
+    FETCH_DONOR,
+    FETCH_DONOR_LIST,
     FETCH_ORGANIZATION,
+    FETCH_ORGANIZATION_LIST,
+    FETCH_PATIENT,
+    FETCH_PATIENT_LIST,
+    HIDE_LOADER_BLOOD_REQUEST,
+    HIDE_LOADER_DONOR,
+    HIDE_LOADER_ORGANIZATION,
+    HIDE_LOADER_PATIENT,
     SET_LiST,
+    SHOW_LOADER_BLOOD_REQUEST,
+    SHOW_LOADER_DONOR,
+    SHOW_LOADER_ORGANIZATION,
+    SHOW_LOADER_PATIENT,
+    UPDATE_BLOOD_REQUEST,
+    UPDATE_DONOR,
     UPDATE_ORGANIZATION,
+    UPDATE_PATIENT,
 } from "../constants/constants";
 
 export const setList = function(data) {
@@ -78,7 +101,7 @@ export const addBloodRequest = data => {
 
   export const updateDonor = data => {
     return {
-      type: UPDATE_DONOR ,
+      type: UPDATE_DONOR,
       payload: data
     }
   }
@@ -171,7 +194,7 @@ export const addOrganization = data => {
 
   export const fetchOrganizationList = data => {
     return {
-      type: FETCH_ORGANIZATION,
+      type: FETCH_ORGANIZATION_LIST,
       payload: data
     }
   }
