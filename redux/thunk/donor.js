@@ -8,6 +8,12 @@ export async function addDonorThunk(dispatch, getState) {
         dispatch(showLoaderDonor())
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderDonor())
+        if(response.ok==true){
+            dispatch(showMessage('donor','add','success'))
+        }
+        else{
+            dispatch(showMessage('donor', 'add','failure'))
+        }
         
 
         dispatch(addDonor(response))
@@ -35,10 +41,10 @@ export async function updateDonorThunk(dispatch, getState) {
       const response = await client.get('/fakeApi/todos')
       dispatch(hideLoaderDonor())
       if(response.ok==true){
-          dispatch(showSuccessMessage())
+          dispatch(showMessage('donor','update','success'))
       }
       else{
-          dispatch(showFailureMessage())
+          dispatch(showMessage('donor', 'update','failure'))
       }
       dispatch(updateDonor(response))
 }
@@ -53,10 +59,10 @@ export async function deleteDonorThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderDonor())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showMessage('donor','delete','success'))
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showMessage('donor','delete','failure'))
         }
         dispatch(deleteDonor(response))
   }
