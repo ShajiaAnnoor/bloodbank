@@ -105,6 +105,17 @@ export default (state = initialState, action) => {
         isLoading:false,
       }
     }
+
+    case SHOW_BLOOD_REQUEST_MESSAGE: {
+      return{
+        ...state,
+        status:{
+          operationType:action.payload.operationType,
+          verdict:action.payload.verdict,
+        }
+        
+      }
+    }
       default:
         return state;
   }
