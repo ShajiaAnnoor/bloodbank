@@ -9,10 +9,10 @@ export async function addBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','add','success'))
         }
         else{
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','add','failure'))
         }
         dispatch(addBloodRequest(response))
   }
@@ -39,10 +39,10 @@ export async function updateBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','update','success'))
         }
         else{
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','update','failure'))
         }
         dispatch(updateBloodRequest(response))
   }
@@ -58,10 +58,10 @@ export async function deleteBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','delete','success'))
         }
         else{
-            dispatch(showMessage())
+            dispatch(showMessage('bloodRequest','delete','failure'))
         }
         dispatch(deleteBloodRequest(response))
   }
