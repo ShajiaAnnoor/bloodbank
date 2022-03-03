@@ -6,6 +6,7 @@ import {
     FETCH_ORGANIZATION,
     SHOW_LOADER_ORGANIZATION,
     HIDE_LOADER_ORGANIZATION,
+    SHOW_ORGANIZATION_MESSAGE,
   } from "../constants/constants";
   
   
@@ -87,6 +88,17 @@ import {
         return {
           ...state,
           isLoading:false,
+        }
+      }
+
+      case SHOW_ORGANIZATION_MESSAGE: {
+        return{
+          ...state,
+          status:{
+            operationType:action.payload.operationType,
+            verdict:action.payload.verdict,
+          }
+          
         }
       }
       
