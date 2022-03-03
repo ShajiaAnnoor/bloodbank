@@ -1,4 +1,4 @@
-import {  addOrganization, deleteOrganization, fetchOrganization, fetchOrganizationList, hideLoaderOrganization, showLoaderOrganization, updateOrganization } from '../action-creator/creator';
+import {  addOrganization, deleteOrganization, fetchOrganization, fetchOrganizationList, hideLoaderOrganization, showLoaderOrganization, showMessage, updateOrganization } from '../action-creator/creator';
 
 export async function addOrganizationThunk(dispatch, getState) {
 
@@ -9,10 +9,10 @@ export async function addOrganizationThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderOrganization())
         if(response.ok==true){
-            dispatch(showSuccessMessage('organization','add','success'))
+            dispatch(showMessage('organization','add','success'))
         }
         else{
-            dispatch(showFailureMessage('organization','add','failure'))
+            dispatch(showMessage('organization','add','failure'))
         }
         
         dispatch(addOrganization(response))
@@ -40,10 +40,10 @@ export async function updateOrganizationThunk(dispatch, getState) {
       const response = await client.get('/fakeApi/todos')
       dispatch(hideLoaderOrganization())
       if(response.ok==true){
-          dispatch(showSuccessMessage('organization','update','success'))
+          dispatch(showMessage('organization','update','success'))
       }
       else{
-          dispatch(showFailureMessage('organization','update','failure'))
+          dispatch(showMessage('organization','update','failure'))
       }
       dispatch(updateOrganization(response))
 }
@@ -58,10 +58,10 @@ export async function deleteOrganizationThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderOrganization())
         if(response.ok==true){
-            dispatch(showSuccessMessage('organization','delete','success'))
+            dispatch(showMessage('organization','delete','success'))
         }
         else{
-            dispatch(showFailureMessage('organization','delete','failure'))
+            dispatch(showMessage('organization','delete','failure'))
         }
         dispatch(deleteOrganization(response))
   }
