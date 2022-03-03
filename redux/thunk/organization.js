@@ -8,6 +8,12 @@ export async function addOrganizationThunk(dispatch, getState) {
         dispatch(showLoaderOrganization())
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderOrganization())
+        if(response.ok==true){
+            dispatch(showSuccessMessage('organization','add','success'))
+        }
+        else{
+            dispatch(showFailureMessage('organization','add','failure'))
+        }
         
         dispatch(addOrganization(response))
   }
@@ -34,10 +40,10 @@ export async function updateOrganizationThunk(dispatch, getState) {
       const response = await client.get('/fakeApi/todos')
       dispatch(hideLoaderOrganization())
       if(response.ok==true){
-          dispatch(showSuccessMessage())
+          dispatch(showSuccessMessage('organization','update','success'))
       }
       else{
-          dispatch(showFailureMessage())
+          dispatch(showFailureMessage('organization','update','failure'))
       }
       dispatch(updateOrganization(response))
 }
@@ -52,10 +58,10 @@ export async function deleteOrganizationThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderOrganization())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showSuccessMessage('organization','delete','success'))
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showFailureMessage('organization','delete','failure'))
         }
         dispatch(deleteOrganization(response))
   }
