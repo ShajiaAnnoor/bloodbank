@@ -90,7 +90,15 @@ import {
         }
       }
   
-      
+      case SHOW_PATIENT_MESSAGE: {
+        return{
+          ...state,
+          status:{
+            operationType:action.payload.operationType,
+            verdict:action.payload.verdict,
+          }
+        }
+      }
           
         default:
           return state;
