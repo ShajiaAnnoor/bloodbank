@@ -235,9 +235,20 @@ export const addOrganization = data => {
 
   export const showMessage = (primaryType, operationType, verdict) => {
     const actionType = "",
-    if( primaryType == "donor" ) {
-      actionType = SHOW_DONOR_MESSAGE; 
+    
+    if( primaryType == "organization" ) {
+      actionType = SHOW_ORGANIZATION_MESSAGE; 
     }
+    if( primaryType == "patient" ) {
+      actionType = SHOW_PATIENT_MESSAGE; 
+    }
+    if( primaryType == "donor" ) {
+      actionType = SHOW_PATIENT_MESSAGE; 
+    }
+    if( primaryType == "bloodRequest" ) {
+      actionType = SHOW_PATIENT_MESSAGE; 
+    }
+
 
     const payld = {}
     payld.operationType = operationType;
