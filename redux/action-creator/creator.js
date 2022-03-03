@@ -243,10 +243,10 @@ export const addOrganization = data => {
       actionType = SHOW_PATIENT_MESSAGE; 
     }
     if( primaryType == "donor" ) {
-      actionType = SHOW_PATIENT_MESSAGE; 
+      actionType = SHOW_DONOR_MESSAGE; 
     }
     if( primaryType == "bloodRequest" ) {
-      actionType = SHOW_PATIENT_MESSAGE; 
+      actionType = SHOW_BLOOD_REQUEST_MESSAGE; 
     }
 
 
