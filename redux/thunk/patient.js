@@ -1,4 +1,4 @@
-import {addPatient, deletePatient, fetchPatient, fetchPatientList, hideLoaderPatient,showLoaderPatient, updatePatient } from '../action-creator/creator';
+import {addPatient, deletePatient, fetchPatient, fetchPatientList, hideLoaderPatient,showLoaderPatient, showMessage, updatePatient } from '../action-creator/creator';
 
 export async function addPatientThunk(dispatch, getState) {
 
@@ -9,10 +9,10 @@ export async function addPatientThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderPatient())
         if(response.ok==true){
-            dispatch(showSuccessMessage('patient','add','success'))
+            dispatch(showMessage('patient','add','success'))
         }
         else{
-            dispatch(showFailureMessage('patient','add','failure'))
+            dispatch(showMessage('patient','add','failure'))
         }
         
 
@@ -41,10 +41,10 @@ export async function updatePatientThunk(dispatch, getState) {
       const response = await client.get('/fakeApi/todos')
       dispatch(hideLoaderPatient())
       if(response.ok==true){
-          dispatch(showSuccessMessage('patient','update','success'))
+          dispatch(showMessage('patient','update','success'))
       }
       else{
-          dispatch(showFailureMessage('patient','update','failure'))
+          dispatch(showMessage('patient','update','failure'))
       }
       dispatch(updatePatient(response))
 }
@@ -59,10 +59,10 @@ export async function deletePatientThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderPatient())
         if(response.ok==true){
-            dispatch(showSuccessMessage('patient','delete','success'))
+            dispatch(showMessage('patient','delete','success'))
         }
         else{
-            dispatch(showFailureMessage('patient','delete','failure'))
+            dispatch(showMessage('patient','delete','failure'))
         }
         dispatch(deletePatient(response))
   }
