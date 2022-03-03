@@ -9,10 +9,10 @@ export async function addBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showMessage())
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showMessage())
         }
         dispatch(addBloodRequest(response))
   }
@@ -39,10 +39,10 @@ export async function updateBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showMessage())
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showMessage())
         }
         dispatch(updateBloodRequest(response))
   }
@@ -58,10 +58,10 @@ export async function deleteBloodRequestThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showMessage())
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showMessage())
         }
         dispatch(deleteBloodRequest(response))
   }
