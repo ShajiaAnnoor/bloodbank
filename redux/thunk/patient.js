@@ -8,6 +8,12 @@ export async function addPatientThunk(dispatch, getState) {
         dispatch(showLoaderPatient())
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderPatient())
+        if(response.ok==true){
+            dispatch(showSuccessMessage('patient','add','success'))
+        }
+        else{
+            dispatch(showFailureMessage('patient','add','failure'))
+        }
         
 
         dispatch(addPatient(response))
@@ -35,10 +41,10 @@ export async function updatePatientThunk(dispatch, getState) {
       const response = await client.get('/fakeApi/todos')
       dispatch(hideLoaderPatient())
       if(response.ok==true){
-          dispatch(showSuccessMessage())
+          dispatch(showSuccessMessage('patient','update','success'))
       }
       else{
-          dispatch(showFailureMessage())
+          dispatch(showFailureMessage('patient','update','failure'))
       }
       dispatch(updatePatient(response))
 }
@@ -53,10 +59,10 @@ export async function deletePatientThunk(dispatch, getState) {
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderPatient())
         if(response.ok==true){
-            dispatch(showSuccessMessage())
+            dispatch(showSuccessMessage('patient','delete','success'))
         }
         else{
-            dispatch(showFailureMessage())
+            dispatch(showFailureMessage('patient','delete','failure'))
         }
         dispatch(deletePatient(response))
   }
