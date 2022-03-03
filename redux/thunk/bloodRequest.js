@@ -8,6 +8,12 @@ export async function addBloodRequestThunk(dispatch, getState) {
         dispatch(showLoaderBloodRequest())
         const response = await client.get('/fakeApi/todos')
         dispatch(hideLoaderBloodRequest())
+        if(response.ok==true){
+            dispatch(showSuccessMessage())
+        }
+        else{
+            dispatch(showFailureMessage())
+        }
         dispatch(addBloodRequest(response))
   }
 }
