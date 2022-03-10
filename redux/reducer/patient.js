@@ -104,3 +104,12 @@ import {
           return state;
     }
   }
+
+  export const getList = state => state.patientList
+
+  export const getStatus = state => state.status
+
+  export const getIsLoading = state => state.isLoading
+
+  export const getPatient = (state,id) => state.patientList[id]
+
