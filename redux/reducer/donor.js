@@ -111,3 +111,15 @@ import {
           return state;
     }
   }
+
+  export const getList = state => state.donorList
+
+  export const getStatus = state => state.status
+
+  export const getIsLoading = state => state.isLoading
+
+  export const getDonor = (state,id) => state.donorList[id]
+
+  
+
+
