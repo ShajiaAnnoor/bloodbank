@@ -120,3 +120,11 @@ export default (state = initialState, action) => {
         return state;
   }
 }
+
+export const getList = state => state.bloodRequestList
+
+export const getStatus = state => state.status
+
+export const getIsLoading = state => state.isLoading
+
+export const getBloodRequest = (state,id) => state.bloodRequestList[id]
