@@ -13,6 +13,11 @@ import {
 const initialState = {
   bloodRequestList: [],
   isLoading: false,
+  status:{
+    operationType:"",
+    verdict:"",
+  },
+  districtFilter: ""
 
 }
 
@@ -118,6 +123,21 @@ export default (state = initialState, action) => {
     }
       default:
         return state;
+  }
+}
+
+export const getList = createSelector(
+  state => state.bloodRequestList,
+
+  bloodRequestList => getFilteredList(bloodRequestList)
+)
+export const getFilteredList = state => {
+  if( state.districtFilter == "" ) return state.bloodRequestList;
+  else {
+    const newData = state.bloodRequestList.filter((item) => {
+      return item.district == state.districtFilter;
+    });
+    return newData;
   }
 }
 
