@@ -134,21 +134,33 @@ export default function App(){
     ],
   };
 
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchOrganizationListThunk)
+
+    return function cleanup() {
+
+    }
+
+  });
   
+
+  const filteredData = useSelector(getOrganizatonList);
+
     return (
       <View style={styles.container2}>
-      <View >
-      <OrganizationEntryModal/>
-      </View>
-      <View style={styles.container}>
-        <FlatList
-          numColumns={1}
-          style={{ flex: 15 }}
-          data={state.data}
-          renderItem={({ item }) => <OrganizationList item={item} />}
-          keyExtractor={(item) => item.contactNumber}
-        />
-      </View>
+        <View>
+          <OrganizationEntryModal/>
+        </View>
+        <View style={styles.container}>
+          <FlatList
+            numColumns={1}
+            style={{ flex: 15 }}
+            data={filteredData}
+            renderItem={({ item }) => <OrganizationList item={item} />}
+            keyExtractor={(item) => item.contactNumber}
+          />
+        </View>
       </View>
     );
   }
