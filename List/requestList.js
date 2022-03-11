@@ -273,6 +273,18 @@ export default function App() {
     ],
   };
 
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchBloodRequestListThunk)
+
+    return function cleanup() {
+
+    }
+
+  })
+  //const [filteredData, setFilteredData] = useState(all_data.data);
+  const filteredData = useSelector(getBloodRequestList);
+
   return (
     <View style={styles.container2}>
       <View >
@@ -282,7 +294,7 @@ export default function App() {
       <FlatList       
         numColumns={1}
         style={{ flex: 15 }}
-        data={state.data}
+        data={filteredData}
         renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.phone}
       />
