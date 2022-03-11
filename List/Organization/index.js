@@ -2,8 +2,6 @@ import React,{
   useState,
  } from 'react';
 import {
-  Picker,
-  Button,
   Text,
   View,
   FlatList,
@@ -147,83 +145,33 @@ export default function App(){
     ],
   };
 
-  const AllDistrict =[
-    'Dhaka',
-    'Chittagong',
-    'Barishal',
-    'Rajshahi',
-    'Mymensingh',
-    'Rangpur',
-    'Sylhet',
-    'Panchagarh',
-  ];
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchOrganizationListThunk)
 
-  const [selectedValue, setSelectedValue] = useState("one");
-    
-    const [filteredData, setFilteredData] = useState(state.data);
-  
-    const onPressDistrict = (itemValue) => {
-      const newData = state.data.filter((item) => {
-        return item.district == itemValue;
-      });
-      setFilteredData(newData);
-    };
-  
-    const onPressAll = () => {    
-      setFilteredData(state.data);
-      //setSelectedValue(itemValue)
-    };
-  
-    const onPickerPress1 = (itemValue) => {
-      setSelectedValue(itemValue);
+    return function cleanup() {
+
     }
-    
+
+  });
+  
+
+  const filteredData = useSelector(getOrganizatonList);
+
     return (
       <View style={styles.container2}>
-      <View >
-      <OrganizationEntryModal/>
-      </View>
-
-      <View style={styles.filterContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150  }}
-          onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
-        >
-          {AllDistrict.map((district) => {
-            return(
-              <Picker.Item label={district} value={district}/>
-            );
-          })}
-        </Picker>
-
-        <Button 
-          style={styles.filterButton}
-          onPress={()=>onPressDistrict(selectedValue)} 
-          title="Click" 
-          color='#a7d1c9' 
-          touchSoundDisabled ="false"
-        />
-
-          <Button 
-            style={styles.filterButton}
-            onPress={()=>onPressAll()} 
-            title="See All" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          />  
-
-        
-    </View>
-      <View style={styles.container}>
-        <FlatList
-          numColumns={1}
-          style={{ flex:15,height:"50%", }}
-          data={filteredData}
-          renderItem={({ item }) => <OrganizationList item={item} />}
-          keyExtractor={(item) => item.contactNumber}
-        />
-      </View>
+        <View>
+          <OrganizationEntryModal/>
+        </View>
+        <View style={styles.container}>
+          <FlatList
+            numColumns={1}
+            style={{ flex: 15 }}
+            data={filteredData}
+            renderItem={({ item }) => <OrganizationList item={item} />}
+            keyExtractor={(item) => item.contactNumber}
+          />
+        </View>
       </View>
     );
   }

@@ -17,6 +17,8 @@ import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import DonorEntryModal from '../../Forms/donorEntryModal';
 import call from 'react-native-phone-call';
+import { useSelector } from 'react-redux';
+import { fetchDonorListThunk } from '../redux/thunk/donor';
 
 import { styles } from "./donorList.style";
 
@@ -29,6 +31,7 @@ const triggerCall = (item) => {
   // Make a call
   call(args).catch(console.error);
 };
+//import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 let all_data = {
   data: [
@@ -222,6 +225,7 @@ function DonorList({ item }) {
 
 export default function App() {
   
+<<<<<<< HEAD:List/Donor/index.js
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
 
@@ -229,6 +233,35 @@ export default function App() {
 
   const onPressAll = () => {    
     setFilteredData(all_data.data);
+=======
+  const [selectedValue, setSelectedValue] = useState("one");
+  
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchDonorListThunk)
+
+    return function cleanup() {
+
+    }
+
+  })
+  //const [filteredData, setFilteredData] = useState(all_data.data);
+  const filteredData = useSelector(getDonorList);
+
+  const onPress = (itemValue) => {
+    dispatch(setDonorDistrictFilter(itemValue))
+    /*
+    const newData = all_data.data.filter((item) => {
+      return item.district == itemValue;
+    });
+    setFilteredData(newData);
+    */
+  };
+
+  const onPressAll = () => {    
+    dispatch(setDonorDistrictFilter(""));
+    //setSelectedValue(itemValue)
+>>>>>>> main:List/donorList.js
   };
 
   const onPickerPress1 = (itemValue) => {
