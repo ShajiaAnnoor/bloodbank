@@ -30,3 +30,7 @@ export const getBloodRequestStatus = state => fromBloodRequest.getStatus(state.b
 export const getBloodRequestIsLoading = state => fromBloodRequest.getIsLoading(state.bloodRequest)
 export const getBloodRequest = state => fromBloodRequest.getBloodRequest(state.bloodRequest)
 
+export const getDonorList = state => fromDonor.getList(state.organization)
+export const getDonorStatus = state => fromDonor.getStatus(state.organization)
+export const getDonorIsLoading = state => fromDonor.getIsLoading(state.organization)
+export const getDonor = state => fromDonor.getDonor(state.organization)
