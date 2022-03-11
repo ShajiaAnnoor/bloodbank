@@ -13,6 +13,11 @@ import {
   const initialState = {
     organizationList: [],
     isLoading: false,
+    status:{
+      operationType:"",
+      verdict:"",
+    },
+    districtFilter: ""
   
   }
   
@@ -105,6 +110,21 @@ import {
           
         default:
           return state;
+    }
+  }
+
+  export const getList = createSelector(
+    state => state.organizationList,
+
+    organizationList => getFilteredList(organizationList)
+  )
+  export const getFilteredList = state => {
+    if( state.districtFilter == "" ) return state.organizationList;
+    else {
+      const newData = state.organizationList.filter((item) => {
+        return item.district == state.districtFilter;
+      });
+      return newData;
     }
   }
 
