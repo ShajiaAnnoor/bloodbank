@@ -136,7 +136,13 @@ export const addBloodRequest = data => {
     }
   }
 
-
+ export const setDonorDistrictFilter = (district) => {
+   return {
+     type: SET_DONOR_DISTRICT_FILTER,
+     payload: district
+   }
+ }
+ 
   export const addPatient = data => {
     return {
       type: ADD_PATIENT,
