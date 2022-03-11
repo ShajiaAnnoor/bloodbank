@@ -6,6 +6,7 @@ import {
     FETCH_DONOR,
     SHOW_LOADER_DONOR,
     HIDE_LOADER_DONOR,
+    SET_DONOR_DISTRICT_FILTER,
   } from "../constants/constants";
   
   
@@ -15,8 +16,8 @@ import {
     status:{
       operationType:"",
       verdict:"",
-    }
-  
+    },
+    districtFilter: ""
   }
   
   
@@ -105,21 +106,38 @@ import {
         }
       }
   
-      
+      case SET_DONOR_DISTRICT_FILTER: {
+        return {
+          ...state,
+          districtFilter: action.payload
+        }
+      }      
           
         default:
           return state;
     }
   }
 
-  export const getList = state => state.donorList
+  export const getList = createSelector(
+    state => state.donorList,
 
+    donorList => getFilteredList(donorList)
+  )
+  export const getFilteredList = state => {
+    if( state.districtFilter == "" ) return state.donorList;
+    else {
+      const newData = state.donorList.filter((item) => {
+        return item.district == state.districtFilter;
+      });
+      return newData;
+    }
+  }
+  
   export const getStatus = state => state.status
 
   export const getIsLoading = state => state.isLoading
 
   export const getDonor = (state,id) => state.donorList[id]
-
   
 
 
