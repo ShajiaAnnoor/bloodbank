@@ -12,6 +12,11 @@ import {
   const initialState = {
     patientList: [],
     isLoading: false,
+    status:{
+      operationType:"",
+      verdict:"",
+    },
+    districtFilter: ""
   
   }
   
@@ -102,6 +107,21 @@ import {
           
         default:
           return state;
+    }
+  }
+
+  export const getList = createSelector(
+    state => state.patientList,
+
+    patientList => getFilteredList(patientList)
+  )
+  export const getFilteredList = state => {
+    if( state.districtFilter == "" ) return state.patientList;
+    else {
+      const newData = state.patientList.filter((item) => {
+        return item.district == state.districtFilter;
+      });
+      return newData;
     }
   }
 
