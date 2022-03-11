@@ -190,19 +190,49 @@ export default function App(){
 
     return (
       <View style={styles.container2}>
-        <View>
+        <View >
           <OrganizationEntryModal/>
         </View>
-        <View style={styles.container}>
-          <FlatList
-            numColumns={1}
-            style={{ flex: 15 }}
-            data={filteredData}
-            renderItem={({ item }) => <OrganizationList item={item} />}
-            keyExtractor={(item) => item.contactNumber}
-          />
-        </View>
+
+        <View style={styles.filterContainer}>
+          <Picker
+            selectedValue={selectedValue}
+            style={{ height: 50, width: 150  }}
+            onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
+          >
+            {AllDistrict.map((district) => {
+              return(
+                <Picker.Item label={district} value={district}/>
+              );
+            })}
+          </Picker>
+
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressDistrict(selectedValue)} 
+          title="Click" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />
+
+        <Button 
+          style={styles.filterButton}
+          onPress={()=>onPressAll()} 
+          title="See All" 
+          color='#a7d1c9' 
+          touchSoundDisabled ="false"
+        />  
       </View>
+      <View style={styles.container}>
+        <FlatList
+          numColumns={1}
+          style={{ flex: 15 }}
+          data={filteredData}
+          renderItem={({ item }) => <OrganizationList item={item} />}
+          keyExtractor={(item) => item.contactNumber}
+        />
+      </View>
+    </View>
     );
   }
 
