@@ -155,6 +155,36 @@ export default function App(){
 
   });
   
+  const AllDistrict =[
+    'Dhaka',
+    'Chittagong',
+    'Barishal',
+    'Rajshahi',
+    'Mymensingh',
+    'Rangpur',
+    'Sylhet',
+    'Panchagarh',
+  ];
+
+  const [selectedValue, setSelectedValue] = useState("one");
+    
+    const [filteredData, setFilteredData] = useState(state.data);
+  
+    const onPressDistrict = (itemValue) => {
+      const newData = state.data.filter((item) => {
+        return item.district == itemValue;
+      });
+      setFilteredData(newData);
+    };
+  
+    const onPressAll = () => {    
+      setFilteredData(state.data);
+      //setSelectedValue(itemValue)
+    };
+  
+    const onPickerPress1 = (itemValue) => {
+      setSelectedValue(itemValue);
+    }
 
   const filteredData = useSelector(getOrganizatonList);
 
