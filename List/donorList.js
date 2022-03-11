@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import {
   Button,
   FlatList,
@@ -14,6 +14,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { useSelector } from 'react-redux';
+import { fetchDonorListThunk } from '../redux/thunk/donor';
 //import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 //import { LoginManager } from "react-native-fbsdk-next";
@@ -187,17 +189,30 @@ export default function App() {
   
   const [selectedValue, setSelectedValue] = useState("one");
   
-  const [filteredData, setFilteredData] = useState(all_data.data);
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchDonorListThunk)
+
+    return function cleanup() {
+
+    }
+
+  })
+  //const [filteredData, setFilteredData] = useState(all_data.data);
+  const all_data = useSelector(getDonorList);
 
   const onPress = (itemValue) => {
+    dispatch(setDonorDistrictFilter(itemValue))
+    /*
     const newData = all_data.data.filter((item) => {
       return item.district == itemValue;
     });
     setFilteredData(newData);
+    */
   };
 
   const onPressAll = () => {    
-    setFilteredData(all_data.data);
+    dispatch(setDonorDistrictFilter(""));
     //setSelectedValue(itemValue)
   };
 
