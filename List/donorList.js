@@ -199,7 +199,7 @@ export default function App() {
 
   })
   //const [filteredData, setFilteredData] = useState(all_data.data);
-  const all_data = useSelector(getDonorList);
+  const filteredData = useSelector(getDonorList);
 
   const onPress = (itemValue) => {
     dispatch(setDonorDistrictFilter(itemValue))
