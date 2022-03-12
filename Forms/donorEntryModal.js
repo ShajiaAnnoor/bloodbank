@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import { styles } from "./donorEntryModal.style";
+import { addDonorThunk } from "../redux/thunk/donor";
 
 const DonorEntryModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -103,7 +104,9 @@ const DonorEntryModal = () => {
             />
           </View>  
             
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity 
+          style={styles.loginBtn}>
+          onPress={() => dispatch(addDonorThunk)}
             <Text style={styles.loginText}>
               Create Entry
             </Text>
