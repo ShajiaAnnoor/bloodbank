@@ -12,6 +12,7 @@ import { Picker } from '@react-native-community/picker';
 import DatePicker from 'react-native-datepicker';
 
 import { styles } from "./requestFormModal.style";
+import { addBloodRequestThunk } from "../redux/thunk/bloodRequest";
 
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -107,7 +108,8 @@ const App = () => {
           <View>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              //onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => dispatch(addBloodRequestThunk)}
             >
               <Text style={styles.textStyle}>POST</Text>
             </Pressable>
