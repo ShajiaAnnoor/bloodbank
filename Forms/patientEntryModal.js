@@ -13,6 +13,7 @@ import {
 import { Picker } from '@react-native-community/picker';
 
 import { styles } from "./patientEntryModal.style";
+import { addPatientThunk } from "../redux/thunk/patient";
 
 const PatientEntryModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -97,7 +98,9 @@ const PatientEntryModal = () => {
             />
           </View>  
             
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity 
+            style={styles.loginBtn}>
+            onPress={() => dispatch(addPatientThunk)}
             <Text style={styles.loginText}>
               Create Entry
             </Text>
