@@ -18,7 +18,7 @@ import { Ionicons } from '@expo/vector-icons';
 import DonorEntryModal from '../../Forms/donorEntryModal';
 import call from 'react-native-phone-call';
 import { useSelector } from 'react-redux';
-import { fetchDonorListThunk } from '../redux/thunk/donor';
+import { fetchDonorListThunk } from '../../redux/thunk/donor';
 
 import { styles } from "./donorList.style";
 
@@ -225,15 +225,6 @@ function DonorList({ item }) {
 
 export default function App() {
   
-<<<<<<< HEAD:List/Donor/index.js
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-  const [selectedBloodGroup, setSelectedBloodGroup] = useState("");
-
-  const [filteredData, setFilteredData] = useState(all_data.data);
-
-  const onPressAll = () => {    
-    setFilteredData(all_data.data);
-=======
   const [selectedValue, setSelectedValue] = useState("one");
   
   useEffect(()=>{
@@ -261,7 +252,6 @@ export default function App() {
   const onPressAll = () => {    
     dispatch(setDonorDistrictFilter(""));
     //setSelectedValue(itemValue)
->>>>>>> main:List/donorList.js
   };
 
   const onPickerPress1 = (itemValue) => {
