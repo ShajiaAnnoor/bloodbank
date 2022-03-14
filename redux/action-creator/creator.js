@@ -244,7 +244,7 @@ export const addOrganization = data => {
   }
 
   export const showMessage = (primaryType, operationType, verdict) => {
-    const actionType = "",
+    const actionType = "";
     
     if( primaryType == "organization" ) {
       actionType = SHOW_ORGANIZATION_MESSAGE; 
