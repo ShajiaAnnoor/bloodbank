@@ -7,8 +7,7 @@ import {
   SHOW_LOADER_BLOOD_REQUEST,
   HIDE_LOADER_BLOOD_REQUEST,
 } from "../constants/constants";
-
-
+import { createSelector } from "reselect";
 
 const initialState = {
   bloodRequestList: [],
@@ -141,7 +140,7 @@ export const getFilteredList = state => {
   }
 }
 
-export const getList = state => state.bloodRequestList
+//export const getList = state => state.bloodRequestList
 
 export const getStatus = state => state.status
 
