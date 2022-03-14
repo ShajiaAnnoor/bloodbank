@@ -168,7 +168,7 @@ export default function App(){
 
   const [selectedValue, setSelectedValue] = useState("one");
     
-    const [filteredData, setFilteredData] = useState(state.data);
+//    const [filteredData, setFilteredData] = useState(state.data);
   
     const onPressDistrict = (itemValue) => {
       const newData = state.data.filter((item) => {
