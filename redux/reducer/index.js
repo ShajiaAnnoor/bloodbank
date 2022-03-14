@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
-import donor from "./donor";
-import organization from "./organization";
-import patient from "./patient";
-import subscriptionList from "./subscriptionlist";
+import organization, * as fromOrganization from "./organization";
+import patient, * as fromPatient from "./patient";
 import donor, * as fromDonor from "./donor";
+import bloodRequest, * as fromBloodRequest from "./bloodRequest";
 
 const rootReducer = combineReducers({
     "bloodRequest" : bloodRequest,
@@ -30,7 +29,7 @@ export const getBloodRequestStatus = state => fromBloodRequest.getStatus(state.b
 export const getBloodRequestIsLoading = state => fromBloodRequest.getIsLoading(state.bloodRequest)
 export const getBloodRequest = state => fromBloodRequest.getBloodRequest(state.bloodRequest)
 
-export const getDonorList = state => fromDonor.getList(state.organization)
-export const getDonorStatus = state => fromDonor.getStatus(state.organization)
-export const getDonorIsLoading = state => fromDonor.getIsLoading(state.organization)
-export const getDonor = state => fromDonor.getDonor(state.organization)
+export const getOrganizationList = state => fromOrganization.getList(state.organization)
+export const getOrganizationStatus = state => fromOrganization.getStatus(state.organization)
+export const getOrganizationIsLoading = state => fromOrganization.getIsLoading(state.organization)
+export const getOrganization = state => fromOrganization.getDonor(state.organization)
