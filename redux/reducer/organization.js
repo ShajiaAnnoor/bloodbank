@@ -8,7 +8,8 @@ import {
     HIDE_LOADER_ORGANIZATION,
     SHOW_ORGANIZATION_MESSAGE,
   } from "../constants/constants";
-  import {createSelector} from Reselect;
+
+  import { createSelector } from "reselect";
   
   
   const initialState = {
@@ -129,7 +130,7 @@ import {
     }
   }
 
-  export const getList = state => state.organizationList
+//  export const getList = state => state.organizationList
 
 export const getStatus = state => state.status
 
