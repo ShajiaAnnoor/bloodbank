@@ -240,22 +240,6 @@ function Item({ item }) {
       </View>
 
       <View style = {styles.ShareButtonContainer}>
-       {/*<Button 
-            style={styles.filterButton}
-            onPress={()=>postOnFacebook(item)} 
-            title="Share on FB" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-          /> 
-
-     <Button 
-            style={styles.filterButton}
-            onPress={()=>shareMessage(item)} 
-            title="Share" 
-            color='#a7d1c9' 
-            touchSoundDisabled ="false"
-     /> */}
-
        <Pressable 
         style = {{
           height:30,
@@ -322,18 +306,6 @@ export default function App() {
 
   const [filteredData, setFilteredData] = useState(all_data.data);
 
-
-//const [selectedValue, setSelectedValue] = useState("one");
-  
-  //const [filteredData, setFilteredData] = useState(all-data.data);
-
-  {/*const onPressDistrict = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.district == itemValue;
-    });
-    setFilteredData(newData);
-  };*/}
-
   const onPressAll = () => {    
     setFilteredData(all_data.data);
     //setSelectedValue(itemValue)
@@ -360,18 +332,17 @@ export default function App() {
     setFilteredData(finalData);
   }
 
- {/* const onPressGroup = (itemValue) => {
-    const newData = all_data.data.filter((item) => {
-      return item.bloodGroup == itemValue;
-    });
-    setFilteredData(newData);
-  };
+  useEffect(()=>{
+    //api call will be made by dispatching thunks
+    dispatch(fetchBloodRequestListThunk)
 
-  const onPressAllGroup= () => {    
-    setFilteredData(all_data.data);
-    //setSelectedValue(itemValue)
-  };*/}
+    return function cleanup() {
 
+    }
+
+  })
+  //const [filteredData, setFilteredData] = useState(all_data.data);
+  const filteredData = useSelector(getBloodRequestList);
 
   return (
     <View style={styles.container2}>
