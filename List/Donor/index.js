@@ -19,7 +19,7 @@ import DonorEntryModal from '../../Forms/donorEntryModal';
 import call from 'react-native-phone-call';
 import { useSelector } from 'react-redux';
 import { fetchDonorListThunk } from '../../redux/thunk/donor';
-
+import {getDonorList} from '../../redux/reducer/donor';
 import { styles } from "./donorList.style";
 
 const triggerCall = (item) => {
