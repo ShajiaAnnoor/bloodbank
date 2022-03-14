@@ -7,6 +7,7 @@ import {
     SHOW_LOADER_PATIENT,
     HIDE_LOADER_PATIENT,
 } from "../constants/constants";
+import { createSelector } from "reselect";
   
   
   const initialState = {
@@ -125,7 +126,7 @@ import {
     }
   }
 
-  export const getList = state => state.patientList
+//  export const getList = state => state.patientList
 
   export const getStatus = state => state.status
 
