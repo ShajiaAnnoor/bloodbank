@@ -9,26 +9,12 @@ import {
     TouchableOpacity,
     View, 
 } from "react-native";
-import { Picker } from '@react-native-community/picker';
 
+import { Picker } from '@react-native-community/picker';
 import { styles } from "./requestOrganizationEntryModal.style";
 import { enterOrganizationThunk } from "../redux/thunk/organization";
-import React, { 
-  useState, 
-} from "react";
-import { 
-  Modal,
-  Pressable, 
-  Text, 
-  TextInput,
-  TouchableOpacity,
-  View, 
-} from "react-native";
-import { Picker } from '@react-native-community/picker';
 
-import { styles } from "./requestOrganizationEntryModal.style";
-import { addOrganizationThunk } from "../redux/thunk/organization";
-
+/*
 const App = () => {
 const [modalVisible, setModalVisible] = useState(false);
 const [organizationName, setOrganizationName] = useState('');
@@ -128,6 +114,7 @@ return (
 };
 
 export default App;
+*/
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [organizationName, setOrganizationName] = useState('');
