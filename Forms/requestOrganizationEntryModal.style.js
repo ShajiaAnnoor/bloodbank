@@ -18,12 +18,12 @@ export const styles = StyleSheet.create({
     },
     button: {
       borderRadius:10,
-      margin:10,
+      margin:1,
       justifyContent:'space-around',
-      padding:30,
+      padding: 20,
       width: '100%',
       height: '90%',
-      flex: 9,
+      flex:9,
       alignSelf: 'center',
     },
     buttonOpen: {
