@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
       padding:2,
       flexDirection:'row',
       justifyContent: 'space-between',
-      marginBottom:5,
+      marginBottom:1,
       flexWrap:'nowrap',
     },
     allFilterContainer: {
