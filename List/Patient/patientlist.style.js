@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
      // alignItems: "flex-start",
       flexDirection:'row',
       justifyContent: 'space-between',
-      marginBottom:5,
+      marginBottom:1,
       //paddingBottom:2,
       flexWrap:'nowrap',
      // alignContent:'space-around',
