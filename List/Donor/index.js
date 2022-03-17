@@ -204,7 +204,7 @@ function DonorList({ item }) {
       </View>
       <Pressable 
                 style ={{
-                    height: 40,
+                    height: 25,
                     width:60,
                     borderRadius:5,
                     backgroundColor : "#a6020d",
@@ -262,7 +262,7 @@ export default function App() {
       <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
-            style={{ height: 50, width: 150, margin:2,padding:2,}}
+            style={{ height: 30, width: 150, margin:2,padding:2,}}
             onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
           >
             {AllDistrict.map((district) => {
