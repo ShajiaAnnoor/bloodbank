@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
       flex: 10,
       backgroundColor: '#F7F7F7',
       //backgroundColor: '#eda187',
-      marginTop: 8,
+      marginTop: 5,
       marginBottom:5,
       width: '90%',
       justifyContent: 'space-between',
