@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-      flex: 10,
+      flex: 11,
       backgroundColor: '#F7F7F7',
       //backgroundColor: '#eda187',
       marginTop: 5,
@@ -26,30 +26,32 @@ export const styles = StyleSheet.create({
     },
   
     modalButtonContainer:{
-      //margin: 10,
-      //padding: 10,
-      backgroundColor: '#FFF',
-      width: '100%',
-      height: '100%',
-      flex:2,
+      //margin: 1,
+      paddingTop: 1,
+      paddingBottom:7,
+      //backgroundColor: '#FAFF',
+      width: '90%',
+      height: '80%',
+      flex:1.4,
       alignSelf: 'center',
-      //flexDirection: 'column',
+      flexDirection: 'column',
       //borderRadius: 50,
     },
   
     container2: {
-      marginTop:1,
+      //marginTop:1,
       //backgroundColor:'#fccdb8',
       //backgroundColor: '#eda187',
       width: '95%',
       height: '90%',
       flex: 1,
+      paddingTop:1,
       alignSelf: 'center',
       flexDirection: 'column',
       justifyContent: 'space-evenly',
-      alignItems:'stretch',
-      alignContent:'space-around',
-      flexBasis:10,
+      //alignItems:'stretch',
+      //alignContent:'space-around',
+      //flexBasis:10,
     },
     listItem: {
       marginTop: 5,
@@ -106,14 +108,16 @@ export const styles = StyleSheet.create({
     filterContainer: {
       flex: 1,
       padding:2,
+      //backgroundColor:"#4CAF60",
       //paddingTop:5,
      // alignItems: "flex-start",
+     //alignSelf: 'center',
       flexDirection:'row',
       justifyContent: 'space-between',
-      marginBottom:5,
+      marginBottom:1,
       //paddingBottom:2,
       flexWrap:'nowrap',
-     // alignContent:'space-around',
+     //alignContent:'space-around',
     },
     
     textStyle:{
