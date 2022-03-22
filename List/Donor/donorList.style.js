@@ -2,11 +2,14 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     pageContainer: {
+      width: '98%',
+      height: '90%',
       flex:1,
       flexDirection:'column',
-      margin:5,
-      paddingTop:5,
-      justifyContent: 'space-evenly',
+     // margin:5,
+      paddingTop:1,
+      alignSelf: 'center',
+      //justifyContent: 'space-evenly',
     },
     container: {
       flex: 10,
@@ -40,6 +43,18 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between',
       marginBottom:1,
       flexWrap:'nowrap',
+    },
+    modalButtonContainer:{
+      //margin: 1,
+      paddingTop: 1,
+      paddingBottom:7,
+      //backgroundColor: '#FAFF',
+      width: '90%',
+      height: '80%',
+      flex:1.4,
+      alignSelf: 'center',
+      flexDirection: 'column',
+      //borderRadius: 50,
     },
     allFilterContainer: {
       flex: 1,
