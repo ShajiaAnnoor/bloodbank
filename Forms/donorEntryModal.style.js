@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
       elevation: 5,
     },
     button: {
-      borderRadius:10,
-      margin:1,
+      borderRadius:20,
+      margin:5,
       justifyContent:'space-around',
       padding: 20,
       width: '100%',
