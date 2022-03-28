@@ -11,8 +11,12 @@ import {
   Button,
   Pressable,  
 } from 'react-native';
+
 import { Paragraph } from 'react-native-paper';
-//import call from 'react-native-phone-call';
+import { AntDesign, Octicons, Entypo } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome ,FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 import { styles } from "./request.style";
 import FormModal from '../../Forms/requestformmodal';
@@ -228,22 +232,72 @@ function Item({ item }) {
   return (
     <View style={styles.listItem}>
       <View style={{ alignItems: 'flex-start', flex: 1 }}>
-        <Paragraph style={{ fontWeight: 'bold',}} >{item.name} </Paragraph>
+        {/*<Paragraph style={{ fontWeight: 'bold',}} >{item.name} </Paragraph>
         <Text style={{ fontWeight: 'bold',}}>{item.bloodGroup} </Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.district}</Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.area}</Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.address}</Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.quantity}</Text>
         <Text style={{ fontWeight: 'bold',  }} >{item.phone}</Text>
-        <Paragraph style={{ fontWeight: 'bold',  }} >{item.reason}</Paragraph>
-        
+        <Paragraph style={{ fontWeight: 'bold',  }} >{item.reason}</Paragraph>*/}
+        <View style={ styles.itemContainer}>
+          <FontAwesome name="bed" size={24} color="black" />
+          <Text style={styles.listItemTextStyle} > 
+            {item.name} 
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <Ionicons name="ios-heart-circle-sharp" size={24} color="black" />
+          <Text style={{ fontWeight: 'bold',margin:5 }}>
+            {item.bloodGroup}
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <MaterialIcons name="location-city" size={24} color="black" />
+          <Text style={styles.listItemTextStyle}>
+            {item.district}
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <Octicons name="location" size={24} color="black" />
+          <Paragraph style={styles.listItemTextStyle}>
+            {item.address}
+          </Paragraph>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <Entypo name="drop" size={24} color="black" />
+          <Text style={styles.listItemTextStyle}>
+            {item.quantity}
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <FontAwesome name="phone-square" size={24} color="black" />
+          <Text style={styles.listItemTextStyle}>
+            {item.phone}
+          </Text>
+        </View>
+
+        <View style={ styles.itemContainer}>
+          <AntDesign name="infocirlce" size={24} color="black" />
+          <Paragraph style={styles.listItemTextStyle}>
+            {item.reason}
+          </Paragraph>
+        </View>
       </View>
+
+    
 
       <View style = {styles.ShareButtonContainer}>
        {/*<Button 
             style={styles.filterButton}
             onPress={()=>postOnFacebook(item)} 
             title="Share on FB" 
+            color='#a7d1c9' 
             color='#a7d1c9' 
             touchSoundDisabled ="false"
           /> 
