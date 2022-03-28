@@ -155,42 +155,42 @@ function DonorList({ item }) {
           
         <View style={ styles.itemContainer}>
           <Ionicons name="person-circle" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold', margin:5, alignContent: 'space-between'}} > 
+          <Text style={styles.listItemTextStyle} > 
             {item.name} 
           </Text>
         </View>
         
         <View style={ styles.itemContainer}>
           <Octicons name="location" size={24} color="black" />
-          <Paragraph style={{ fontWeight: 'bold',margin: 5 }}>
+          <Paragraph style={styles.listItemTextStyle}>
             {item.address}
           </Paragraph>
         </View>
         
         <View style={ styles.itemContainer}>
           <MaterialIcons name="location-city" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold',margin: 5 }}>
+          <Text style={styles.listItemTextStyle}>
             {item.district}
           </Text>
         </View>
 
         <View style={ styles.itemContainer}>
           <Entypo name="compass" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold',margin:5 }}>
+          <Text style={styles.listItemTextStyle}>
             {item.availablity}
           </Text>
         </View>
 
         <View style={ styles.itemContainer}>
           <MaterialIcons name="event-available" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold',margin:5 }}>
+          <Text style={styles.listItemTextStyle}>
             {item.status}
           </Text>
         </View>
 
         <View style={ styles.itemContainer}>
           <FontAwesome name="phone-square" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold',margin:5 }}>
+          <Text style={styles.listItemTextStyle}>
             {item.contactNumber}
           </Text>
         </View>
@@ -255,7 +255,7 @@ export default function App() {
   return (
     <View style={styles.pageContainer}>
 
-      <View >
+      <View style={styles.modalButtonContainer}>
         <DonorEntryModal/>
       </View>
 
