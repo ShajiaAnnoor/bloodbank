@@ -37,28 +37,28 @@ function OrganizationList({ item }) {
           
         <View style={ styles.itemContainer}>
           <Octicons name="organization" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold', marginTop: 7, alignContent: 'space-between'}} > 
+          <Text style={styles.listItemTextStyle} > 
             {item.organizationName} 
           </Text>
         </View>
         
         <View style={ styles.itemContainer}>
           <Octicons name="location" size={24} color="black" />
-          <Paragraph style={{ fontWeight: 'bold' }}>
+          <Paragraph style={styles.listItemTextStyle} >
             {item.address}
           </Paragraph>
         </View>
         
         <View style={ styles.itemContainer}>
           <MaterialIcons name="location-city" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold' }}>
+          <Text style={styles.listItemTextStyle} >
             {item.district}
           </Text>
         </View>
 
         <View style={ styles.itemContainer}>
           <FontAwesome name="phone-square" size={24} color="black" />
-          <Text style={{ fontWeight: 'bold' }}>
+          <Text style={styles.listItemTextStyle} >
             {item.contactNumber}
           </Text>
         </View>
@@ -180,7 +180,7 @@ export default function App(){
     
     return (
       <View style={styles.container2}>
-      <View >
+      <View style={styles.modalButtonContainer}>
       <OrganizationEntryModal/>
       </View>
 
