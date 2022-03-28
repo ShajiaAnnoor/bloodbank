@@ -10,10 +10,19 @@ export const styles = StyleSheet.create({
       alignSelf: 'center',
     },
     container: {
+     // flex: 10,
+      //backgroundColor: '#F7F7F7',
+      //marginTop:10,
+      //marginBottom:5,
+
       flex: 10,
-      backgroundColor: '#F7F7F7',
-      marginTop:10,
-      marginBottom:5,
+      marginTop: 2,
+      marginBottom:2,
+      width: '100%',
+      justifyContent: 'space-evenly',
+      alignSelf:'center',
+      flexDirection:'column',
+      //backgroundColor:'red'
     },
     itemContainer: {
       flex:1,
@@ -34,6 +43,14 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
 
+    listItemTextStyle:{
+      fontWeight: 'bold',
+      fontSize:14, 
+      margin:5, 
+      alignContent: 'space-between',
+      alignSelf:'center'
+    },
+
     modalButtonContainer:{
       //margin: 1,
       paddingTop: 1,
@@ -51,7 +68,7 @@ export const styles = StyleSheet.create({
       padding:2,
       //paddingTop:5,
      // alignItems: "flex-start",
-     backgroundColor:'#fcadb8',
+    // backgroundColor:'#fcadb8',
       flexDirection:'row',
       justifyContent: 'space-between',
       marginBottom:1,
