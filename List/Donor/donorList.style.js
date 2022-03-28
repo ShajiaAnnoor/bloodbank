@@ -14,35 +14,14 @@ export const styles = StyleSheet.create({
     container: {
       flex: 10,
       backgroundColor: '#F7F7F7',
-      marginTop:10,
-      marginBottom:5,
+      marginTop:2,
+      marginBottom:2,
     },
     itemContainer: {
       flex:1,
       flexDirection:'row',
       justifyContent: 'space-around',
       margin:2,
-    },
-    listItem: {
-      margin: 10,
-      padding: 10,
-      paddingLeft:40,
-      backgroundColor: '#a7d1c9',
-      width: '95%',
-      flex:1,
-      alignSelf: 'center',
-      flexDirection: 'column',
-      borderRadius: 5,
-      alignItems:'flex-start',
-      justifyContent: 'space-between',
-    },  
-    filterContainer: {
-      flex: 1,
-      padding:2,
-      flexDirection:'row',
-      justifyContent: 'space-between',
-      marginBottom:1,
-      flexWrap:'nowrap',
     },
     modalButtonContainer:{
       //margin: 1,
@@ -56,6 +35,38 @@ export const styles = StyleSheet.create({
       flexDirection: 'column',
       //borderRadius: 50,
     },
+
+    listItem: {
+      margin: 10,
+      padding: 10,
+      paddingLeft:40,
+      backgroundColor: '#a7d1c9',
+      width: '95%',
+      flex:1,
+      alignSelf: 'center',
+      flexDirection: 'column',
+      borderRadius: 5,
+      alignItems:'flex-start',
+      justifyContent: 'space-between',
+    },
+    
+    listItemTextStyle:{
+      fontWeight: 'bold',
+      fontSize:14, 
+      margin:5, 
+      alignContent: 'space-between',
+      alignSelf:'center'
+    },
+
+    filterContainer: {
+      flex: 1,
+      padding:2,
+      flexDirection:'row',
+      justifyContent: 'space-between',
+      marginBottom:1,
+      flexWrap:'nowrap',
+    },
+    
     allFilterContainer: {
       flex: 1,
       flexDirection:'column',
