@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
       flex: 12,
-      marginTop: 5,
-      marginBottom:3,
+      marginTop: 2,
+      marginBottom:2,
       width: '100%',
       justifyContent: 'space-evenly',
       alignSelf:'center',
       flexDirection:'column',
+      //backgroundColor:'red'
     },
     filterContainer: {
       flex: 1,
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
       flexDirection:'row',
       justifyContent: 'space-between',
       margin:1,
-      backgroundColor:'#fcadb8',
+      //backgroundColor:'#fcadb8',
     },
     filterButton:{
       height:50,
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
     container2: {
       paddingTop:1,
       //marginTop:3,
-     backgroundColor:'#fccdb5',
+     //backgroundColor:'#fccdb5',
       width: '95%',
       height: '90%',
       flex: 1,
@@ -69,6 +70,14 @@ export const styles = StyleSheet.create({
       borderRadius: 5,
       alignItems:'flex-start',
       justifyContent: 'space-between',
+    },
+
+    listItemTextStyle:{
+      fontWeight: 'bold',
+      fontSize:14, 
+      margin:5, 
+      alignContent: 'space-between',
+      alignSelf:'center'
     },
     textStyle:{
       color: "white",
