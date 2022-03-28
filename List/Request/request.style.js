@@ -5,20 +5,27 @@ export const styles = StyleSheet.create({
       flex: 11,
       backgroundColor: '#F7F7F7',
       //backgroundColor: '#eda187',
-      marginTop: 5,
-      marginBottom:5,
-      width: '90%',
+      marginTop: 3,
+      marginBottom:3,
+      width: '98%',
+      height:'98%',
       justifyContent: 'space-between',
       alignSelf:'center',
       flexDirection:'column',
     },
-  
+    
+    itemContainer: {
+      flex:1,
+      flexDirection:'row',
+      justifyContent: 'space-around',
+      margin:2,
+    },
     ShareButtonContainer: {
       flex: 1,
       backgroundColor: '#F7F7F7',
       //backgroundColor: 'white',
-      marginTop: 10,
-      marginBottom:10,
+      marginTop:2,
+      marginBottom:2,
       width: '90%',
       justifyContent: 'space-between',
       alignSelf:'flex-start',
@@ -54,8 +61,9 @@ export const styles = StyleSheet.create({
       //flexBasis:10,
     },
     listItem: {
-      marginTop: 5,
-      padding:10,
+      marginTop:3,
+     // paddingTop:10,
+      padding:8,
       //backgroundColor: '#FFF',
       //backgroundColor: '#eda187',
       backgroundColor: '#a7d1c9',
@@ -118,6 +126,14 @@ export const styles = StyleSheet.create({
       //paddingBottom:2,
       flexWrap:'nowrap',
      //alignContent:'space-around',
+    },
+
+    listItemTextStyle:{
+      fontWeight: 'bold',
+      fontSize:14, 
+      margin:5, 
+      alignContent: 'space-between',
+      alignSelf:'center'
     },
     
     textStyle:{
