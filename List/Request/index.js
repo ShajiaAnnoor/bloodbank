@@ -428,7 +428,7 @@ export default function App() {
 
 
   return (
-    <View style={styles.container2}>
+    <View style={styles.pageContainer}>
       <View style={styles.modalButtonContainer}>
       <FormModal />
       </View>
@@ -436,7 +436,7 @@ export default function App() {
       <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
-            style={{ height: 50, width: 150, margin:2,padding:2,}}
+            style={{ height: 50, width: 150, margin:1,padding:1,}}
             onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
           >
             {AllDistrict.map((district) => {
@@ -448,7 +448,7 @@ export default function App() {
 
           <Picker
             selectedValue={selectedBloodGroup}
-            style={{ height: 50, width: 150  }}
+            style={{ height: 50, width: 150,margin:1,padding:1,}}
             onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
           >
             {AllBloodGroup.map((bloodGroup) => {
@@ -478,7 +478,7 @@ export default function App() {
             />  
           
       </View>
-      <View style={styles.container}>
+      <View style={styles.listContainer}>
       <FlatList       
         numColumns={1}
         style={{ flex: 15 }}
