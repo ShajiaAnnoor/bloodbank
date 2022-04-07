@@ -245,7 +245,7 @@ import React,{
         <View style={styles.filterContainer}>
           <Picker
             selectedValue={selectedDistrict}
-            style={{ height: 50, width: 150, margin:2,padding:2,}}
+            style={{ height: 50, width: 150, margin:1,padding:1,}}
             onValueChange={(itemValue, itemIndex) => onPickerPress1(itemValue,itemIndex)}
           >
             {AllDistrict.map((district) => {
@@ -257,7 +257,7 @@ import React,{
 
           <Picker
             selectedValue={selectedBloodGroup}
-            style={{ height: 50, width: 150  }}
+            style={{ height: 50, width: 150, margin:1,padding:1, }}
             onValueChange={(itemValue, itemIndex) => onPickerPress2(itemValue,itemIndex)}
           >
             {AllBloodGroup.map((bloodGroup) => {
@@ -287,7 +287,7 @@ import React,{
             />  
           
       </View>
-        <View style={styles.container}>
+        <View style={styles.listContainer}>
           <FlatList
             style={{ flex: 10, }}
             data={filteredData} 
