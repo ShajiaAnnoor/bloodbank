@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
+    listContainer: {
       flex: 11,
       backgroundColor: '#F7F7F7',
       //backgroundColor: '#eda187',
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
       //borderRadius: 50,
     },
   
-    container2: {
+    pageContainer: {
       //marginTop:1,
       //backgroundColor:'#fccdb8',
       //backgroundColor: '#eda187',
@@ -64,6 +64,7 @@ export const styles = StyleSheet.create({
       marginTop:3,
      // paddingTop:10,
       padding:8,
+      margin:6,
       //backgroundColor: '#FFF',
       //backgroundColor: '#eda187',
       backgroundColor: '#a7d1c9',
@@ -72,7 +73,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       alignSelf: 'center',
       flexDirection: 'column',
-      borderRadius: 5,
+      borderRadius:20,
       justifyContent: 'space-evenly',
     },
   
