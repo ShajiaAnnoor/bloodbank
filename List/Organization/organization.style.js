@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
       marginTop: 2,
       marginBottom:2,
       width: '100%',
-      justifyContent: 'space-evenly',
+      justifyContent: 'space-between',
       alignSelf:'center',
       flexDirection:'column',
       //backgroundColor:'red'
@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
       flexDirection:'row',
       justifyContent: 'space-between',
       margin:1,
+      flexWrap:"nowrap",
       //backgroundColor:'#fcadb8',
     },
     filterButton:{
