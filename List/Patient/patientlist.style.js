@@ -2,27 +2,41 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     pageContainer: {
-      width: '98%',
+      width: '95%',
       height: '90%',
       flex:1,
       flexDirection:'column',
       paddingTop:1,
       alignSelf: 'center',
+      justifyContent: 'space-evenly',
+
+      
     },
-    container: {
+    listContainer: {
      // flex: 10,
       //backgroundColor: '#F7F7F7',
       //marginTop:10,
       //marginBottom:5,
 
-      flex: 10,
+      /*flex: 10,
       marginTop: 2,
       marginBottom:2,
       width: '100%',
       justifyContent: 'space-evenly',
       alignSelf:'center',
       flexDirection:'column',
-      //backgroundColor:'red'
+      //backgroundColor:'red'*/
+
+       flex: 11,
+      backgroundColor: '#F7F7F7',
+      //backgroundColor: '#eda187',
+      marginTop: 3,
+      marginBottom:3,
+      width: '98%',
+      height:'98%',
+      justifyContent: 'space-between',
+      alignSelf:'center',
+      flexDirection:'column',
     },
     itemContainer: {
       flex:1,
@@ -31,7 +45,7 @@ export const styles = StyleSheet.create({
       margin:2,
     },
     listItem: {
-      margin: 10,
+      /*margin: 10,
       padding: 10,
       backgroundColor: '#a7d1c9',
       width: '95%',
@@ -40,7 +54,22 @@ export const styles = StyleSheet.create({
       flexDirection: 'column',
       borderRadius: 5,
       alignItems:'flex-start',
-      justifyContent: 'space-between',
+      justifyContent: 'space-between',*/
+
+      marginTop:3,
+      // paddingTop:10,
+       padding:8,
+       margin:6,
+       //backgroundColor: '#FFF',
+       //backgroundColor: '#eda187',
+       backgroundColor: '#a7d1c9',
+       width: '100%',
+       height:'10%',
+       flex: 1,
+       alignSelf: 'center',
+       flexDirection: 'column',
+       borderRadius:20,
+       justifyContent: 'space-evenly',
     },
 
     listItemTextStyle:{
