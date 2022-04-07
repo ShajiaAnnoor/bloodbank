@@ -66,6 +66,17 @@ function MyTabs() {
           ),
         }}
       />
+      
+       <Tab.Screen
+        name="Patients"
+        component={Patients}
+        options={{
+          tabBarLabel: 'Patients',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ios-people-circle" size={24} color={color} />
+          ),
+        }}
+      />
 
       <Tab.Screen
         name="Blood Organizations"
@@ -74,17 +85,6 @@ function MyTabs() {
           tabBarLabel: 'Organizations',
           tabBarIcon: ({ color, size }) => (
             <SimpleLineIcons name="organization" size={size} color={color}/>
-          ),
-        }}
-      />
-
-       <Tab.Screen
-        name="Patients"
-        component={Patients}
-        options={{
-          tabBarLabel: 'Patients',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-people-circle" size={24} color={color} />
           ),
         }}
       />
