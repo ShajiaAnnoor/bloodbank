@@ -12,9 +12,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { styles } from "./myApp.style";
 import MyTab from '../MyApp/MyTab';
 import ProfileNavigator from '../Profile/ProfileNavigatorButton/profileNavigatorButton.js'
-//import Patient from "../Profile/Patient/PatientProfile/PatientProfile";
+import Patient from "../Profile/Patient/PatientProfile/PatientProfile";
 import Donor from "../Profile/Donor/DonorProfile/donorProfile";
 import Organization from "../Profile/Organization/OrganizationProfile/OrganizationProfile";
+import More from "../More/index.js";
+import Eligibility from "../More/eligibility.js";
+
 
 
 import { registerForPushNotificationsAsync, sendPushNotification } from "../Notifications/example"
@@ -86,6 +89,19 @@ function App() {
         name="Organization"
         component={Organization}       
       />
+
+      <Stack.Screen
+        name="Patient"
+        component={Patient}       
+      />
+      <Stack.Screen
+        name="More"
+        component={More}       
+      /> 
+      <Stack.Screen
+        name="Eligibility"
+        component={Eligibility}       
+      /> 
       {/*<Stack.Screen
         name="Patient"
         component={Patient}       
