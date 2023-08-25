@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useEffect,
 }from 'react';
 import {
   Text,
@@ -12,6 +13,7 @@ import {
   Pressable,  
 } from 'react-native';
 import { Paragraph } from 'react-native-paper';
+import { useSelector } from 'react-redux';
 //import call from 'react-native-phone-call';
 
 import { styles } from "./request.style";
@@ -334,7 +336,7 @@ export default function App() {
 
   useEffect(()=>{
     //api call will be made by dispatching thunks
-    dispatch(fetchBloodRequestListThunk)
+    //dispatch(fetchBloodRequestListThunk);
 
     return function cleanup() {
 
@@ -342,7 +344,7 @@ export default function App() {
 
   })
   //const [filteredData, setFilteredData] = useState(all_data.data);
-  const filteredData = useSelector(getBloodRequestList);
+  //const filteredDatas = useSelector(getBloodRequestList);
 
   return (
     <View style={styles.container2}>
