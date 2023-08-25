@@ -4,7 +4,6 @@ import React, {
 import { 
     Modal,
     Pressable, 
-    StyleSheet, 
     Text, 
     TextInput,
     TouchableOpacity,
@@ -62,7 +61,7 @@ const DonorEntryModal = () => {
           <View style={styles.inputView}>
             <Picker
               selectedValue={selectedDistrict}
-              style={{ height: 50, width: 150 }}
+              //style={{ height: 50, width: 150 }}
               onValueChange={(itemValue) => setSelectedDistrict(itemValue)}
               style={styles.inputText}
             >
@@ -73,20 +72,20 @@ const DonorEntryModal = () => {
 
           <View style={styles.inputView}>
             <Picker
-            selectedValue={selectedAvailablity}
-            style={{ height: 50, width: 150 }}
-            onValueChange={(itemValue) => setSelectedAvailablity(itemValue)}
-            style={styles.inputText}
+              selectedValue={selectedAvailablity}
+            //style={{ height: 50, width: 150 }}
+              onValueChange={(itemValue) => setSelectedAvailablity(itemValue)}
+              style={styles.inputText}
             >
-            <Picker.Item label="Available" value="Available" />
-            <Picker.Item label="Not Available" value="Not Available" />
+              <Picker.Item label="Available" value="Available" />
+              <Picker.Item label="Not Available" value="Not Available" />
             </Picker>
         </View>
 
         <View style={styles.inputView}>
             <Picker
             selectedValue={selectedReady}
-            style={{ height: 50, width: 150 }}
+            //style={{ height: 50, width: 150 }}
             onValueChange={(itemValue) => setSelectedReady(itemValue)}
             style={styles.inputText}
             >
