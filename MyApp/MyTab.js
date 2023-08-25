@@ -40,10 +40,6 @@ function MyTabs() {
       tabBarOptions={{
         activeTintColor: '#e91e63',
       }}
-      options={{
-        headerTintColor: 'white',
-        headerStyle: { backgroundColor: 'tomato' },
-      }}
     >
       <Tab.Screen
         name="Blood Requests"
