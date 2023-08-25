@@ -15,9 +15,8 @@ import ProfileNavigator from '../Profile/ProfileNavigatorButton/profileNavigator
 //import Patient from "../Profile/Patient/PatientProfile/PatientProfile";
 import Donor from "../Profile/Donor/DonorProfile/donorProfile";
 import Organization from "../Profile/Organization/OrganizationProfile/OrganizationProfile";
+import { registerForPushNotificationsAsync, sendPushNotification } from "../Notifications/example";
 
-
-import { registerForPushNotificationsAsync, sendPushNotification } from "../Notifications/example"
 const Stack = createStackNavigator();
 
 function LogoTitle() {
