@@ -1,7 +1,11 @@
-import { LoginButton, AccessToken } from 'react-native-fbsdk';
+//import { LoginButton, AccessToken } from 'react-native-fbsdk-next';
 import React, { Component } from 'react';
-import { View } from 'react-native';
+//import { View } from 'react-native';
 
+export default Dummy = () => {
+  return (<></>)
+}
+/*
 export default class Login extends Component {
   render() {
     return (
@@ -27,3 +31,4 @@ export default class Login extends Component {
     );
   }
 }
+*/
