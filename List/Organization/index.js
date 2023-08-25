@@ -1,5 +1,6 @@
 import React,{ 
   useState,
+  useEffect,
  } from 'react';
 import {
   Text,
@@ -11,6 +12,7 @@ import { Paragraph } from 'react-native-paper';
 import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { useSelector } from 'react-redux';
 import OrganizationEntryModal from '../../Forms/requestOrganizationEntryModal';
 //import call from 'react-native-phone-call';
 
