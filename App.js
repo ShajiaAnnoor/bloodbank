@@ -1,7 +1,8 @@
 import React from 'react';
 import { Provider } from "react-redux";
-import MyApp from './MyApp/myApp';
 import { PersistGate } from 'redux-persist/integration/react';
+
+import MyApp from './MyApp/myApp';
 import { store, persistor } from "./redux/store";
 
 export default function App() {
